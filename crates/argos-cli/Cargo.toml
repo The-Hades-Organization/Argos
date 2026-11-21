@@ -1,0 +1,17 @@
+[package]
+name = "argos-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "argos"
+path = "src/main.rs"
+
+[dependencies]
+argos-core = { path = "../argos-core" }
+clap.workspace = true
+
+[lints]
+workspace = true
