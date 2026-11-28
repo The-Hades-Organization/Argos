@@ -5,7 +5,7 @@ de linha de comando e responde o que cada um pede. Família Hades (fontes, forma
 Hades-UI v0.3.1), com tokens próprios para estado do agente, nó, cabo e terminal. O brief que manda nestas escolhas é o
 `DESIGN.md` do repositório Argos.
 
-> **Estado:** fundações e regras de interação em rascunho, aguardando o ok do dono. Nenhum componente ainda.
+> **Estado:** fundações e regras de interação aprovadas pelo dono em 28/11. Componentes ainda não entraram.
 
 ## Princípios
 

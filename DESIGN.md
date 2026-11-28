@@ -97,6 +97,9 @@ página pública em 2026-11-28.
   descartar.
 - 2026-11-28: escuro como tema padrão, densidade alta, movimento só com sentido, teclado primeiro. Por quê: padrões
   propostos e aceitos pelo dono.
+- 2026-11-28: fundações do design system aprovadas, com três escolhas próprias do Argos: rosa só para "esperando
+  você", anel de foco azul e seleção neutra em colchetes de canto. Por quê: a atenção do canvas tem uma cor só, e
+  seleção não se confunde com estado.
 
 ## Perguntas abertas
 
