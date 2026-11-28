@@ -5,7 +5,8 @@ de linha de comando e responde o que cada um pede. Família Hades (fontes, forma
 Hades-UI v0.3.1), com tokens próprios para estado do agente, nó, cabo e terminal. O brief que manda nestas escolhas é o
 `DESIGN.md` do repositório Argos.
 
-> **Estado:** fundações e regras de interação aprovadas pelo dono em 28/11. Componentes ainda não entraram.
+> **Estado:** fundações e regras de interação aprovadas pelo dono em 28/11. Nove componentes base e os ícones em
+> rascunho, aguardando o ok do dono. A tela principal segue a direção Coordenador.
 
 ## Princípios
 
@@ -117,6 +118,31 @@ Escritas uma vez; os componentes seguem estas regras em vez de inventar as suas.
 
 ## Iconografia
 
-Um conjunto só: os ícones do Hades-UI (Lucide, licença ISC, mais ícones próprios sob MIT, já com `argos`). Traço de
-1,5 px, 16 px na interface, 14 px em chip. Ícone sozinho leva nome acessível; ícone decorativo some do leitor de tela.
-A escolha da biblioteca e a extração dos ícones para este sistema ficam na etapa de componentes.
+Um conjunto só: os ícones do Hades-UI v0.3.1. Os de linha são do Lucide v0.460.0 (licença ISC) e os desenhos próprios
+da Hades, como `argos`, estão sob MIT. As duas licenças são permissivas e compatíveis com a GPL-3.0 do Argos; basta
+manter o aviso, que está em `assets/Icones/LICENSE.txt`. O gpui já carrega o conjunto pelo `IconName` do Hades-UI, sem
+dependência nova, e o Argos fica igual às outras cinco ferramentas.
+
+Traço de 2 em 24 (cerca de 1,3 px a 16 px), ponta quadrada e junta em ângulo. 16 px na interface, 14 px em chip. A
+tinta é `currentColor`: o ícone herda a cor do texto. Ícone sozinho leva nome acessível; ícone ao lado de rótulo some
+do leitor de tela. Os 25 que o Argos usa estão no grupo Ícones, com o uso de cada um.
+
+## Componentes
+
+Cada componente tem anatomia, regra com o porquê e matriz de estados na própria página. O CSS deles está em
+`components/bundle.css` e usa só os papéis de token acima. No app, os mesmos papéis viram o tema gpui.
+
+| Componente | Grupo | Para quê |
+|---|---|---|
+| Botão | Ações | Primária, secundária, fantasma e ícone, com os seis estados |
+| Campo | Entrada | Resposta de uma linha e pedido ao time de várias |
+| Chip | Conteúdo | Identificador dentro do texto, tipo de agente, contador de quem espera |
+| Estado do agente | Agente | Forma, palavra e tempo dos seis estados, mais "(inferido)" |
+| Nó de agente | Agente | A peça do canvas, nos seis estados, selecionado, hover, foco e zoom distante |
+| Decisão | Decisões | Cartão de permissão, pergunta, plano e proposta, com a opção recomendada |
+| Coluna do coordenador | Decisões | Pedido ao time, caixa de decisões e atalhos; vazia e com erro |
+| Trilho | Navegação | Canvas, Squads, Histórico, Adaptadores e Configuração |
+| Barra de estado | Navegação | Supervisor, contagem, custo do dia; sem supervisor e custo alto |
+
+Os componentes das telas de squad (proposta, biblioteca e convocação) entram depois, quando a direção dessas telas for
+escolhida.
