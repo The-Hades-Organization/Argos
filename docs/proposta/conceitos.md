@@ -4,7 +4,8 @@ O Argos novo tem um vocabulário curto: um **agente** roda numa **sessão** guar
 **adaptador** do seu tipo e aparece no **canvas** como um **nó**. Quando ele para e pede algo, o pedido é uma
 **pendência**, e a pendência entra na **caixa de decisões**. O dono fala com o time pelo **coordenador**, que monta
 **squads**: times salvos em disco e convocados de novo para tarefas futuras. Cada termo abaixo tem um nome só, usado igual na
-interface, na documentação e na CLI. Como as peças se ligam está em [arquitetura.md](arquitetura.md).
+interface, na documentação e na CLI. Como as peças se ligam está em [arquitetura.md](arquitetura.md); como cada termo aparece na tela, nas páginas de
+[paginas.md](paginas.md).
 
 ## Agente e o que o roda
 

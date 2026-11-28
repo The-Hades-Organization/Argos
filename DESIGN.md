@@ -188,6 +188,12 @@ página pública em 2026-11-28.
   eles morrem, e a tela não pode fingir o contrário.
 - 2026-11-28: canvas da primeira vez é um vazio enxuto: uma frase, Recrutar e um exemplo de pedido ao
   coordenador, sem tour nem boas-vindas. Por quê: os adaptadores de fábrica já vêm prontos e recrutar é uma tecla.
+- 2026-11-28: desenho da tela Vazio e erro, aprovado. Todo erro do sistema entra numa faixa no topo do canvas:
+  vermelha quando algo parou, amarela quando funciona pela metade, verde por 5 s quando voltou; `Enter` com a faixa
+  em foco faz a ação principal. Canvas salvo ilegível não é regravado até o dono escolher; conflito de gravação não
+  se mescla sozinho. Três peças no design system: os estados Desatualizado e Esqueleto do Nó de agente, o componente
+  Vazio e a classe de supervisor desligado da Barra de estado. Por quê: um lugar só para a causa e a ação; nada que
+  o dono arrumou some por uma gravação automática.
 
 ## Perguntas abertas
 

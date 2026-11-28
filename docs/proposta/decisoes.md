@@ -76,6 +76,40 @@ e os outros apps enxergam o mesmo agente. **Descartada:** formato próprio de re
 **Decisão:** herdr, loop da Hades e `gh` viram integrações que o Argos usa quando existem. **Por quê:** o dono quer
 menos dependência externa; o terminal embutido cobre o caso de uso sem elas.
 
+## Adaptador editado no arquivo, tela só de leitura
+
+**Decisão:** a tela Adaptadores mostra a lista dos tipos com o estado de cada um e o contrato do escolhido em
+leitura; `O` abre o arquivo no editor do dono e a tela recarrega ao salvar. As partes que não reiniciam o processo
+(ler estado, responder, comandos, custo e contexto) valem na hora para os agentes vivos; as outras, para os próximos
+recrutas. Versão nova que não carrega deixa os vivos na última válida, com o erro à vista. **Por quê:** o arquivo é a
+fonte, e um formulário repetiria o formato; consertar um padrão de tela não pode esperar o agente encerrar.
+**Descartadas:** formulário de edição na tela; mudança valendo só para recrutas novos.
+
+## Sem o work root, o Argos funciona para agentes avulsos
+
+**Decisão:** sem a pasta de estado do Hades-Core, o canvas abre, recruta e mostra o estado lido do terminal,
+marcado como inferido; uma faixa avisa que o loop e o painel não enxergam esses agentes e oferece **Criar em
+~/.hades** ([arquitetura.md](arquitetura.md#o-que-vem-do-hades-core)). **Por quê:** o `hades-core` vai dentro do
+binário; o que pode faltar é a pasta, e exigir configuração antes do canvas trava quem só quer um agente.
+**Descartada:** bloquear o app até o work root existir.
+
+## Erro do sistema numa faixa, sem esconder o último estado
+
+**Decisão:** todo erro do sistema entra numa faixa no topo do canvas, com a causa e a ação. Supervisor que não
+responde: os nós ficam com o último estado lido, marcados com a hora e sem digitação, e o Argos tenta reconectar a
+cada 5 s. Supervisor que morreu: ele volta sozinho, os agentes ficam encerrados no canvas com o motivo e a opção de
+recrutar de novo com a mesma sessão, quando o adaptador sabe retomar. Canvas salvo ilegível: os agentes vivos
+aparecem lado a lado, o arquivo não é regravado e a faixa oferece a última cópia boa. **Por quê:** os agentes são
+do supervisor, não da janela; dar como encerrado um agente que só está sem contato, ou apagar a arrumação do dono
+numa gravação automática, faria a tela mentir. **Descartadas:** esvaziar o canvas quando o supervisor some; diálogo
+modal para cada erro.
+
+## Primeira vez sem tour
+
+**Decisão:** o canvas vazio da primeira vez tem uma frase, **Recrutar** (`R`) e um exemplo de pedido ao
+coordenador, com o campo do coordenador já focado. **Por quê:** os adaptadores de fábrica já vêm prontos e recrutar é
+uma tecla. **Descartadas:** tour guiado; tela de boas-vindas.
+
 ## Celular fica em aberto
 
 **Decisão:** a proposta lista as opções e não escolhe ([perguntas-abertas.md](perguntas-abertas.md)). **Por quê:**

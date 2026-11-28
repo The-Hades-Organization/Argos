@@ -7,12 +7,16 @@ quando a opção recomendada serve. Recrutar e montar um squad custam uma frase 
 
 ## Primeira vez
 
+Tela: [design/telas/vazio-e-erro.html](../../design/telas/vazio-e-erro.html).
+
 O canvas abre vazio, sem tour: no centro, "Nenhum agente ainda" com **Recrutar** (`R`) e um exemplo de pedido ao
 coordenador; o campo do coordenador já vem focado. Os tipos de fábrica que encontram o programa no PATH já estão
 prontos; os outros aparecem desativados no lançador, com o motivo na linha, e o shell sempre funciona. Sem o work root
 do Hades-Core, uma faixa avisa que o estado vem só do terminal e oferece **Criar em ~/.hades**.
 
 ## Quando algo falha
+
+Tela: [design/telas/vazio-e-erro.html](../../design/telas/vazio-e-erro.html).
 
 Todo erro do sistema entra numa faixa no topo do canvas, com a causa e a ação; `Enter` com a faixa em foco faz a ação.
 Supervisor que não responde: os nós ficam com o último estado, marcados com a hora e sem digitação, e o Argos tenta
@@ -38,6 +42,8 @@ Nenhum atalho do Argos atual foi pedido pelo dono para continuar (pergunta abert
 
 ## Responder
 
+Tela: [design/telas/canvas-principal.html](../../design/telas/canvas-principal.html).
+
 1. Uma pendência nova entra no fim da caixa de decisões, com o agente, o tipo e há quanto tempo espera. O nó do agente
    ganha a faixa de "esperando você" no canvas.
 2. `J` leva até ela. O canvas enquadra o agente, com o terminal legível.
@@ -50,6 +56,8 @@ Quando o agente não entrega opções, a decisão mostra as últimas linhas do t
 veio só da tela, a decisão diz "(inferido)" e oferece abrir o terminal antes de responder.
 
 ## Recrutar
+
+Tela: [design/telas/recrutar.html](../../design/telas/recrutar.html).
 
 **Pelo coordenador.** O dono escreve o pedido ("recrute um revisor de testes para a PR #1"). O coordenador mostra a
 proposta: quantos agentes, tipo, modelo, esforço, diretório e custo estimado. Os nós aparecem tracejados no canvas até
@@ -70,6 +78,8 @@ adaptador declara passa a erro. Erro aparece na caixa de decisões como "precisa
 atalho para as últimas linhas.
 
 ## Inspecionar um agente
+
+Tela: [design/telas/foco.html](../../design/telas/foco.html).
 
 `F` (agente selecionado ou da decisão em foco) ou clique duplo no cabeçalho do nó abre o foco no lugar do canvas. A
 coluna do coordenador fica ao lado, e a caixa de decisões continua mostrando quem mais espera. No foco o terminal
@@ -104,6 +114,8 @@ coordenador vira proposta. O agente sai do canvas, a sessão fecha e o que ele f
 
 ## Configurar um adaptador
 
+Tela: [design/telas/adaptadores.html](../../design/telas/adaptadores.html).
+
 Pelo trilho (Adaptadores) ou por "Ver adaptador" no nó e no foco de um agente com erro. A tela abre no lugar do canvas,
 com a coluna do coordenador ao lado. À esquerda, os tipos em dois grupos, De fábrica e Seus, cada um com o estado e
 quantos vivos o usam; à direita, o contrato do escolhido em sete partes, só para leitura.
@@ -120,6 +132,8 @@ Para um tipo novo, Duplicar copia o escolhido para a sua pasta e abre o arquivo.
 fábrica vale no lugar dele. `Esc`, sem teste rodando, volta ao canvas.
 
 ## Squads
+
+Tela: [design/direcoes/squads-planta.html](../../design/direcoes/squads-planta.html).
 
 Um squad passa por sete passos. Os quatro primeiros acontecem uma vez; convocar se repete a cada tarefa.
 

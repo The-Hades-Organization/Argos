@@ -3,7 +3,7 @@
 O Argos novo é um app desktop gpui onde um dev acompanha nove ou mais agentes de linha de comando ao mesmo tempo e
 responde, sem abrir o terminal, o que cada um pede. O trabalho número um da tela principal é mostrar quem está
 esperando o dono e deixar a resposta a um passo. Recrutar, acompanhar e dispensar vêm depois, e cada um custa menos
-passos que hoje.
+passos que hoje. As telas estão nas páginas locais listadas em [paginas.md](paginas.md).
 
 ## Problema
 
