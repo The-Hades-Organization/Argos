@@ -26,6 +26,17 @@ especializados (um módulo, um tipo de bug, frontend) sem remontar o prompt de c
 em disco para versionar, e briefs que envelhecem quando o código muda. **Descartadas:** equipe montada só na conversa
 com o coordenador (some com o contexto); predefinição de um agente só, como no Argos atual.
 
+## Squads desenhados no canvas
+
+**Decisão:** o squad é uma planta no próprio canvas, com nós tracejados num quadro, ligados por cabos com o nome do
+que passa de um para outro. A biblioteca é uma paleta flutuante, e convocar é soltar o squad e dar a tarefa num
+balão. **Por quê:** escolha do dono entre três estruturas desenhadas. O squad fica onde os agentes vão trabalhar, e
+os nós tracejados viram agentes de verdade. **Custa:** disputa de espaço com os agentes vivos e menos lugar para o
+histórico. A proposta trata os dois: ao soltar, os agentes vivos se afastam e nenhum nó fica por baixo de outro;
+convocado, o squad recolhe numa faixa de células e desdobra com `F`; a paleta abre as últimas convocações do squad
+selecionado, com resultado e custo, e leva ao Histórico filtrado. **Descartadas:** linha de montagem (estações
+com barra de custo, numa tela própria) e mesa de composição (uma coluna por papel, convocação em diálogo).
+
 ## Supervisor de sessões separado do app
 
 **Decisão:** um processo próprio abre e mantém os PTYs; o app gpui se liga a ele por socket local

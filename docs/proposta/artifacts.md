@@ -7,3 +7,4 @@ repositório, na pasta indicada.
 |---|---|---|
 | [Design system do Argos](https://claude.ai/artifact/MzBPcqX9EtZLsng7FXXM5M) | Tokens nos temas escuro e claro, tipografia, espaço, forma, movimento, voz e regras de interação | `design/design-system/` |
 | [Direção Coordenador](https://claude.ai/artifact/EvNazg5upivA3wQPMC7EJT) | A direção escolhida para a tela principal: caixa de decisões e pedido ao time em texto | `design/direcoes/` |
+| [Telas de squad: planta no canvas](https://claude.ai/artifact/CDRxHUEvtEu9kWDdR7WY6D) | Proposta de squad para aprovação, paleta com histórico, convocar soltando no canvas e squad recolhido | `design/direcoes/squads-planta.html` |

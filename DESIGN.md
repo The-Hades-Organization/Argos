@@ -111,6 +111,9 @@ página pública em 2026-11-28.
 - 2026-11-28: componentes base e ícones aprovados; a ação principal (`primary`) passa a neutro claro no tema escuro
   (fundo claro, texto escuro) e neutro escuro no claro. Texto sobre o rosa ganha token próprio, `on-agent-waiting`.
   Por quê: o botão principal fica dentro dos cartões de decisão, e dois rosas lado a lado se confundiam.
+- 2026-11-28: telas de squad como planta no canvas: nós tracejados, paleta flutuante com o histórico e squad
+  convocado recolhido numa faixa. Linha de montagem e mesa de composição descartadas. Por quê: escolha do
+  dono, que pediu tratar a disputa de espaço com os agentes vivos e o histórico escondido.
 
 ## Perguntas abertas
 

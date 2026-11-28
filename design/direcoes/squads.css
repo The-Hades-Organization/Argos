@@ -159,3 +159,14 @@ svg.pipe path { fill: none; stroke: var(--cable); stroke-width: 1.5; }
 .card.tile.off { opacity: 1; }
 .card.tile.off .nm, .card.tile.off .tc b { color: var(--text-muted); }
 .mlr { font-size: 11px; line-height: 14px; }
+
+/* Planta escolhida: espaço e histórico */
+.was { position: absolute; border: 1px dashed var(--divider); }
+svg.pipe path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }
+.hist { display: grid; gap: 4px; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--divider); }
+.hrow { display: grid; grid-template-columns: 38px 1fr auto; gap: 0 8px; font-size: 12px; line-height: 16px; }
+.hrow .hres { grid-column: 2; color: var(--success); font-size: 11px; }
+.hrow.err .hres { color: var(--danger); }
+.hrow > .num:last-child { grid-column: 3; grid-row: 1; }
+.frame-group.folded .unfold { position: absolute; right: 8px; top: 6px; height: 24px; }
+.frame-group.folded .cell { width: 168px; }
