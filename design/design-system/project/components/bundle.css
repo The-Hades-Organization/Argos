@@ -170,7 +170,8 @@ svg.cables path.on { stroke: var(--cable-active); }
 .rail .rb.is-hover { opacity: 1; background: color-mix(in srgb, var(--on-rail) 8%, transparent); }
 
 /* Decisão e coluna do coordenador */
-.dec { border: 1px solid var(--border); background: var(--canvas); display: grid; }
+.dec { border: 1px solid var(--border); background: var(--canvas); display: grid; grid-template-columns: minmax(0, 1fr); }
+.dec .cmd { border: 1px solid var(--border); }
 .dec.cur { border-color: var(--agent-waiting); }
 .dec .dh { display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: var(--agent-waiting-bg); }
 .dec .dh .nm { font: 600 13px/18px var(--sans); }

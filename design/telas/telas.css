@@ -47,10 +47,9 @@ body { background: var(--canvas); color: var(--text); }
 .zoomed { position: absolute; left: 392px; top: 0; transform-origin: 0 0; }
 
 /* Grids de uma coluna não crescem com o conteúdo: nome longo corta, comando quebra */
-.coord, .coord .ask, .coord .list, .dec { grid-template-columns: minmax(0, 1fr); }
+.coord, .coord .ask, .coord .list { grid-template-columns: minmax(0, 1fr); }
 .cmd { overflow-wrap: anywhere; max-height: calc(12 * 17px + 16px); overflow-y: auto; }
 .status > span { white-space: nowrap; }
-.dec .cmd { border: 1px solid var(--border); }
 /* O palco do nó selecionado é cortado de propósito pela folha; sem barra de rolagem */
 .spec:has(.stage) { overflow: hidden; }
 

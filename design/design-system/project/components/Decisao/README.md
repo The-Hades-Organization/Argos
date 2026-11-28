@@ -5,7 +5,10 @@ primeiro.
 
 **Anatomia.**
 - Cabeçalho em `agent-waiting-bg`: ponto de estado, nome do agente, tipo · projeto em `mono-small`, idade à direita.
-- Corpo em `canvas`, padding `space-3`. A pergunta em `body`; identificadores em Chip; comando em bloco `term-bg`.
+- Corpo em `canvas`, padding `space-3`. A pergunta em `body`; identificadores em Chip; comando em bloco `term-bg`
+  com fio `border`, para não sumir no cartão no tema escuro.
+- Coluna única que não cresce com o conteúdo: nome longo corta com reticências e comando largo quebra, sem alargar
+  a caixa de decisões.
 - Respostas: botões (permissão, plano, proposta) ou opções numeradas (pergunta). Teclas `1` a `9` escolhem; `Enter`
   aceita a recomendada.
 
