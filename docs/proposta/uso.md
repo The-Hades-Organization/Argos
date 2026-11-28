@@ -16,6 +16,8 @@ quando a opção recomendada serve. Recrutar e montar um squad custam uma frase 
 | `T` | Abre o terminal do agente da decisão em foco |
 | `F` | Abre o foco do agente; `Esc` volta ao canvas no mesmo lugar |
 | `R` | Abre o recrutamento de um agente avulso |
+| `P` | Com um nó selecionado, abre o campo para mandar prompt a ele |
+| `Ctrl+]` | Devolve ao canvas o teclado que estava no terminal de um nó (clicar fora do nó também devolve) |
 
 Nenhum atalho do Argos atual foi pedido pelo dono para continuar (pergunta aberta no [DESIGN.md](../../DESIGN.md)).
 
@@ -47,7 +49,9 @@ O nó nasce em "Iniciando" ao lado dos agentes do mesmo projeto, afastando os vi
 
 O canvas mostra cada agente com estado, terminal ao vivo, modelo, custo e uso de contexto. Afastando o zoom, o nó troca
 o terminal por nome e estado. A barra de estado mostra quantos agentes trabalham, quantos esperam e o custo do dia,
-com o custo do coordenador separado. Erro aparece na caixa de decisões como "precisa de atenção", com o motivo e o
+com o custo do coordenador separado. O rodapé do nó tem uma barra de 2 px com o uso de contexto; de 90% em
+diante o número fica vermelho com "quase cheio". Um agente que não dá sinal de pronto dentro do prazo que o
+adaptador declara passa a erro. Erro aparece na caixa de decisões como "precisa de atenção", com o motivo e o
 atalho para as últimas linhas.
 
 ## Dispensar

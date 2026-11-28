@@ -28,7 +28,7 @@ O contrato tem seis partes. Só as duas primeiras são obrigatórias; as outras 
 | Parte | Declara | Exemplo do que cabe |
 |---|---|---|
 | Identidade | id, nome, ícone, versão do contrato | `codex`, "Codex", ícone, `contrato = 1` |
-| Iniciar | comando, argumentos, variáveis de ambiente (por referência, nunca valor de segredo), diretório, como retomar uma sessão | comando com `{prompt_inicial}` e `{dir}`; argumento de retomada |
+| Iniciar | comando, argumentos, variáveis de ambiente (por referência, nunca valor de segredo), diretório, como retomar uma sessão, prazo para o primeiro sinal de pronto | comando com `{prompt_inicial}` e `{dir}`; argumento de retomada; `prazo_pronto = 120 s` (passado o prazo sem sinal, o agente vai a erro) |
 | Mandar prompt | como o texto chega ao agente | colar entre marcadores de colagem no PTY e mandar Enter; argumento de linha de comando; arquivo |
 | Ler estado | de onde vêm os sinais e como viram estado | eventos estruturados; arquivo de sessão; padrões de tela |
 | Responder | como cada tipo de pendência é respondido | permissão: tecla de sim, de não e de "sempre"; pergunta: texto + Enter |

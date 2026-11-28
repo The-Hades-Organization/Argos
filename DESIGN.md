@@ -130,6 +130,12 @@ página pública em 2026-11-28.
   variante nova da peça de decisão. Por quê: escolha do dono; o rosa continua sendo o único sinal de "precisa de
   você".
 - 2026-11-28: tela Recrutar aprovada como desenhada, com a folha 2.6 no rosa padrão. Por quê: ok do dono.
+- 2026-11-28: o teclado do terminal de um nó volta ao canvas com `Ctrl+]` ou um clique fora do nó; `Esc` fica
+  com o agente. Por quê: escolha do dono; vários agentes usam `Esc` para interromper.
+- 2026-11-28: contexto quase cheio aparece só no rodapé do nó: barra de 2 px e, de 90% em diante, número em
+  vermelho com "quase cheio". Não entra na caixa de decisões. Por quê: escolha do dono.
+- 2026-11-28: agente em Iniciando vira erro quando passa do prazo declarado pelo adaptador; antes disso, o nó
+  mostra o tempo. Por quê: escolha do dono, nenhum nó fica parado em Iniciando sem fim.
 
 ## Perguntas abertas
 
