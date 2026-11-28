@@ -1,0 +1,39 @@
+<!-- @dsCard height=288 -->
+<style>
+  html, body { margin: 0; height: 100%; background: var(--canvas); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--canvas); }
+  .cover svg { position: absolute; inset: 0; }
+  .primary { fill: var(--primary); }
+  .waiting { fill: var(--agent-waiting); }
+  .ink { fill: var(--text); }
+  .working { fill: var(--agent-working); }
+  .dot { fill: var(--canvas); }
+  .block { rx: var(--radius-none); }
+  .words { position: absolute; left: 40px; bottom: 32px; max-width: 440px; }
+  .name { margin: 0; font-family: "Marcellus", Georgia, serif; font-size: 120px; line-height: .92; color: var(--text); font-weight: 400; }
+  .tag { margin: 8px 0 0; font-family: "Figtree", system-ui, sans-serif; font-size: 13px; line-height: 18px; color: var(--text-muted); }
+</style>
+<div class="cover">
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <!-- blocks: primary 200x288, agent-waiting 280x120 bleeding right, text 160x168, agent-working 120x48 (state, small) -->
+    <!-- arrangement: one tall slab with satellites, flush on the grid-step (20px), square corners (radius-none) -->
+    <!-- pattern: dot grid at grid-step cut out of the ink block in canvas; the canvas grid is what the Argos draws on -->
+    <!-- scales: grid-step 20px for pitch and every side, radius-none on blocks, radius-full only on dots -->
+    <rect class="block primary" x="480" y="0" width="200" height="288"/>
+    <rect class="block waiting" x="680" y="0" width="280" height="120"/>
+    <rect class="block ink" x="680" y="120" width="160" height="168"/>
+    <rect class="block working" x="840" y="240" width="120" height="48"/>
+    <g>
+      <circle class="dot" cx="700" cy="140" r="2"/><circle class="dot" cx="720" cy="140" r="2"/><circle class="dot" cx="740" cy="140" r="2"/><circle class="dot" cx="760" cy="140" r="2"/><circle class="dot" cx="780" cy="140" r="2"/><circle class="dot" cx="800" cy="140" r="2"/><circle class="dot" cx="820" cy="140" r="2"/>
+      <circle class="dot" cx="700" cy="160" r="2"/><circle class="dot" cx="720" cy="160" r="2"/><circle class="dot" cx="740" cy="160" r="2"/><circle class="dot" cx="760" cy="160" r="2"/><circle class="dot" cx="780" cy="160" r="2"/><circle class="dot" cx="800" cy="160" r="2"/><circle class="dot" cx="820" cy="160" r="2"/>
+      <circle class="dot" cx="700" cy="180" r="2"/><circle class="dot" cx="720" cy="180" r="2"/><circle class="dot" cx="740" cy="180" r="2"/><circle class="dot" cx="760" cy="180" r="2"/><circle class="dot" cx="780" cy="180" r="2"/><circle class="dot" cx="800" cy="180" r="2"/><circle class="dot" cx="820" cy="180" r="2"/>
+      <circle class="dot" cx="700" cy="200" r="2"/><circle class="dot" cx="720" cy="200" r="2"/><circle class="dot" cx="740" cy="200" r="2"/><circle class="dot" cx="760" cy="200" r="2"/><circle class="dot" cx="780" cy="200" r="2"/><circle class="dot" cx="800" cy="200" r="2"/><circle class="dot" cx="820" cy="200" r="2"/>
+      <circle class="dot" cx="700" cy="220" r="2"/><circle class="dot" cx="720" cy="220" r="2"/><circle class="dot" cx="740" cy="220" r="2"/><circle class="dot" cx="760" cy="220" r="2"/><circle class="dot" cx="780" cy="220" r="2"/><circle class="dot" cx="800" cy="220" r="2"/><circle class="dot" cx="820" cy="220" r="2"/>
+      <circle class="dot" cx="700" cy="240" r="2"/><circle class="dot" cx="720" cy="240" r="2"/><circle class="dot" cx="740" cy="240" r="2"/><circle class="dot" cx="760" cy="240" r="2"/><circle class="dot" cx="780" cy="240" r="2"/><circle class="dot" cx="800" cy="240" r="2"/><circle class="dot" cx="820" cy="240" r="2"/>
+    </g>
+  </svg>
+  <div class="words">
+    <p class="name">Argos</p>
+    <p class="tag">Canvas de agentes da Hades. Quem espera você aparece primeiro.</p>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-28T07:07:35Z"
+ },
+ "title": "Argos",
+ "namespace": "Argos",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Icones"
+ ],
+ "assetGroups": {
+  "Icones": {
+   "name": "Icones",
+   "tile": "s",
+   "order": [
+    "argos.svg",
+    "layout-dashboard.svg",
+    "messages-square.svg",
+    "users.svg",
+    "history.svg",
+    "plug.svg",
+    "sliders-horizontal.svg",
+    "plus.svg",
+    "minus.svg",
+    "maximize.svg",
+    "mouse-pointer-click.svg",
+    "sticky-note.svg",
+    "play.svg",
+    "pencil.svg",
+    "power-off.svg",
+    "check.svg",
+    "x.svg",
+    "chevron-right.svg",
+    "corner-down-left.svg",
+    "square-terminal.svg",
+    "bot.svg",
+    "triangle-alert.svg",
+    "circle-dashed.svg",
+    "loader-circle.svg",
+    "coins.svg"
+   ],
+   "files": {
+    "argos.svg": {
+     "name": "argos.svg",
+     "blob": "80c43e3f7d6c83a82808a7fd9c001486",
+     "size": 2073,
+     "type": "image/svg+xml"
+    },
+    "layout-dashboard.svg": {
+     "name": "layout-dashboard.svg",
+     "blob": "16e87764f3b0d3d65b4ebff5b236ba0b",
+     "size": 381,
+     "type": "image/svg+xml"
+    },
+    "messages-square.svg": {
+     "name": "messages-square.svg",
+     "blob": "56972c9fd8612487c39bcb3252582ba6",
+     "size": 321,
+     "type": "image/svg+xml"
+    },
+    "users.svg": {
+     "name": "users.svg",
+     "blob": "57a680f535c5d26015ec31b3d40fa013",
+     "size": 346,
+     "type": "image/svg+xml"
+    },
+    "history.svg": {
+     "name": "history.svg",
+     "blob": "cbe7a8c6122bfb5ea6cdb45799279e99",
+     "size": 293,
+     "type": "image/svg+xml"
+    },
+    "plug.svg": {
+     "name": "plug.svg",
+     "blob": "80c21736843109910b0d702961550268",
+     "size": 300,
+     "type": "image/svg+xml"
+    },
+    "sliders-horizontal.svg": {
+     "name": "sliders-horizontal.svg",
+     "blob": "3b954eb5ad6b5678b85e01f723fb4c48",
+     "size": 380,
+     "type": "image/svg+xml"
+    },
+    "plus.svg": {
+     "name": "plus.svg",
+     "blob": "c1c6b6398e7137edc735d4c70a7fae17",
+     "size": 229,
+     "type": "image/svg+xml"
+    },
+    "minus.svg": {
+     "name": "minus.svg",
+     "blob": "1d44551b9034cc5ed9eb9473e60faa8e",
+     "size": 209,
+     "type": "image/svg+xml"
+    },
+    "maximize.svg": {
+     "name": "maximize.svg",
+     "blob": "2b058a9259c8e10da3dfe8dd266c0bac",
+     "size": 331,
+     "type": "image/svg+xml"
+    },
+    "mouse-pointer-click.svg": {
+     "name": "mouse-pointer-click.svg",
+     "blob": "99cf85275972b3463ee211139e94a233",
+     "size": 424,
+     "type": "image/svg+xml"
+    },
+    "sticky-note.svg": {
+     "name": "sticky-note.svg",
+     "blob": "354a7746172d40981ff94702182eee8c",
+     "size": 294,
+     "type": "image/svg+xml"
+    },
+    "play.svg": {
+     "name": "play.svg",
+     "blob": "cded079a3e54dd024a1702cd143f1fcf",
+     "size": 277,
+     "type": "image/svg+xml"
+    },
+    "pencil.svg": {
+     "name": "pencil.svg",
+     "blob": "d8a7b18c02dd90da854f162157719d60",
+     "size": 350,
+     "type": "image/svg+xml"
+    },
+    "power-off.svg": {
+     "name": "power-off.svg",
+     "blob": "e7444d9353e253ae5d9ebea347ee9078",
+     "size": 316,
+     "type": "image/svg+xml"
+    },
+    "check.svg": {
+     "name": "check.svg",
+     "blob": "9ec6dc8ae61fe65f017794ac6cb09ede",
+     "size": 216,
+     "type": "image/svg+xml"
+    },
+    "x.svg": {
+     "name": "x.svg",
+     "blob": "45e48839e91d527b53191fcb8b0f5fe6",
+     "size": 276,
+     "type": "image/svg+xml"
+    },
+    "chevron-right.svg": {
+     "name": "chevron-right.svg",
+     "blob": "8f61ea18cac9daeb2e04ac3a960c266e",
+     "size": 214,
+     "type": "image/svg+xml"
+    },
+    "corner-down-left.svg": {
+     "name": "corner-down-left.svg",
+     "blob": "bcd6f9a621cc423dcfda7ac8944d97c5",
+     "size": 259,
+     "type": "image/svg+xml"
+    },
+    "square-terminal.svg": {
+     "name": "square-terminal.svg",
+     "blob": "158574cac8cb91447884b8700575c390",
+     "size": 323,
+     "type": "image/svg+xml"
+    },
+    "bot.svg": {
+     "name": "bot.svg",
+     "blob": "ce4120bebe673f539437e3b0c4e5636b",
+     "size": 337,
+     "type": "image/svg+xml"
+    },
+    "triangle-alert.svg": {
+     "name": "triangle-alert.svg",
+     "blob": "b1411e5652904930e43a8d2127ece1b3",
+     "size": 297,
+     "type": "image/svg+xml"
+    },
+    "circle-dashed.svg": {
+     "name": "circle-dashed.svg",
+     "blob": "61a941143cff86b52aef188f47afb079",
+     "size": 539,
+     "type": "image/svg+xml"
+    },
+    "loader-circle.svg": {
+     "name": "loader-circle.svg",
+     "blob": "029ada681fba5cec693232a1f72c07b2",
+     "size": 228,
+     "type": "image/svg+xml"
+    },
+    "coins.svg": {
+     "name": "coins.svg",
+     "blob": "f95839a552d3fc25a5a523c7b5443db4",
+     "size": 428,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "sections": []
+ },
+ "lastChange": {
+  "by": "HadsonRamalho",
+  "at": "2026-11-28T15:30:00Z",
+  "via": "Claude Code",
+  "note": "Entram os componentes de squad: planta, paleta, balão de tarefa e faixa."
+ }
+}

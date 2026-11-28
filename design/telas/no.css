@@ -1,0 +1,21 @@
+/* Nó de agente: peças de bundle.css; acréscimos do nó só com papéis de token. */
+.spec .in > .node + .node { margin-top: 8px; }
+.node .ft .r { display: inline-flex; gap: 4px; align-items: center; }
+.node .ft .link + .link { margin-left: 8px; }
+.node.wrap .term { white-space: pre-wrap; overflow-wrap: anywhere; }
+.node .term .ask-q { display: block; color: var(--term-fg); white-space: pre-wrap; padding-bottom: 6px; margin-bottom: 6px; border-bottom: 1px solid var(--term-muted); }
+.node .term .ask-q.clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; max-height: calc(3 * 15px); padding-bottom: 0; border-bottom: 0; margin-bottom: 4px; }
+.node .term .more-l { display: block; font: 600 11px/15px var(--sans); color: var(--term-fg); text-decoration: underline; text-underline-offset: 2px; }
+.node .term .recon { display: flex; align-items: center; gap: 6px; font: 500 11px/15px var(--sans); color: var(--term-fg); margin-bottom: 6px; }
+.node .term .stale { color: var(--term-muted); }
+.spec .in > .node.is-focus { margin: 4px; }
+.zgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(336px, 1fr)); gap: 24px 16px; }
+.zitem { display: grid; gap: 8px; justify-items: start; align-content: start; }
+.zl { font: 600 11px/14px var(--sans); color: var(--text-muted); }
+.z70 { position: relative; width: 336px; height: 224px; }
+.z70 > .node { position: absolute; left: 0; top: 0; transform: scale(.7); transform-origin: 0 0; }
+.zitem > .cell { position: relative; left: auto !important; top: auto !important; }
+@media (prefers-reduced-motion: no-preference) {
+  .node.just .s-idle .dot { animation: just-done 900ms ease-out 1; }
+  @keyframes just-done { 0% { box-shadow: 0 0 0 0 var(--agent-idle); } 100% { box-shadow: 0 0 0 6px transparent; } }
+}

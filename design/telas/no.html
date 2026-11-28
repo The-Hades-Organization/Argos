@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nó de agente do Argos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Marcellus&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="bundle.css">
+<link rel="stylesheet" href="telas.css">
+<link rel="stylesheet" href="no.css">
+
+<main class="doc">
+  <header class="dochead">
+    <div class="titles">
+      <h1>Nó de agente</h1>
+      <p class="lead">A peça que você mais olha. Cabeçalho com nome, tipo e estado; o terminal ao vivo; o rodapé com
+        modelo, custo e contexto. Cada estado diz o que aconteceu e o que fazer em seguida.</p>
+    </div>
+    <div class="themes" role="group" aria-label="Tema">
+      <button type="button" id="tema-sistema" data-set="">Sistema</button>
+      <button type="button" id="tema-escuro" data-set="dark">Escuro</button>
+      <button type="button" id="tema-claro" data-set="light">Claro</button>
+    </div>
+  </header>
+
+  <section class="facts" aria-label="Como ler esta página"><div><b>O que é</b><span>O nó por dentro, a 100%, com o que cada estado oferece. Quadros numerados como <b>3.1 · Nó · estado</b>.</span></div><div><b>Seis estados</b><span>Cada um com cor, forma e palavra. Rosa só para esperando você; vermelho só para erro.</span></div><div><b>Ao afastar</b><span>A 70% o nó só encolhe. Abaixo de 50% vira célula com nome e estado, no mesmo lugar.</span></div><div><b>Teclado</b><span><b>P</b> manda prompt pelo nó. Clique no corpo dá o teclado ao terminal; <b>Ctrl+]</b> devolve.</span></div></section>
+
+  <section>
+    <h2>3.1 · Nó · seis estados</h2>
+    <div class="sheet"><figure class="leaf"><figcaption class="lh">Iniciando</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:320px"><div class="hd"><span class="nm">codex-2</span><span class="tp">codex</span><span class="st s-starting"><span class="dot"></span>Iniciando · 8 s</span></div><div class="term"><span class="m">$ codex --model gpt-5 --cwd ~/projetos/hades-core</span>
+Carregando sessão e instruções do projeto…</div><div class="ft"><span>gpt-5 · médio</span><span class="r">US$ 0,00</span></div></article></div></div><p class="ln">A sessão abriu e o agente ainda não deu o primeiro sinal de pronto. O tempo conta no cabeçalho.</p></figure><figure class="leaf"><figcaption class="lh">Trabalhando</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:320px"><div class="hd"><span class="nm">lock-ttl</span><span class="tp">agy</span><span class="st s-working"><span class="dot"></span>Trabalhando · 12s</span></div><div class="term"><span class="m">$ cargo test -p hades-core lock -- --nocapture</span>
+   Compiling hades-core v0.4.0 (~/projetos/hades-core/crates/core)
+    Finished test profile in 14.82s
+running 18 tests
+test lock::adquire_e_libera ... ok
+test lock::expira_sem_dono ... ok
+test lock::renova_antes_do_ttl ... ok
+test lock::dois_donos_disputam ... ok
+test lock::ttl_zero_recusa ... ok
+test lock::relogio_volta ... ok
+test lock::arquivo_corrompido ...</div><div class="ft"><span>gemini-2.5-pro · alto</span><span class="r">US$ 0,31 · <span class="ctx-t">41%</span><i class="ctx" style="--p:41%"></i></span></div></article></div></div><p class="ln">O terminal ao vivo é o corpo do nó. O tempo é desde o último sinal, não desde o recrutamento.</p></figure><figure class="leaf"><figcaption class="lh">Ocioso</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:320px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-idle"><span class="dot"></span>Ocioso · 4 min</span></div><div class="term"><span class="m">● Escrevendo docs/plano-diario-v2.md</span>
+  + ## Passo 1: campo ts_ms ao lado de ts
+  + ## Passo 2: leitores migram para ts_ms
+  + ## Passo 3: ts sai na v3
+
+&gt; Plano pronto em docs/plano-diario-v2.md.
+  Três passos, um por PR. Nenhum arquivo de código alterado.</div><div class="ft"><span>sonnet · alto</span><span class="r">US$ 0,22 · <span class="ctx-t">63%</span><i class="ctx" style="--p:63%"></i></span></div></article></div></div><p class="ln">Terminou e não pediu nada. A última saída fica à vista; mandar outro prompt é P com o nó selecionado.</p></figure><figure class="leaf"><figcaption class="lh">Esperando você</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node waiting" style="width:480px;height:320px"><div class="hd"><span class="nm">diario-v2</span><span class="tp">opencode</span><span class="st s-waiting"><span class="dot pulse"></span>Esperando você · pergunta</span></div><div class="term"><span class="ask-q">Pergunta · manter o campo "ts" em segundos ou
+passar para milissegundos?
+  1  Segundos, sem migração
+  2  Milissegundos, com migração  (recomendada)</span>
+<span class="m">● Lido crates/core/src/diario.rs
+● Lido docs/diario-v2.md</span></div><div class="ft"><span>qwen3-coder · alto</span><span class="r">US$ 0,09 · <span class="ctx-t">28%</span><i class="ctx" style="--p:28%"></i></span></div></article></div></div><p class="ln">Faixa rosa, o tipo da pendência no cabeçalho e o resumo no topo do corpo. Responder é na caixa de decisões ou na tela de foco; o nó só avisa.</p></figure><figure class="leaf"><figcaption class="lh">Erro</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node error" style="width:480px;height:320px"><div class="hd"><span class="nm">bench-lock</span><span class="tp">codex</span><span class="st s-error"><span class="tri"></span>Erro · saiu com código 101</span></div><div class="term"><span class="m">$ cargo bench -p hades-core lock</span>
+    Finished bench profile in 31.40s
+     Running benches/lock.rs
+adquire/1 dono        time: [212.4 ns 214.0 ns 215.9 ns]
+adquire/8 donos       time: [1.882 µs 1.901 µs 1.920 µs]
+thread 'main' panicked at benches/lock.rs:88:5:
+lock ainda preso depois de 30 s
+note: run with `RUST_BACKTRACE=1` for a backtrace
+error: bench failed, to rerun pass `--bench lock`
+<span class="m">processo saiu com código 101</span></div><div class="ft"><span>gpt-5 · médio</span><span class="r"><span class="link">Recrutar de novo</span> <span class="link">Ver as últimas linhas</span></span></div></article></div></div><p class="ln">Falha dita como falha: fio vermelho, o código no cabeçalho e as últimas linhas no corpo. O rodapé troca o custo pelas duas saídas.</p></figure><figure class="leaf"><figcaption class="lh">Encerrado</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node ended" style="width:480px;height:320px"><div class="hd"><span class="nm">investigador</span><span class="tp">claude-code</span><span class="st s-ended"><span class="dot"></span>Encerrado · dispensado por você</span></div><div class="term"><span class="m">&gt; causa.md entregue ao squad.
+  O lock fica preso porque renova() não confere o dono.</span></div><div class="ft"><span>sonnet · alto</span><span class="r">Histórico em 7 min · US$ 0,41</span></div></article></div></div><p class="ln">Cinza, com o motivo no cabeçalho. Sai sozinho para o Histórico 10 min depois de encerrar.</p></figure></div>
+  </section>
+
+  <section>
+    <h2>3.2 · Nó · ao afastar</h2>
+    <div class="spec on-canvas"><div class="zgrid"><div class="zitem"><span class="zl">70%</span><div class="z70"><article class="node" style="width:480px;height:320px"><div class="hd"><span class="nm">codex-2</span><span class="tp">codex</span><span class="st s-starting"><span class="dot"></span>Iniciando · 8 s</span></div><div class="term"><span class="m">$ codex --model gpt-5 --cwd ~/projetos/hades-core</span>
+Carregando sessão e instruções do projeto…</div><div class="ft"><span>gpt-5 · médio</span><span class="r">US$ 0,00</span></div></article></div><span class="zl">Abaixo de 50%</span><div class="cell" style="left:0px;top:0px"><span class="nm">codex-2</span><span class="st s-starting"><span class="dot"></span>Iniciando · 8 s</span></div></div><div class="zitem"><span class="zl">70%</span><div class="z70"><article class="node" style="width:480px;height:320px"><div class="hd"><span class="nm">lock-ttl</span><span class="tp">agy</span><span class="st s-working"><span class="dot"></span>Trabalhando · 12s</span></div><div class="term"><span class="m">$ cargo test -p hades-core lock -- --nocapture</span>
+   Compiling hades-core v0.4.0 (~/projetos/hades-core/crates/core)
+    Finished test profile in 14.82s
+running 18 tests
+test lock::adquire_e_libera ... ok
+test lock::expira_sem_dono ... ok
+test lock::renova_antes_do_ttl ... ok
+test lock::dois_donos_disputam ... ok
+test lock::ttl_zero_recusa ... ok
+test lock::relogio_volta ... ok
+test lock::arquivo_corrompido ...</div><div class="ft"><span>gemini-2.5-pro · alto</span><span class="r">US$ 0,31 · <span class="ctx-t">41%</span><i class="ctx" style="--p:41%"></i></span></div></article></div><span class="zl">Abaixo de 50%</span><div class="cell" style="left:0px;top:0px"><span class="nm">lock-ttl</span><span class="st s-working"><span class="dot"></span>Trabalhando · 12s</span></div></div><div class="zitem"><span class="zl">70%</span><div class="z70"><article class="node" style="width:480px;height:320px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-idle"><span class="dot"></span>Ocioso · 4 min</span></div><div class="term"><span class="m">● Escrevendo docs/plano-diario-v2.md</span>
+  + ## Passo 1: campo ts_ms ao lado de ts
+  + ## Passo 2: leitores migram para ts_ms
+  + ## Passo 3: ts sai na v3
+
+&gt; Plano pronto em docs/plano-diario-v2.md.
+  Três passos, um por PR. Nenhum arquivo de código alterado.</div><div class="ft"><span>sonnet · alto</span><span class="r">US$ 0,22 · <span class="ctx-t">63%</span><i class="ctx" style="--p:63%"></i></span></div></article></div><span class="zl">Abaixo de 50%</span><div class="cell" style="left:0px;top:0px"><span class="nm">migra-db</span><span class="st s-idle"><span class="dot"></span>Ocioso · 4 min</span></div></div><div class="zitem"><span class="zl">70%</span><div class="z70"><article class="node waiting" style="width:480px;height:320px"><div class="hd"><span class="nm">diario-v2</span><span class="tp">opencode</span><span class="st s-waiting"><span class="dot pulse"></span>Esperando você</span></div><div class="term"><span class="ask-q">Pergunta · manter o campo "ts" em segundos ou
+passar para milissegundos?
+  1  Segundos, sem migração
+  2  Milissegundos, com migração  (recomendada)</span>
+<span class="m">● Lido crates/core/src/diario.rs
+● Lido docs/diario-v2.md</span></div><div class="ft"><span>qwen3-coder · alto</span><span class="r">US$ 0,09 · <span class="ctx-t">28%</span><i class="ctx" style="--p:28%"></i></span></div></article></div><span class="zl">Abaixo de 50%</span><div class="cell waiting" style="left:0px;top:0px"><span class="nm">diario-v2</span><span class="st s-waiting"><span class="dot pulse"></span>Esperando você</span></div></div><div class="zitem"><span class="zl">70%</span><div class="z70"><article class="node error" style="width:480px;height:320px"><div class="hd"><span class="nm">bench-lock</span><span class="tp">codex</span><span class="st s-error"><span class="tri"></span>Erro · código 101</span></div><div class="term"><span class="m">$ cargo bench -p hades-core lock</span>
+    Finished bench profile in 31.40s
+     Running benches/lock.rs
+adquire/1 dono        time: [212.4 ns 214.0 ns 215.9 ns]
+adquire/8 donos       time: [1.882 µs 1.901 µs 1.920 µs]
+thread 'main' panicked at benches/lock.rs:88:5:
+lock ainda preso depois de 30 s
+note: run with `RUST_BACKTRACE=1` for a backtrace
+error: bench failed, to rerun pass `--bench lock`
+<span class="m">processo saiu com código 101</span></div><div class="ft"><span>gpt-5 · médio</span><span class="r"><span class="link">Ver as últimas linhas</span></span></div></article></div><span class="zl">Abaixo de 50%</span><div class="cell error" style="left:0px;top:0px"><span class="nm">bench-lock</span><span class="st s-error"><span class="tri"></span>Erro · código 101</span></div></div><div class="zitem"><span class="zl">70%</span><div class="z70"><article class="node ended" style="width:480px;height:320px"><div class="hd"><span class="nm">investigador</span><span class="tp">claude-code</span><span class="st s-ended"><span class="dot"></span>Encerrado</span></div><div class="term"><span class="m">&gt; causa.md entregue ao squad.
+  O lock fica preso porque renova() não confere o dono.</span></div><div class="ft"><span>sonnet · alto</span><span class="r">US$ 0,41</span></div></article></div><span class="zl">Abaixo de 50%</span><div class="cell" style="left:0px;top:0px"><span class="nm">investigador</span><span class="st s-ended"><span class="dot"></span>Encerrado</span></div></div></div></div>
+    <p class="cap">Esperando você e erro mantêm o fio e o fundo do estado na célula, para serem achados de longe.
+      Os outros quatro ficam com o fio neutro e só o indicador muda.</p>
+  </section>
+
+  <section>
+    <h2>3.3 · Folha · dados</h2>
+    <div class="sheet"><figure class="leaf"><figcaption class="lh">Terminal com muita saída</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:240px"><div class="hd"><span class="nm">lock-ttl</span><span class="tp">agy</span><span class="st s-working"><span class="dot"></span>Trabalhando · 3s</span></div><div class="term">test lock::dois_donos_disputam ... ok
+test lock::ttl_zero_recusa ... ok
+test lock::relogio_volta ... ok
+test lock::arquivo_corrompido ... ok
+test lock::renova_sem_dono ... FAILED
+
+failures:
+---- lock::renova_sem_dono stdout ----
+thread 'lock::renova_sem_dono' panicked at crates/core/src/lock.rs:142:9:
+assertion `left == right` failed<span class="newlines">↓ 240 linhas novas</span></div><div class="ft"><span>gemini-2.5-pro · alto</span><span class="r">US$ 0,34 · <span class="ctx-t">44%</span><i class="ctx" style="--p:44%"></i></span></div></article></div></div><p class="ln">O nó mostra as últimas linhas. Com a rolagem para cima, a saída nova não puxa a tela: o aviso no pé do terminal leva de volta ao fim.</p></figure><figure class="leaf"><figcaption class="lh">Texto longo</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node wrap" style="width:480px;height:200px"><div class="hd"><span class="nm">revisor-concorrencia-do-diario-v2</span><span class="tp">claude-code-com-mcp-interno</span><span class="st s-working"><span class="dot"></span>Trabalhando · 2 h 14 min</span></div><div class="term"><span class="m">$ rg -n "fn renova" crates/</span>
+crates/core/src/lock.rs:131:    pub fn renova(&amp;self, dono: &amp;DonoId, ttl: Duration) -&gt; Result&lt;Lease, LockError&gt; {
+crates/core/src/lock/arquivo.rs:58:    fn renova_no_disco(caminho: &amp;Path, lease: &amp;Lease) -&gt; io::Result&lt;()&gt; {</div><div class="ft"><span>claude-sonnet-4-5-20250929 · alto</span><span class="r">US$ 1.284,07 · <span class="ctx-t">77%</span><i class="ctx" style="--p:77%"></i></span></div></article><article class="node waiting" style="width:480px;height:200px"><div class="hd"><span class="nm">diario-v2</span><span class="tp">opencode</span><span class="st s-waiting"><span class="dot pulse"></span>Esperando você · pergunta</span></div><div class="term"><span class="ask-q clamp">Pergunta · O contrato v1 do diário grava ts em segundos e a fila de eventos do supervisor ordena por ts. Com dois eventos no mesmo segundo a ordem se perde, e o painel mostra a resposta antes da pergunta. Passar para milissegundos resolve, mas o Cerberus e o Moirai leem o campo como inteiro de segundos e quebrariam sem uma janela de migração com os dois campos lado a lado. Mantenho segundos e desempato pela ordem de chegada, ou migro?</span><span class="more-l">Ver tudo na caixa de decisões</span></div><div class="ft"><span>qwen3-coder · alto</span><span class="r">US$ 0,09 · <span class="ctx-t">28%</span><i class="ctx" style="--p:28%"></i></span></div></article></div></div><p class="ln">Nome, tipo e modelo cortam com reticências. A linha do terminal quebra como num terminal de verdade. A pergunta mostra três linhas e leva à caixa de decisões.</p></figure><figure class="leaf"><figcaption class="lh">Campo opcional faltando</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:120px"><div class="hd"><span class="nm">shell-1</span><span class="tp">shell</span><span class="st s-idle"><span class="dot"></span>Ocioso · 1 min</span></div><div class="term"><span class="m">~/projetos/hades-core $</span> </div><div class="ft"><span>bash</span><span class="r"></span></div></article><article class="node" style="width:480px;height:120px"><div class="hd"><span class="nm">aider</span><span class="tp">aider</span><span class="st s-working"><span class="dot"></span>Trabalhando · 5s</span></div><div class="term"><span class="m">&gt; /add crates/core/src/lock.rs</span>
+Added crates/core/src/lock.rs</div><div class="ft"><span>modelo padrão do agente</span><span class="r">US$ 0,03</span></div></article></div></div><p class="ln">O rodapé mostra só o que o adaptador declara. O shell só diz qual é (bash), sem modelo nem custo; o aider não declara contexto. Nada de US$ 0,00 inventado.</p></figure><figure class="leaf"><figcaption class="lh">Contexto quase cheio</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:120px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-working"><span class="dot"></span>Trabalhando · 40s</span></div><div class="term"><span class="m">● Lendo crates/core/src/diario/*.rs (31 arquivos)</span></div><div class="ft"><span>sonnet · alto</span><span class="r">US$ 0,58 · <span class="ctx-t full">93% quase cheio</span><i class="ctx full" style="--p:93%"></i></span></div></article></div></div><p class="ln">A barra de 2 px no pé do nó acompanha o contexto. De 90% em diante o número fica vermelho com "quase cheio". Fica só no rodapé: não entra na caixa de decisões.</p></figure></div>
+  </section>
+
+  <section>
+    <h2>3.4 · Folha · sistema</h2>
+    <div class="sheet"><figure class="leaf"><figcaption class="lh">Abrindo o app</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:150px"><div class="hd"><span class="nm">lock-ttl</span><span class="tp">agy</span><span class="st s-starting"><span class="dot"></span>Reconectando</span></div><div class="term"><span class="recon"><span class="spin"></span>Reconectando ao terminal</span><span class="stale">test lock::relogio_volta ... ok
+test lock::arquivo_corrompido ...</span></div><div class="ft"><span>gemini-2.5-pro · alto</span><span class="r">US$ 0,31 · <span class="ctx-t">41%</span><i class="ctx" style="--p:41%"></i></span></div></article></div></div><p class="ln">O nó volta do registro com as últimas linhas esmaecidas até a sessão responder. Nada é apagado.</p></figure><figure class="leaf"><figcaption class="lh">Estado ilegível</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node error" style="width:480px;height:150px"><div class="hd"><span class="nm">aider</span><span class="tp">aider</span><span class="st s-error"><span class="tri"></span>Erro · estado ilegível</span></div><div class="term"><span class="m">&gt; /run cargo check</span>
+    Checking hades-core v0.4.0
+    Finished dev profile in 3.10s</div><div class="ft"><span>modelo padrão do agente</span><span class="r"><span class="link">Ver adaptador</span></span></div></article></div></div><p class="ln">O adaptador não consegue ler o estado: erro com o motivo. O terminal segue vivo e o rodapé leva ao adaptador.</p></figure><figure class="leaf"><figcaption class="lh">Estado inferido</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:120px"><div class="hd"><span class="nm">goose</span><span class="tp">goose</span><span class="st s-idle"><span class="dot"></span>Ocioso (inferido)</span></div><div class="term"><span class="m">( O)&gt;</span> pronto para a próxima instrução</div><div class="ft"><span>gpt-5 · padrão</span><span class="r">US$ 0,12</span></div></article></div></div><p class="ln">Só a tela sustenta o estado, sem evento do agente: o sufixo "(inferido)" do design system.</p></figure><figure class="leaf"><figcaption class="lh">Iniciando sem sinal</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:130px"><div class="hd"><span class="nm">codex-2</span><span class="tp">codex</span><span class="st s-starting"><span class="dot"></span>Iniciando · 48 s</span></div><div class="term"><span class="m">$ codex --model gpt-5 --cwd ~/projetos/hades-core</span>
+Carregando sessão e instruções do projeto…
+Baixando ferramentas do MCP…</div><div class="ft"><span>gpt-5 · médio</span><span class="r">prazo do adaptador 120 s</span></div></article><article class="node error" style="width:480px;height:130px"><div class="hd"><span class="nm">codex-2</span><span class="tp">codex</span><span class="st s-error"><span class="tri"></span>Erro · sem sinal em 120 s</span></div><div class="term"><span class="m">$ codex --model gpt-5 --cwd ~/projetos/hades-core</span>
+Carregando sessão e instruções do projeto…
+Baixando ferramentas do MCP…
+<span class="m">nenhum sinal de pronto até o prazo</span></div><div class="ft"><span>gpt-5 · médio</span><span class="r"><span class="link">Recrutar de novo</span> <span class="link">Ver o que saiu</span></span></div></article></div></div><p class="ln">Antes do prazo, o tempo conta e o rodapé diz o prazo que o adaptador declara. No prazo vira erro, entra na caixa de decisões no mesmo rosa das outras e oferece as duas saídas.</p></figure><figure class="leaf"><figcaption class="lh">Trabalhando sem saída</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:110px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-working"><span class="dot"></span>Trabalhando · sem saída há 6 min</span></div><div class="term"><span class="m">● Rodando cargo test -p hades-core diario</span></div><div class="ft"><span>sonnet · alto</span><span class="r">US$ 0,58 · <span class="ctx-t">71%</span><i class="ctx" style="--p:71%"></i></span></div></article></div></div><p class="ln">Muito tempo sem linha nova não troca o estado: o texto diz há quanto tempo, sem alarme.</p></figure><figure class="leaf"><figcaption class="lh">Mudou enquanto você escrevia</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node waiting sel" style="width:480px;height:170px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-waiting"><span class="dot pulse"></span>Esperando você · permissão</span></div><div class="term"><span class="ask-q">Permissão · rodar cargo test -p hades-core diario?</span></div><div class="pfield"><div class="pbox">Depois dos testes, abra a PR em draft<span class="caret"></span></div><div class="phint"><span><span class="kbd">Ctrl</span> <span class="kbd">Enter</span> envia · <span class="kbd">Esc</span> fecha</span></div></div></article></div></div><p class="ln">O agente passou a esperar você com o campo aberto. O texto fica, o cabeçalho troca e o campo não se move.</p></figure><figure class="leaf"><figcaption class="lh">Respondido em outro lugar</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node" style="width:480px;height:110px"><div class="hd"><span class="nm">diario-v2</span><span class="tp">opencode</span><span class="st s-working"><span class="dot"></span>Trabalhando · respondido pelo celular</span></div><div class="term"><span class="m">&gt; Milissegundos, com migração</span>
+● Escrevendo docs/plano-diario-v2.md</div><div class="ft"><span>qwen3-coder · alto</span><span class="r">US$ 0,10 · <span class="ctx-t">30%</span><i class="ctx" style="--p:30%"></i></span></div></article></div></div><p class="ln">Pelo coordenador, pela CLI ou pelo celular: o nó volta a trabalhar e diz por onde, por 5 s.</p></figure></div>
+    <p class="cap">Sem rede e prazo vencido não se aplicam: os agentes são processos locais e esperam você sem
+      prazo.</p>
+  </section>
+
+  <section>
+    <h2>3.5 · Folha · atividade</h2>
+    <div class="sheet"><figure class="leaf"><figcaption class="lh">Terminou agora</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node just" style="width:480px;height:110px"><div class="hd"><span class="nm">lock-ttl</span><span class="tp">agy</span><span class="st s-idle"><span class="dot"></span>Ocioso · agora</span></div><div class="term">test result: ok. 18 passed; 0 failed; 0 ignored
+<span class="m">&gt; Os 18 testes de lock passam.</span></div><div class="ft"><span>gemini-2.5-pro · alto</span><span class="r">US$ 0,36 · <span class="ctx-t">47%</span><i class="ctx" style="--p:47%"></i></span></div></article></div></div><p class="ln">Trabalhando passa a "Ocioso · agora" com um único pulso no indicador. Com movimento reduzido, sem pulso.</p></figure><figure class="leaf"><figcaption class="lh">Dispensar, com 5 s para desfazer</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node error leaving" style="width:480px;height:110px"><div class="hd"><span class="nm">bench-lock</span><span class="tp">codex</span><span class="st s-error"><span class="tri"></span>Erro · saiu com código 101</span></div><div class="term"><span class="m">lock ainda preso depois de 30 s
+processo saiu com código 101</span></div><div class="ft"><span>gpt-5 · médio</span><span class="r"><span class="link">Ver as últimas linhas</span></span></div></article><div class="float toast"><span>bench-lock dispensado · encerra em 4 s</span><span class="btn secondary">Desfazer</span></div></div></div><p class="ln">O mesmo aviso do canvas principal: sem diálogo, o nó esmaece e o processo só encerra quando a contagem acaba. Se o processo já tinha saído, o aviso não oferece desfazer.</p></figure><figure class="leaf"><figcaption class="lh">Encerrado diz por quê</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node ended" style="width:480px;height:96px"><div class="hd"><span class="nm">investigador</span><span class="tp">claude-code</span><span class="st s-ended"><span class="dot"></span>Encerrado · dispensado por você</span></div><div class="term"><span class="m">&gt; causa.md entregue ao squad.</span></div><div class="ft"><span>sonnet · alto</span><span class="r">Histórico em 7 min · US$ 0,41</span></div></article><article class="node ended" style="width:480px;height:96px"><div class="hd"><span class="nm">docs-canvas</span><span class="tp">gemini-cli</span><span class="st s-ended"><span class="dot"></span>Encerrado · terminou sozinho, código 0</span></div><div class="term"><span class="m">&gt; Resumo pronto em docs/canvas.md</span></div><div class="ft"><span>2.5 pro</span><span class="r">Histórico em 9 min · US$ 0,09</span></div></article><article class="node ended" style="width:480px;height:96px"><div class="hd"><span class="nm">revisor</span><span class="tp">claude-code</span><span class="st s-ended"><span class="dot"></span>Encerrado · dispensado pela CLI</span></div><div class="term"><span class="m">&gt; hades argos dismiss revisor</span></div><div class="ft"><span>sonnet · médio</span><span class="r">Histórico em 10 min · US$ 0,17</span></div></article></div></div><p class="ln">Encerrado é cinza e nunca parece falha: dispensado por você, terminou sozinho com código 0, dispensado pela CLI. Erro é sempre vermelho e oferece recrutar de novo.</p></figure></div>
+  </section>
+
+  <section>
+    <h2>3.6 · Folha · interação</h2>
+    <div class="sheet"><figure class="leaf"><figcaption class="lh">Mandar prompt pelo nó</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node sel" style="width:480px;height:200px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-idle"><span class="dot"></span>Ocioso · 4 min</span></div><div class="term"><span class="m">&gt; Plano pronto em docs/plano-diario-v2.md.
+  Três passos, um por PR. Nenhum arquivo de código alterado.</span></div><div class="pfield"><div class="pbox">Siga com o passo 1. Abra a PR em draft com o campo ts_ms ao lado de ts e os testes de concorrência rodando nos dois campos.<span class="caret"></span></div><div class="phint"><span><span class="kbd">Ctrl</span> <span class="kbd">Enter</span> envia · <span class="kbd">Esc</span> fecha</span></div></div></article></div></div><p class="ln">Com o nó selecionado, P abre o campo no lugar do rodapé. Ele cresce até quatro linhas tomando altura do terminal, então o nó não muda de tamanho. Enter quebra linha; Ctrl+Enter envia, como em todo campo de prompt.</p></figure><figure class="leaf"><figcaption class="lh">Teclado no terminal</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node is-focus" style="width:480px;height:170px"><div class="hd"><span class="nm">lock-ttl</span><span class="tp">agy</span><span class="st s-working"><span class="dot"></span>Trabalhando · 2s</span></div><div class="term"><span class="m">$ cargo test -p hades-core lock</span>
+running 18 tests
+test lock::adquire_e_libera ... ok
+<span class="m">&gt;</span> <span class="cur"></span></div><div class="ft kb"><span>Teclado no terminal</span><span class="r"><span class="kbd">Ctrl</span> <span class="kbd">]</span> ou clique fora volta ao canvas</span></div></article></div></div><p class="ln">Um clique no corpo dá o teclado ao agente: o nó ganha o anel de foco e o rodapé diz como voltar. Esc fica com o agente; Ctrl+] ou um clique fora devolve o teclado ao canvas.</p></figure><figure class="leaf"><figcaption class="lh">Comandos do agente pelo nó</figcaption><div class="spec on-canvas"><div class="in" style="width:480px"><article class="node sel" style="width:480px;height:300px"><div class="hd"><span class="nm">migra-db</span><span class="tp">claude-code</span><span class="st s-idle"><span class="dot"></span>Ocioso · 4 min</span></div><div class="term"><span class="m">&gt; Plano pronto em docs/plano-diario-v2.md.
+  Três passos, um por PR. Nenhum arquivo de código alterado.</span></div><div class="pfield"><div class="pbox" role="combobox" aria-expanded="true">/co<span class="caret"></span></div></div></article><div class="cmds" role="listbox" aria-label="Comandos" style="left:8px;bottom:44px;width:calc(100% - 16px)"><div class="ch"><span>Comandos do claude-code</span><span class="n">4 de 20</span></div><div class="cl"><div class="citem sel" role="option" aria-selected="true"><span class="nm">/compact <span class="a">[instruções]</span></span><span class="d">Resume a conversa para liberar contexto</span></div><div class="citem" role="option" aria-selected="false"><span class="nm">/context</span><span class="d">Mostra o uso de contexto por parte da conversa</span></div><div class="citem" role="option" aria-selected="false"><span class="nm">/cost</span><span class="d">Mostra o custo e os tokens da sessão</span></div><div class="citem" role="option" aria-selected="false"><span class="nm">/config</span><span class="d">Abre as configurações do agente</span></div></div><div class="cfoot"><span><span class="kbd">↑</span> <span class="kbd">↓</span> escolhem</span><span><span class="kbd">Tab</span> ou <span class="kbd">Enter</span> completam</span><span><span class="kbd">Esc</span> fecha a lista</span></div></div></div></div><p class="ln">O mesmo / do foco: no começo do campo, a lista dos comandos que o adaptador declara abre para cima, na largura do nó, e pode passar da borda dele. Tab ou Enter completam; Ctrl+Enter envia.</p></figure></div>
+    <p class="cap">Hover, seleção, foco e célula vêm do design system; aqui entra só o que muda o conteúdo do nó.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  function fit() {
+    document.querySelectorAll('.viewport').forEach(function (v) {
+      var f = v.querySelector('.frame');
+      var w = Number(v.getAttribute('data-w')) || 1440;
+      var h = Number(v.getAttribute('data-h')) || 900;
+      var s = v.parentElement.clientWidth / 1440;
+      f.style.transform = 'scale(' + s + ')';
+      v.style.width = Math.round(w * s) + 'px';
+      v.style.height = Math.round(h * s) + 'px';
+    });
+  }
+  function setTheme(t) {
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else document.documentElement.removeAttribute('data-theme');
+    document.querySelectorAll('.themes button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === t));
+    });
+  }
+  var saved = '';
+  try { saved = localStorage.getItem('argos-tema') || ''; } catch (e) { saved = ''; }
+  saved = saved || document.documentElement.getAttribute('data-theme') || '';
+  setTheme(saved);
+  document.querySelectorAll('.themes button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-set');
+      setTheme(t);
+      try { localStorage.setItem('argos-tema', t); } catch (e) { /* tema só desta visita */ }
+    });
+  });
+  fit();
+  window.addEventListener('resize', fit);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(document.body);
+})();
+</script>

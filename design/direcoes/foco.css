@@ -1,0 +1,123 @@
+/* Foco de um agente: peças de bundle.css; acréscimos do foco só com papéis de token. */
+.focus { position: absolute; left: 392px; right: 0; top: 0; bottom: 0; z-index: 1; background: var(--surface); display: grid; grid-template-rows: auto minmax(0, 1fr); grid-template-columns: minmax(0, 1fr); }
+.narrow .work > .focus { left: var(--queue-width); }
+
+/* Cabeçalho */
+.fhd { position: relative; display: flex; align-items: center; gap: 8px; min-width: 0; height: 48px; padding: 0 12px 0 6px; background: var(--node-header); border-bottom: 1px solid var(--border); }
+.fhd .sep { width: 1px; height: 20px; background: var(--divider); flex: none; }
+.fhd .fnm { font: 600 15px/20px var(--sans); color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 0 1 auto; min-width: 64px; max-width: 40%; }
+.fhd .ftp { font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 0 100 auto; }
+.fhd .st { flex: none; margin-left: 4px; }
+.fhd .fpos { display: inline-flex; align-items: center; gap: 6px; flex: none; font: 400 11px/14px var(--sans); color: var(--text-muted); white-space: nowrap; }
+.fhd .grow { flex: 1 1 0; min-width: 0; }
+.fhd .acts { display: flex; gap: 6px; flex: none; }
+.fhd .back { flex: none; color: var(--text); }
+.fhd.waiting { background: var(--agent-waiting-bg); }
+.fhd.waiting::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--agent-waiting); }
+.fhd.error { box-shadow: inset 0 0 0 1px var(--agent-error); border-bottom-color: var(--agent-error); }
+.fhd.ended .fnm, .fhd.ended .ftp { color: var(--text-disabled); }
+.fhd.leaving > :not(.back) { opacity: .5; }
+
+/* Corpo: linha da sessão, terminal e pendência no pé; o balão de Detalhes abre por cima */
+.fstack { position: relative; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr); min-height: 0; }
+.fstack > .det { top: 34px; right: 6px; }
+.fmain { display: grid; grid-template-rows: minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr); min-height: 0; min-width: 0; }
+.fout { position: relative; background: var(--term-bg); color: var(--term-fg); overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; padding: 10px 12px; min-height: 0; }
+.fout .tx { font: 400 12px/17px var(--mono); white-space: pre; }
+.fout .m { color: var(--term-muted); }
+.fout .ask { color: var(--term-fg); font-weight: 600; }
+.focus .fout, .fstack .fout { justify-content: flex-end; }
+.fout .dropped { font: 500 11px/17px var(--sans); color: var(--term-muted); border-bottom: 1px dashed var(--term-muted); padding-bottom: 4px; margin-bottom: 6px; }
+.fout .stale { color: var(--term-muted); }
+.fout .recon { display: flex; margin-bottom: 6px; align-items: center; gap: 6px; font: 500 11px/15px var(--sans); color: var(--term-fg); }
+.fout .tcur { display: inline-block; width: 7px; height: 14px; background: var(--term-cursor); vertical-align: -3px; }
+.fout mark { background: var(--term-selection); color: var(--term-fg); }
+.fout mark.cur { box-shadow: 0 0 0 1px var(--term-fg); }
+.fout .newlines { position: absolute; right: 12px; bottom: 10px; padding: 2px 8px; background: var(--surface); color: var(--text); border: 1px solid var(--border); font: 600 11px/16px var(--sans); }
+.fout .toast { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); white-space: nowrap; color: var(--text); }
+.fmain.ended .fout { background: var(--fill-1); color: var(--text-muted); }
+.fmain.leaving .tx { opacity: .5; }
+.fmain.kb .fout { box-shadow: inset 0 0 0 2px var(--focus); }
+.fft { display: flex; align-items: center; gap: 8px; min-width: 0; height: 32px; padding: 0 6px 0 12px; border-top: 1px solid var(--border); background: var(--surface); font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fft .grow { flex: 1; }
+.fft .h { font-family: var(--sans); overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.fft.kb { font: 600 11px/14px var(--sans); color: var(--text); }
+.fft.kb .h { font-weight: 400; color: var(--text-muted); }
+.fmain .pfield { border-top: 1px solid var(--border); background: var(--surface); padding: 6px 12px 5px; display: grid; gap: 4px; }
+.fmain .pbox { border: 1px solid var(--focus); background: var(--fill-1); padding: 4px 8px; font: 400 12px/17px var(--sans); color: var(--text); }
+.fmain .pbox .caret, .fsearch .caret { display: inline-block; width: 1px; height: 14px; background: var(--text); vertical-align: -2px; margin-left: 1px; }
+.fmain .phint { font: 400 11px/14px var(--sans); color: var(--text-muted); }
+.fsearch { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 4px 12px; border-top: 1px solid var(--border); background: var(--surface); }
+.fsearch .field { height: 28px; width: 260px; flex: none; border-color: var(--focus); font-size: 12px; }
+.fsearch .field .grow { flex: 1; }
+.fsearch .n { font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.fsearch .h { font: 400 11px/14px var(--sans); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+/* Pendência no pé do terminal: até metade da área; acima disso o conteúdo rola e os botões ficam */
+.fdock { border-top: 1px solid var(--border); background: var(--surface); padding: 10px 12px; display: grid; grid-template-columns: minmax(0, 1fr); max-height: 50%; }
+.fdock .dec .db:has(> .cmd) { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; }
+.fdock .dec .db:has(> .cmd) > .q { grid-column: 1 / -1; }
+.fdock .dec .db:has(> .cmd) > .cmd { grid-column: 1; }
+.fdock .dec .db:has(> .cmd) > .row { grid-column: 2; grid-row: 2; flex-wrap: nowrap; }
+.narrow .fdock .dec .db:has(> .cmd) { grid-template-columns: minmax(0, 1fr); }
+.narrow .fdock .dec .db:has(> .cmd) > .row { grid-column: 1; grid-row: auto; }
+.fdock .scrollbox { max-height: 156px; overflow-y: auto; border-bottom: 1px solid var(--divider); padding-bottom: 6px; }
+.fdock .why { display: grid; gap: 8px; font: 400 12px/17px var(--sans); color: var(--text); }
+.fdock .why .row { display: flex; gap: 6px; }
+.fdock.err { border-top-color: var(--agent-error); }
+.fdock.done { padding-block: 4px; }
+.fdock.done .done-line { padding: 0; }
+.fdock.entering { box-shadow: inset 0 3px 0 var(--agent-waiting); }
+.dec .steps { margin: 0; padding-left: 22px; display: grid; gap: 2px; font: 400 12px/17px var(--sans); color: var(--text); }
+.dec .steps li::marker { font: 400 11px/17px var(--mono); color: var(--text-muted); }
+
+/* Peças nas folhas */
+.sheet.one { grid-template-columns: minmax(0, 1fr); margin-top: 20px; }
+.ffrag { border: 1px solid var(--border); display: grid; grid-template-columns: minmax(0, 1fr); background: var(--surface); }
+.ffrag > .fhd + .fhd, .ffrag > .fdock + .fhd { border-top: 1px solid var(--border); }
+.ffrag > .fstack { height: 300px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fhd.just .s-idle .dot { animation: just-done 900ms ease-out 1; }
+  @keyframes just-done { 0% { box-shadow: 0 0 0 0 var(--agent-idle); } 100% { box-shadow: 0 0 0 6px transparent; } }
+}
+
+/* Direções do foco: acréscimos só com papéis de token. */
+.cbar { display: inline-block; height: 2px; background: var(--divider); position: relative; vertical-align: middle; }
+.cbar i { position: absolute; left: 0; top: 0; bottom: 0; width: var(--p); background: var(--text-muted); }
+
+/* A · linha da sessão */
+.fstack { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr); min-height: 0; }
+.fmeta { display: flex; align-items: center; gap: 16px; height: 30px; padding: 0 6px 0 12px; min-width: 0; background: var(--surface); border-bottom: 1px solid var(--border); font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.fmeta .i { display: inline-flex; align-items: center; gap: 6px; min-width: 0; flex: none; }
+.fmeta .lbl { font-family: var(--sans); }
+.fmeta .dir { flex: 1 1 auto; }
+.fmeta .dir .p { direction: rtl; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.fmeta .sq { font-family: var(--sans); flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; }
+.fmeta .grow { flex: 1 1 0; min-width: 8px; }
+.fdock { border-top: 1px solid var(--border); background: var(--surface); padding: 10px 12px; }
+.fdock .dec .db { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; }
+.fdock .dec .db > .q { grid-column: 1 / -1; }
+.fdock .dec .db > .cmd { grid-column: 1; }
+.fdock .dec .db > .row { grid-column: 2; grid-row: 2; flex-wrap: nowrap; }
+.narrow .fdock .dec .db { grid-template-columns: minmax(0, 1fr); }
+.narrow .fdock .dec .db > .row { grid-column: 1; grid-row: auto; }
+
+/* B · resumo no cabeçalho, balão de detalhes e gaveta da pendência */
+.fbody { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 0; position: relative; }
+.isec { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--surface); }
+.isec-h { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 8px; min-height: 32px; padding: 6px 12px; background: var(--surface); border-bottom: 1px solid var(--divider); font: 600 12px/16px var(--sans); color: var(--text); }
+.fhd .btn.on { background: var(--tint-selected); }
+.fhd .fsum { display: inline-flex; align-items: center; gap: 6px; margin-right: 6px; font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.fdet { top: 6px; right: 96px; width: 380px; padding: 4px 0; z-index: 3; }
+.fdrawer { position: absolute; top: 0; right: 0; bottom: 0; width: 360px; z-index: 2; background: var(--surface); border-left: 1px solid var(--border); box-shadow: var(--elev-float); }
+.fdrawer .cb { padding: 12px; display: grid; grid-template-columns: minmax(0, 1fr); }
+.narrowd .fdrawer { width: 320px; }
+.narrowd .fhd .fsum { display: none; }
+
+/* Comparação */
+.cmp { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.cmp > div { background: var(--surface); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.cmp b { font: 600 13px/18px var(--sans); }
+.cmp ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 13px; line-height: 19px; }
+.doc section > p:not(.cap) { margin-bottom: 4px; }
