@@ -3,7 +3,7 @@ body { background: var(--canvas); color: var(--text); }
 .doc { max-width: 1240px; margin: 0 auto; padding-block: 32px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
 .doc h1 { font: 400 32px/38px var(--display); margin: 0; text-wrap: balance; }
 .doc h2 { font: 400 20px/26px var(--display); margin: 0 0 8px; text-wrap: balance; }
-.doc p { margin: 0; max-width: 72ch; color: var(--text-muted); font-size: 14px; line-height: 21px; }
+.doc p { margin: 0; max-width: 72ch; color: var(--text-muted); font-size: 14px; line-height: 21px; text-wrap: balance; text-wrap: pretty; }
 .doc .lead { color: var(--text); font-size: 15px; line-height: 23px; }
 .dochead { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; justify-content: space-between; }
 .dochead .titles { display: grid; gap: 10px; min-width: 0; flex: 1 1 480px; }
@@ -17,7 +17,7 @@ body { background: var(--canvas); color: var(--text); }
 .facts b { font: 600 12px/16px var(--sans); color: var(--text-muted); }
 .facts span b { color: var(--text); }
 .facts span { font-size: 13px; line-height: 19px; }
-.cap { font: 500 12px/18px var(--sans); color: var(--text-muted); margin-top: 12px; }
+.doc .cap { font: 500 12px/18px var(--sans); color: var(--text-muted); margin-top: 12px; }
 .viewport { position: relative; width: 100%; overflow: hidden; border: 1px solid var(--border); }
 .viewport > .frame { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
 
@@ -45,6 +45,14 @@ body { background: var(--canvas); color: var(--text); }
 .node.leaving { opacity: .5; }
 .work > .canvas { left: 392px; }
 .zoomed { position: absolute; left: 392px; top: 0; transform-origin: 0 0; }
+
+/* Grids de uma coluna não crescem com o conteúdo: nome longo corta, comando quebra */
+.coord, .coord .ask, .coord .list, .dec { grid-template-columns: minmax(0, 1fr); }
+.cmd { overflow-wrap: anywhere; max-height: calc(12 * 17px + 16px); overflow-y: auto; }
+.status > span { white-space: nowrap; }
+.dec .cmd { border: 1px solid var(--border); }
+/* O palco do nó selecionado é cortado de propósito pela folha; sem barra de rolagem */
+.spec:has(.stage) { overflow: hidden; }
 
 /* Janela estreita: a coluna usa queue-width */
 .narrow .coord { width: var(--queue-width); }
