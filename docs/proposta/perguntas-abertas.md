@@ -16,3 +16,16 @@ o canal de resposta de cada agente, então todas as opções partem dele.
 
 Em todas, responder uma permissão pelo celular é aprovar um comando que o agente vai rodar na máquina. A operação
 precisa de identidade conferida no supervisor, limite de taxa e registro no diário (quem, o quê, qual agente, quando).
+
+## Trocar o modelo de um agente no meio do trabalho
+
+Alguns agentes trocam de modelo sem reiniciar a sessão; outros só aceitam o modelo na linha de comando. O contrato de
+adaptador ([arquitetura.md](arquitetura.md#contrato-de-adaptador)) ainda não declara essa troca, e a tela de foco
+não a oferece.
+
+| Opção | Como funciona | Custa |
+|---|---|---|
+| Parte opcional nova do contrato | O adaptador declara como pedir a troca (comando dentro da sessão, tecla, argumento de retomada) e como confirmar que ela pegou; o foco ganha "Trocar modelo", desabilitado com o motivo quando o adaptador não declara | Uma sétima parte no contrato, um estado "trocando" com prazo e o caso da troca que não confirma |
+| Recrutar de novo com outro modelo | O dono dispensa e recruta com o modelo novo, retomando a sessão quando o adaptador sabe retomar | Nada novo no contrato; perde o que não estiver salvo na sessão |
+| Fora do Argos | O dono troca pelo próprio terminal do agente, com o teclado no terminal | Nada; o rodapé do nó mostra o modelo só quando o adaptador o lê de novo |
+

@@ -141,9 +141,17 @@ página pública em 2026-11-28.
   metade e a tecla é a mesma em toda parte.
 - 2026-11-28: tela do nó de agente aprovada; a barra de contexto, o aviso de linhas novas, o campo de prompt no
   rodapé e o rodapé "Teclado no terminal" entram no componente Nó de agente do design system. Por quê: ok do dono.
+- 2026-11-28: o foco de um agente abre no lugar do canvas, com a coluna do coordenador ao lado. Por quê: escolha
+  do dono, a caixa de decisões continua mostrando quem mais espera enquanto ele lê um agente.
+- 2026-11-28: sai-se do foco com `Esc` quando o teclado está fora do terminal; com o teclado no terminal, `Ctrl+]`
+  e depois `Esc`. Por quê: escolha do dono, `Esc` continua sendo do agente dentro do terminal.
+- 2026-11-28: trocar o modelo de um agente no meio do trabalho fica fora da tela de foco, como pergunta aberta
+  sobre uma parte opcional futura do contrato de adaptador. Por quê: escolha do dono; o contrato ainda não declara
+  a troca.
 
 ## Perguntas abertas
 
 - Atalhos do Argos atual que continuam (nenhum pedido pelo dono até agora).
 - Custo mostrado em `US$` (assumido).
 - Como o dono acompanha e responde pelo celular: opções em `docs/proposta/perguntas-abertas.md`.
+- Trocar o modelo de um agente no meio do trabalho: opções em `docs/proposta/perguntas-abertas.md`.

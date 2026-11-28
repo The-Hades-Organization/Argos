@@ -14,7 +14,7 @@ quando a opção recomendada serve. Recrutar e montar um squad custam uma frase 
 | `Enter` | Aceita a opção recomendada da decisão em foco |
 | `1` a `9` | Escolhe a opção pelo número |
 | `T` | Abre o terminal do agente da decisão em foco |
-| `F` | Abre o foco do agente; `Esc` volta ao canvas no mesmo lugar |
+| `F` | Abre o foco do agente no lugar do canvas, com a coluna do coordenador ao lado; `Esc` volta ao canvas no mesmo lugar (com o teclado no terminal, `Ctrl+]` e depois `Esc`) |
 | `R` | Abre o recrutamento de um agente avulso |
 | `P` | Com um nó selecionado, abre o campo para mandar prompt a ele; `Ctrl+Enter` envia, `Enter` quebra linha, `Esc` fecha |
 | `Ctrl+]` | Devolve ao canvas o teclado que estava no terminal de um nó (clicar fora do nó também devolve) |
@@ -53,6 +53,21 @@ com o custo do coordenador separado. O rodapé do nó tem uma barra de 2 px com 
 diante o número fica vermelho com "quase cheio". Um agente que não dá sinal de pronto dentro do prazo que o
 adaptador declara passa a erro. Erro aparece na caixa de decisões como "precisa de atenção", com o motivo e o
 atalho para as últimas linhas.
+
+## Inspecionar um agente
+
+`F` (agente selecionado ou da decisão em foco) ou clique duplo no cabeçalho do nó abre o foco no lugar do canvas. A
+coluna do coordenador fica ao lado, e a caixa de decisões continua mostrando quem mais espera. O foco tem o terminal
+inteiro com a rolagem e, ao lado, a pendência atual, o histórico de pendências (o que cada uma pediu, a resposta,
+quem respondeu e quando) e os detalhes da sessão.
+
+1. A pendência atual se responde ali, como na caixa de decisões; responder em um lugar resolve os dois.
+2. `P` manda prompt, `/` busca na saída, `D` dispensa com 5 s para desfazer, `J` e `K` trocam o foco para o agente
+   da próxima ou da decisão anterior.
+3. Clicar no terminal dá o teclado a ele; `Ctrl+]` devolve ao foco. `Esc`, com o teclado fora do terminal, volta ao
+   canvas no mesmo enquadramento.
+
+Um agente que encerra com o foco aberto não fecha o foco: ele fica cinza, com o motivo e o terminal só para leitura.
 
 ## Dispensar
 
