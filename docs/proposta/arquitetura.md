@@ -36,13 +36,13 @@ O contrato tem sete partes. Só as duas primeiras são obrigatórias; as outras 
 | Custo e contexto | onde ler tokens, custo e uso de contexto | arquivo de sessão e o leitor que o entende; ausente quando o agente não expõe |
 
 O contrato é versionado e só cresce: campo novo entra opcional, e o leitor tolera versão maior, como o diário do
-Hades-Core já faz com `v`.
+Hades-Core já faz com `v`. Adaptador com campo inválido não carrega e aparece com erro na configuração de
+adaptadores; ele não cai num padrão em silêncio.
 
 Comandos: o prompt do foco e do nó usa a lista para completar o que se digita depois de `/`, e o comando vai ao agente
 pelo mesmo caminho de "Mandar prompt"; o Argos não o interpreta. O efeito volta pelos sinais de sempre (um `/model`
 muda o modelo que o leitor de custo e contexto informa). Comando de projeto com arquivo inválido fica fora da lista com
-o motivo; a lista do adaptador segue a regra geral: inválida, o adaptador não carrega. Adaptador com campo inválido não carrega e aparece com erro na configuração de adaptadores;
-ele não cai num padrão em silêncio.
+o motivo; a lista do adaptador segue a regra geral: inválida, o adaptador não carrega.
 
 ### Sinais de estado, por confiança
 
