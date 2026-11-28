@@ -370,6 +370,38 @@ svg.cables path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }
 .tres .m { font: 400 11px/14px var(--mono); color: var(--text-muted); }
 /* fim: Adaptadores */
 
+/* Vazio e erro · nó desatualizado, esqueleto, vazio no canvas, tela de falha, barra sem supervisor */
+.status .off { display: inline-flex; align-items: center; gap: 6px; color: var(--danger); font-weight: 600; }
+.status .off .tri { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 9px solid var(--danger); }
+.node .seen { display: inline-flex; align-items: center; gap: 4px; flex: none; font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.node .seen svg.ic { width: 12px; height: 12px; }
+.node.stale .pulse { animation: none; }
+.node.stale .term { color: var(--term-muted); }
+.node.stale .term .frozen { position: absolute; left: 0; right: 0; bottom: 0; padding: 3px 10px; background: var(--term-bg); border-top: 1px solid color-mix(in srgb, var(--term-fg) 14%, transparent); color: var(--term-fg); font: 400 11px/14px var(--sans); white-space: normal; }
+.node.stale .ft { color: var(--text-disabled); }
+.node.skel .hd .nm { color: var(--text-muted); }
+.node.skel .term { display: grid; align-content: start; gap: 8px; padding-top: 12px; }
+.skb { display: block; height: 8px; background: color-mix(in srgb, var(--term-fg) 12%, transparent); }
+.node.skel .ft .skb { width: 88px; height: 6px; background: var(--fill-1); }
+.node.skel .ft .r.skb { width: 64px; }
+@media (prefers-reduced-motion: no-preference) {
+  .skb { animation: skel 1600ms ease-in-out infinite; }
+  @keyframes skel { 50% { opacity: .45; } }
+}
+.empty.big { width: 440px; max-width: 100%; padding: 28px 28px 24px; gap: 10px; border: 1px solid var(--border); background: var(--surface); font-size: 13px; line-height: 18px; }
+.empty.big .ttl { display: flex; align-items: center; gap: 10px; font: 400 24px/30px var(--display); color: var(--text); }
+.empty.big .ttl svg.ic { width: 20px; height: 20px; flex: none; }
+.empty.big .acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.empty.big .btn { margin-left: 0; }
+.empty.big .ex { display: grid; gap: 4px; width: 100%; margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--divider); font-size: 12px; line-height: 17px; }
+.empty.big .ex .say { font: 400 12px/17px var(--mono); color: var(--text); }
+.empty.big .dl { width: 100%; padding: 6px 0 0; grid-template-columns: 64px minmax(0, 1fr); }
+.empty.big.slim { width: 360px; padding: 20px; gap: 8px; }
+.empty.big.slim .ttl { font-size: 18px; line-height: 24px; }
+.empty.big.fail { border-left: 2px solid var(--danger); }
+.empty.big.fail .ttl svg.ic { color: var(--danger); }
+/* fim: Vazio e erro */
+
 /* NoDeAgente · contexto, linhas novas, prompt e teclado */
 .node .ft { position: relative; }
 .node .ft .ctx { position: absolute; left: 0; bottom: -1px; height: 2px; width: var(--p); background: var(--text-muted); }

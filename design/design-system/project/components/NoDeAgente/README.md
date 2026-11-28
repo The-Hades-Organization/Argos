@@ -15,6 +15,8 @@ contexto.
 | Esperando você | Faixa de 3 px no topo, fio e cabeçalho em `agent-waiting` / `agent-waiting-bg`, pulso no ponto |
 | Erro | Fio `agent-error`; o rodapé troca o custo por "Ver as últimas linhas" |
 | Encerrado | Nome e tipo em `text-disabled`, corpo em `fill-1`; sai do canvas ao ir para o histórico |
+| Esqueleto | Abrindo um canvas que passa de 1 s: o nó na posição e no tamanho salvos, com nome e tipo, "Lendo", e barras no lugar do terminal e do rodapé. Sem tela branca; com movimento reduzido as barras não pulsam |
+| Desatualizado | O supervisor não responde: o último estado lido, sem pulso, com a marca `circle-dashed` e a hora ("às 14h31"); terminal em `term-muted` com "Parado na tela de 14h31 · não aceita digitação" no pé; rodapé em `text-disabled`. Mantém fio e fundo do estado, para quem esperava continuar à vista |
 | Hover | Só o fio escurece (`border-hover`) |
 | Selecionado | Colchetes de canto em `select-mark`, 7 px para fora; os cabos dele em `cable-active` |
 | Foco (teclado) | Anel `focus` de 2 px; com seleção, os dois aparecem juntos |
