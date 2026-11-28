@@ -331,7 +331,7 @@ svg.cables path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }
 .alist.slim .aitem .id, .alist.slim .aitem .live, .alist.slim .aitem .note { display: none; }
 .alist.slim .aitem { grid-template-columns: minmax(0, 1fr); }
 .alist.slim .aitem .ast { justify-self: start; }
-.csec { display: grid; grid-template-columns: minmax(0, 1fr); padding: 12px 0 6px; border-top: 1px solid var(--divider); }
+.csec { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; padding: 12px 0 6px; border-top: 1px solid var(--divider); }
 .csec .ch { display: flex; align-items: baseline; gap: 8px; min-width: 0; padding: 0 16px 4px; }
 .csec .ch h3 { margin: 0; font: 600 12px/16px var(--sans); color: var(--text); white-space: nowrap; }
 .csec .ch .op { font: 400 11px/14px var(--sans); color: var(--text-muted); }

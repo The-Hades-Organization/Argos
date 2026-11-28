@@ -23,6 +23,7 @@ rede o navegador usa as fontes de reserva.
 | Recrutar | Lançador de tipos de agente: padrão, primeira vez no projeto, recrutado agora e folhas de dados, sistema, atividade e interação | `design/telas/recrutar.html` |
 | Nó de agente | Os seis estados a 100%, o nó ao afastar o zoom e folhas de dados, sistema, atividade e interação | `design/telas/no.html` |
 | Foco de um agente | Direção A: trabalhando, esperando você com a pendência no pé do terminal, janela de 1024 px com o balão de Detalhes e folhas de dados, sistema, atividade e interação | `design/telas/foco.html` |
+| Adaptadores | Lista dos tipos de agente com o estado de cada um e o contrato do escolhido em leitura: padrão, adaptador que não carrega, testando, janela de 1024 px e folhas de dados, sistema, atividade e interação | `design/telas/adaptadores.html` |
 
 A página do design system é gerada a partir de `design/design-system/project/` (README, `tokens.json`, prévias e
 READMEs dos componentes, ícones) por `python3 design/design-system/gerar_index.py .`; edite a fonte e rode de novo, não

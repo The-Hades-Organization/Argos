@@ -87,6 +87,23 @@ Um agente que encerra com o foco aberto não fecha o foco: ele fica cinza, com o
 Pelo menu do nó, pela tecla no foco do agente ou pedindo ao coordenador ("dispense os revisores da PR #1"). Pedido ao
 coordenador vira proposta. O agente sai do canvas, a sessão fecha e o que ele fez fica no histórico.
 
+## Configurar um adaptador
+
+Pelo trilho (Adaptadores) ou por "Ver adaptador" no nó e no foco de um agente com erro. A tela abre no lugar do canvas,
+com a coluna do coordenador ao lado. À esquerda, os tipos em dois grupos, De fábrica e Seus, cada um com o estado e
+quantos vivos o usam; à direita, o contrato do escolhido em sete partes, só para leitura.
+
+1. Escolha o tipo com `↑ ↓` ou digitando parte do nome.
+2. `O` abre o arquivo no seu editor (na linha do erro, quando o adaptador não carrega). Salve e a tela recarrega
+   sozinha: Ler estado, Responder, Comandos e Custo e contexto valem na hora para os agentes vivos; Identidade,
+   Iniciar e Mandar prompt, para os próximos recrutas. A faixa no topo diz o que foi aplicado. Se a versão nova não
+   carrega, os vivos seguem na última válida e o erro fica à vista.
+3. `T` testa: um agente de prova sobe num terminal à parte e cada passo do contrato é conferido. O custo aparece ao
+   fim, e `Esc` para o teste.
+
+Para um tipo novo, Duplicar copia o escolhido para a sua pasta e abre o arquivo. Um arquivo seu com o id de um de
+fábrica vale no lugar dele. `Esc`, sem teste rodando, volta ao canvas.
+
 ## Squads
 
 Um squad passa por sete passos. Os quatro primeiros acontecem uma vez; convocar se repete a cada tarefa.

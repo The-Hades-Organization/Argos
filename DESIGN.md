@@ -173,6 +173,12 @@ página pública em 2026-11-28.
   recrutados depois. A tela mostra o que foi aplicado aos vivos. Versão nova que não carrega: os vivos seguem com a
   última versão válida e o erro fica à vista. Por quê: escolha do dono; consertar um padrão de tela não pode esperar
   o agente encerrar.
+- 2026-11-28 (proposta, aguarda o dono): desenho da tela Adaptadores. Cada parte do contrato diz quando uma mudança
+  vale ("vale na hora para os vivos" ou "vale para os próximos recrutas"); a recarga marca com ponto e etiqueta as
+  partes aplicadas. A tela não tem ação primária, exceto no adaptador que não carrega, em que "Abrir o arquivo na
+  linha N" vira primária. Quatro peças novas no design system: Lista de adaptadores, Seção do contrato, Passos do
+  teste e Faixa. Oito ícones novos do Hades-UI. Por quê: tela de leitura não tem uma ação que se destaque; no erro,
+  só uma ação resolve; a faixa vai servir também às telas de vazio e erro.
 
 ## Perguntas abertas
 
