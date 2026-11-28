@@ -173,12 +173,21 @@ página pública em 2026-11-28.
   recrutados depois. A tela mostra o que foi aplicado aos vivos. Versão nova que não carrega: os vivos seguem com a
   última versão válida e o erro fica à vista. Por quê: escolha do dono; consertar um padrão de tela não pode esperar
   o agente encerrar.
-- 2026-11-28 (proposta, aguarda o dono): desenho da tela Adaptadores. Cada parte do contrato diz quando uma mudança
+- 2026-11-28: desenho da tela Adaptadores, aprovado. Cada parte do contrato diz quando uma mudança
   vale ("vale na hora para os vivos" ou "vale para os próximos recrutas"); a recarga marca com ponto e etiqueta as
   partes aplicadas. A tela não tem ação primária, exceto no adaptador que não carrega, em que "Abrir o arquivo na
   linha N" vira primária. Quatro peças novas no design system: Lista de adaptadores, Seção do contrato, Passos do
   teste e Faixa. Oito ícones novos do Hades-UI. Por quê: tela de leitura não tem uma ação que se destaque; no erro,
   só uma ação resolve; a faixa vai servir também às telas de vazio e erro.
+- 2026-11-28: sem o work root do Hades, o Argos funciona para agentes avulsos, com faixa de aviso e o botão "Criar
+  em ~/.hades". Por quê: o `hades-core` vai dentro do binário; o que pode faltar é a pasta de estado, e exigir
+  configuração antes do canvas trava quem só quer um agente.
+- 2026-11-28: supervisor parado tem dois casos desenhados: não responde (agentes vivos nele, último estado à
+  vista, reconexão) e morreu (agentes encerrados com o motivo e "Recrutar de novo com a mesma sessão" quando o
+  adaptador declara retomada). Por quê: o supervisor existe para os agentes sobreviverem ao app; se ele morre,
+  eles morrem, e a tela não pode fingir o contrário.
+- 2026-11-28: canvas da primeira vez é um vazio enxuto: uma frase, Recrutar e um exemplo de pedido ao
+  coordenador, sem tour nem boas-vindas. Por quê: os adaptadores de fábrica já vêm prontos e recrutar é uma tecla.
 
 ## Perguntas abertas
 

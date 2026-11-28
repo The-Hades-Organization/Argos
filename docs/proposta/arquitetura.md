@@ -16,6 +16,9 @@ herdr, o loop da Hades e o `gh` viram integrações opcionais. As decisões e as
 
 O supervisor é processo separado do app porque o agente precisa sobreviver ao app. Hoje um reinício do multiplexador
 derrubou um agente (notas de rodada do Argos atual, `argos-canvas.log.md:56`); fechar ou atualizar o app não pode fazer o mesmo.
+O contrário não vale: se o supervisor morre, os agentes morrem com ele. O app mostra os dois casos de forma
+diferente: supervisor que não responde (agentes vivos, último estado à vista, reconexão) e supervisor que morreu
+(agentes encerrados com o motivo e, quando o adaptador declara retomada, recrutar de novo com a mesma sessão).
 
 ## Contrato de adaptador
 
@@ -161,6 +164,10 @@ O Argos depende do `hades-core` por tag, como os outros cinco apps gpui. Usa, se
 | Diário (`journal/<agente>.jsonl`, v1, só aditivo) | Fonte 1 dos sinais de estado; o Argos lê e grava eventos próprios (recrutado, respondido, dispensado) |
 | Escrita atômica e lock (`atomic.rs`, `lock.rs`) | Gravar o canvas e o registro sem corromper nem perder escrita |
 | Relógio (`clock.rs`, `HADES_NOW`) | Tempo injetado nos testes |
+
+Sem o work root (máquina nova, pasta apagada), o Argos funciona para agentes avulsos: o estado vem só do terminal
+e do arquivo de sessão, o loop e o painel não enxergam esses agentes, e uma faixa oferece criar o work root em
+`~/.hades`.
 
 O estado do canvas (posições, notas, grupos, ligações) fica num arquivo próprio do Argos, com campo de versão e
 revisão. Conflito de gravação aparece para o dono com as duas versões; ele não some.
