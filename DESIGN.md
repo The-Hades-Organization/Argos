@@ -165,6 +165,14 @@ página pública em 2026-11-28.
   pela cabeça da pendência (`M`), que recolhida vira a cabeça da Decisão com o resumo; estado global e lembrado. A
   lista de comandos é peça do design system, compartilhada pelo foco e pelo nó, e filtra só pelo nome. Por quê: um
   fio de poucos pixels é alvo difícil, e o alerta de contexto não pode sumir com a linha.
+- 2026-11-28: a tela Adaptadores é só de leitura: edita-se o arquivo, com "Abrir o arquivo" e recarga ao salvar.
+  Abre no lugar do canvas, com a coluna do coordenador ao lado. O teste roda só pelo botão, com o custo mostrado ao
+  fim. Por quê: o arquivo é a fonte e um formulário repetiria o TOML; quem espera o dono continua à vista.
+- 2026-11-28: mudança no arquivo de um adaptador vale na hora para os agentes vivos nas partes que não reiniciam o
+  processo (ler estado, responder, comandos, custo e contexto); identidade, iniciar e mandar prompt valem para os
+  recrutados depois. A tela mostra o que foi aplicado aos vivos. Versão nova que não carrega: os vivos seguem com a
+  última versão válida e o erro fica à vista. Por quê: escolha do dono; consertar um padrão de tela não pode esperar
+  o agente encerrar.
 
 ## Perguntas abertas
 

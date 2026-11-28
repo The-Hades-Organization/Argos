@@ -39,6 +39,11 @@ O contrato é versionado e só cresce: campo novo entra opcional, e o leitor tol
 Hades-Core já faz com `v`. Adaptador com campo inválido não carrega e aparece com erro na configuração de
 adaptadores; ele não cai num padrão em silêncio.
 
+Recarga: o Argos observa a pasta de adaptadores e relê o arquivo salvo. Ler estado, Responder, Comandos e Custo e
+contexto valem na hora também para os agentes vivos daquele tipo; Identidade, Iniciar e Mandar prompt só para os
+recrutados depois, porque mudam como o processo nasce. Se a versão nova não carrega, os vivos seguem com a última
+versão válida e o erro aparece na tela Adaptadores.
+
 Comandos: o prompt do foco e do nó usa a lista para completar o que se digita depois de `/`, e o comando vai ao agente
 pelo mesmo caminho de "Mandar prompt"; o Argos não o interpreta. O efeito volta pelos sinais de sempre (um `/model`
 muda o modelo que o leitor de custo e contexto informa). Comando de projeto com arquivo inválido fica fora da lista com
