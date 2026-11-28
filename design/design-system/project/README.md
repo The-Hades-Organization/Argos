@@ -143,6 +143,9 @@ Cada componente tem anatomia, regra com o porquê e matriz de estados na própri
 | Coluna do coordenador | Decisões | Pedido ao time, caixa de decisões e atalhos; vazia e com erro |
 | Trilho | Navegação | Canvas, Squads, Histórico, Adaptadores e Configuração |
 | Barra de estado | Navegação | Supervisor, contagem, custo do dia; sem supervisor e custo alto |
+| Planta do squad | Squad | Quadro, nó tracejado e cabo com rótulo: proposta, mudou, a recrutar, hover, seleção e foco |
+| Paleta de squads | Squad | Biblioteca flutuante com o histórico do selecionado; arrastar, vazia, sem resultado, manifesto inválido |
+| Balão de tarefa | Squad | Pede a tarefa ao soltar o squad: vazio, preenchido, convocando e erro |
+| Faixa do squad | Squad | Squad convocado recolhido em células: em andamento, esperando você, erro e pronto |
 
-Os componentes das telas de squad (proposta, biblioteca e convocação) entram depois, quando a direção dessas telas for
-escolhida.
+As peças de squad seguem a direção planta no canvas, escolhida pelo dono em 28/11 (aguardando o ok nos componentes).
