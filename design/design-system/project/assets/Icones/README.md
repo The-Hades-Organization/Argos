@@ -1,7 +1,7 @@
 # Ícones
 
 O Argos usa os ícones do Hades-UI v0.3.1 (`crates/hades-ui/assets/icons/`), os mesmos das outras ferramentas da Hades.
-Aqui estão os 25 que as telas do Argos usam; os 171 do conjunto estão no Hades-UI, pelo mesmo nome.
+Aqui estão os 33 que as telas do Argos usam; os 171 do conjunto estão no Hades-UI, pelo mesmo nome.
 
 **Por que este conjunto.** O Argos é GPL-3.0. Os ícones de linha são do Lucide v0.460.0, sob a licença ISC, que é
 permissiva e compatível com a GPL-3.0: basta manter o aviso de copyright, que está em `LICENSE.txt`. Os desenhos
@@ -30,3 +30,6 @@ some do leitor de tela. Nas pré-visualizações desta página os arquivos apare
 | `square-terminal`, `bot` | Abrir terminal; agente |
 | `triangle-alert`, `circle-dashed`, `loader-circle` | Erro; iniciando; carregando |
 | `coins` | Custo |
+| `refresh-cw`, `file-pen`, `copy` | Recarregado e procurar de novo; abrir o arquivo do adaptador; duplicar |
+| `info`, `circle-x`, `search-x` | Faixa de informação; passo do teste que falhou; filtro sem resultado |
+| `trash-2`, `circle-stop` | Apagar um adaptador seu; parar o teste |

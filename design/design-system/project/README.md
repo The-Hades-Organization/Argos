@@ -137,11 +137,15 @@ Cada componente tem anatomia, regra com o porquê e matriz de estados na própri
 | Botão | Ações | Primária, secundária, fantasma e ícone, com os seis estados |
 | Campo | Entrada | Resposta de uma linha e pedido ao time de várias |
 | Chip | Conteúdo | Identificador dentro do texto, tipo de agente, contador de quem espera |
+| Faixa | Conteúdo | Aviso no topo de uma área: info, sucesso, aviso e erro, com a ação que resolve |
 | Estado do agente | Agente | Forma, palavra e tempo dos seis estados, mais "(inferido)" |
 | Nó de agente | Agente | A peça do canvas, nos seis estados, selecionado, hover, foco e zoom distante |
 | Linha da sessão | Agente | O mínimo da sessão sob o cabeçalho do foco: modelo, custo, contexto, branch, diretório e squad; janela estreita e campo ausente |
 | Painel de detalhes | Agente | Balão de cinco linhas aberto com I: modelo, diretório inteiro com Copiar, branch, início e squad |
 | Lista de comandos | Agente | Completa os slash commands do agente no prompt do foco e do nó: filtro, argumento, comandos do projeto e tipo sem comandos |
+| Lista de adaptadores | Adaptadores | Tipos de agente em dois grupos, com estado e vivos: pronto, não carrega, programa não encontrado, não lido, testando |
+| Seção do contrato | Adaptadores | Uma das sete partes do contrato em leitura: quando vale, recarregada, campo inválido e ausente |
+| Passos do teste | Adaptadores | Progresso do teste de um adaptador: rodando, passou e falhou |
 | Decisão | Decisões | Cartão de permissão, pergunta, plano e proposta, com a opção recomendada |
 | Coluna do coordenador | Decisões | Pedido ao time, caixa de decisões e atalhos; vazia e com erro |
 | Trilho | Navegação | Canvas, Squads, Histórico, Adaptadores e Configuração |
