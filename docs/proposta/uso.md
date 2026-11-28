@@ -70,6 +70,15 @@ diretório e squad (que abre o brief).
    da próxima ou da decisão anterior.
 4. Clicar no terminal dá o teclado a ele; `Ctrl+]` devolve ao foco. `Esc`, com o teclado fora do terminal, volta ao
    canvas no mesmo enquadramento.
+5. `L` recolhe a linha da sessão e `M` recolhe a pendência; a mesma tecla expande. Recolhida, a linha some e o
+   botão "Sessão" do cabeçalho mostra o contexto quando passa de 90%; a pendência vira uma linha com quem pede, o
+   tipo e o comando, e `1` `2` `3` continuam respondendo. O Argos lembra a escolha para todos os agentes.
+
+Comandos do agente: no prompt do foco ou do nó, `/` no começo do campo lista os comandos que o tipo de agente
+oferece (no Claude Code, `/compact`, `/model`, `/clear` e os outros; no Codex, Gemini e demais, os deles), com a
+descrição de cada um e os comandos do projeto num grupo à parte. Digitar filtra; `Tab` ou `Enter` completam;
+`Ctrl+Enter` envia. Comando com argumento mostra a assinatura e, quando o adaptador declara, os valores (os modelos
+de `/model`, com o atual marcado). O Argos não executa nada: o comando vai ao agente como qualquer prompt.
 
 Um agente que encerra com o foco aberto não fecha o foco: ele fica cinza, com o motivo e o terminal só para leitura.
 

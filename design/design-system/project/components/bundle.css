@@ -258,6 +258,37 @@ svg.cables path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }
 .empty { border: 1px dashed var(--border-hover); padding: 20px 16px; display: grid; gap: 6px; justify-items: start; color: var(--text-muted); font-size: 12px; line-height: 17px; }
 .empty b { font: 600 13px/18px var(--sans); color: var(--text); }
 .empty .btn { margin-left: -10px; }
+.ic.up { transform: rotate(-90deg); }
+.ic.down { transform: rotate(90deg); }
+.btn.fold .alert { font: 600 11px/14px var(--mono); color: var(--agent-error); }
+.dec .dh .tp { font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.dec .dh .age { margin-left: auto; font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qkind { font: 600 11px/14px var(--sans); color: var(--text); white-space: nowrap; }
+.dec .dh .sum { flex: 1 1 auto; margin-left: 4px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 400 11px/14px var(--mono); color: var(--text-muted); }
+.dec .dh .age + .btn.fold { margin: -3px -4px -3px 0; }
+.dec .dh .grow { flex: 1 1 0; min-width: 0; }
+.cmds { position: absolute; width: 440px; max-width: calc(100% - 16px); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--elev-float); display: grid; grid-template-columns: minmax(0, 1fr); padding: 4px; z-index: 4; }
+.cmds .ch { display: flex; align-items: center; gap: 8px; padding: 4px 8px 6px; font: 600 11px/14px var(--sans); color: var(--text-muted); }
+.cmds .ch .n { margin-left: auto; font: 400 11px/14px var(--mono); font-variant-numeric: tabular-nums; }
+.cmds .cl { display: grid; gap: 2px; max-height: calc(8 * 27px + 7 * 2px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border-hover) transparent; }
+.cmds .cg { margin-top: 4px; padding-top: 6px; border-top: 1px solid var(--divider); }
+.citem { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 0 12px; padding: 5px 8px; }
+.citem .nm { font: 600 12px/17px var(--mono); color: var(--text); white-space: nowrap; }
+.citem .nm .a { font-weight: 400; color: var(--text-muted); }
+.citem .d { font: 400 12px/17px var(--sans); color: var(--text-muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.citem .d .now { color: var(--text); font-weight: 600; }
+.citem.is-hover { background: var(--fill-1); }
+.citem.sel { background: var(--tint-selected); }
+.citem.sel .d { white-space: normal; color: var(--text); }
+.cmds .csig { padding: 6px 8px; display: grid; gap: 2px; border-bottom: 1px solid var(--divider); margin-bottom: 4px; }
+.cmds .csig:last-child { border-bottom: 0; margin-bottom: 0; }
+.cmds .csig .nm { font: 600 12px/17px var(--mono); color: var(--text); }
+.cmds .csig .nm .a { font-weight: 400; color: var(--text-muted); }
+.cmds .csig .d { font: 400 12px/17px var(--sans); color: var(--text-muted); }
+.cmds .cnone { padding: 6px 8px; display: grid; gap: 2px; font: 400 12px/17px var(--sans); color: var(--text-muted); }
+.cmds .cnone b { font-weight: 600; color: var(--text); }
+.cmds .cerr { display: flex; align-items: center; gap: 6px; padding: 6px 8px 2px; font: 400 11px/14px var(--sans); color: var(--danger); }
+.cmds .cfoot { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; padding: 6px 8px 2px; border-top: 1px solid var(--divider); font: 400 11px/14px var(--sans); color: var(--text-muted); }
 /* fim: Foco */
 
 /* NoDeAgente · contexto, linhas novas, prompt e teclado */

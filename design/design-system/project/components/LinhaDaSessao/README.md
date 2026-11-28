@@ -21,6 +21,12 @@ painel ao lado (direção A da Q22).
 - "Copiar" tem largura mínima fixa: virar "Copiado" (com `check` em `success`) por 2 s não empurra o diretório.
 - Nada aqui se edita.
 
+**Recolher (`L`).** O dono pode devolver os 30 px ao terminal. O botão "Sessão" fica no cabeçalho do foco, antes
+das ações, com `chevron-right` girado para cima (expandida) ou para baixo (recolhida), `aria-expanded` e `L`. Recolhida,
+a linha some e o terminal sobe; com o contexto em 90% ou mais, o botão mostra "contexto 93%" em `agent-error`, para o
+alerta não sumir junto. O Argos lembra a escolha para todos os agentes e entre aberturas. Na janela estreita, `I`
+continua abrindo o balão, ancorado no botão "Sessão" quando a linha está recolhida.
+
 | Estado | Como fica |
 |---|---|
 | Normal | Seis itens, diretório cortando no começo se faltar espaço |
@@ -30,6 +36,8 @@ painel ao lado (direção A da Q22).
 | Campo faltando | O item some (shell: só diretório) |
 | Fora de squad | O botão do squad some; o diretório leva o espaço |
 | Copiar, Squad, Detalhes | Hover `tint-hover`; foco por teclado com o anel; pressionado `tint-pressed` |
+| Recolhida | A linha some; no cabeçalho, "Sessão" com a seta para baixo |
+| Recolhida, contexto alto | "Sessão contexto 93%" com o número em `agent-error` |
 
 **Não fazer.** Cortar o fim do diretório; quebrar a linha em duas (ela tem altura fixa, para o terminal não mudar
 de tamanho quando um valor cresce); pôr ali o estado do agente, que já está no cabeçalho.

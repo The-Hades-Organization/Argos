@@ -29,3 +29,12 @@ primeiro.
 **Opção.** Linha com número, título em `body-strong` e descrição em `small`. A recomendada tem `tint-selected` e o
 selo "Recomendada" com `check`; nunca é aplicada sem o dono. Hover escurece o fio; foco é o anel azul; escolhida tem
 fio `text`; desativada usa `text-disabled`.
+
+<!-- foco: pendência no pé -->
+**No pé do foco (recolher, `M`).** No foco de um agente, a pendência atual encaixa no pé do terminal como esta peça
+deitada. A cabeça ganha "Recolher M" depois da idade (`btn ghost xs` com `chevron-right` girado para baixo).
+Recolhida, fica só a cabeça (`.dec.folded`): ponto pulsando, nome, tipo, o resumo numa linha em `mono` `text-muted`
+(comando, começo da pergunta ou número de passos), a idade e "Expandir M". Nada some: o cabeçalho do foco continua
+rosa, a coluna do coordenador mostra a mesma decisão, e `1 2 3` respondem com ela recolhida. O Argos lembra a escolha
+para todos os agentes: a próxima pendência chega recolhida, com o fio rosa de entrada.
+<!-- fim: pendência no pé -->

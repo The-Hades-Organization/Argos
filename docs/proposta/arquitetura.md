@@ -23,19 +23,25 @@ Todo agente entra por um adaptador declarado em arquivo (proposta: TOML em `<con
 com os de fábrica embutidos no binário). O núcleo lê o arquivo, valida na carga e trata o agente só pelo contrato.
 Nenhum `if claude` espalhado pelo código: o comportamento específico mora no arquivo do adaptador.
 
-O contrato tem seis partes. Só as duas primeiras são obrigatórias; as outras declaram o que o agente oferece.
+O contrato tem sete partes. Só as duas primeiras são obrigatórias; as outras declaram o que o agente oferece.
 
 | Parte | Declara | Exemplo do que cabe |
 |---|---|---|
 | Identidade | id, nome, ícone, versão do contrato | `codex`, "Codex", ícone, `contrato = 1` |
 | Iniciar | comando, argumentos, variáveis de ambiente (por referência, nunca valor de segredo), diretório, como retomar uma sessão, prazo para o primeiro sinal de pronto | comando com `{prompt_inicial}` e `{dir}`; argumento de retomada; `prazo_pronto = 120 s` (passado o prazo sem sinal, o agente vai a erro) |
 | Mandar prompt | como o texto chega ao agente | colar entre marcadores de colagem no PTY e mandar Enter; argumento de linha de comando; arquivo |
+| Comandos | os slash commands nativos do agente: nome, descrição, argumento (opcional ou obrigatório, com os valores quando forem fixos) e, opcional, a pasta de comandos do projeto | `compact` com `[instruções]`; `model` com `opus`, `sonnet`, `haiku`; `.claude/commands/*.md`; ausente no shell |
 | Ler estado | de onde vêm os sinais e como viram estado | eventos estruturados; arquivo de sessão; padrões de tela |
 | Responder | como cada tipo de pendência é respondido | permissão: tecla de sim, de não e de "sempre"; pergunta: texto + Enter |
 | Custo e contexto | onde ler tokens, custo e uso de contexto | arquivo de sessão e o leitor que o entende; ausente quando o agente não expõe |
 
 O contrato é versionado e só cresce: campo novo entra opcional, e o leitor tolera versão maior, como o diário do
-Hades-Core já faz com `v`. Adaptador com campo inválido não carrega e aparece com erro na configuração de adaptadores;
+Hades-Core já faz com `v`.
+
+Comandos: o prompt do foco e do nó usa a lista para completar o que se digita depois de `/`, e o comando vai ao agente
+pelo mesmo caminho de "Mandar prompt"; o Argos não o interpreta. O efeito volta pelos sinais de sempre (um `/model`
+muda o modelo que o leitor de custo e contexto informa). Comando de projeto com arquivo inválido fica fora da lista com
+o motivo; a lista do adaptador segue a regra geral: inválida, o adaptador não carrega. Adaptador com campo inválido não carrega e aparece com erro na configuração de adaptadores;
 ele não cai num padrão em silêncio.
 
 ### Sinais de estado, por confiança

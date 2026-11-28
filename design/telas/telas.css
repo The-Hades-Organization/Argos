@@ -28,10 +28,7 @@ body { background: var(--canvas); color: var(--text); }
 .coord .foot { border-top: 1px solid var(--border); padding: 8px 14px; font-size: 11px; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 6px 12px; }
 .coord .push { margin-left: auto; }
 .coord .field .grow { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.dec .dh .tp { font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.dec .dh .age { margin-left: auto; font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .dec .opts { gap: 4px; }
-.qkind { font: 600 11px/14px var(--sans); color: var(--text); white-space: nowrap; }
 .msg { display: grid; gap: 4px; font-size: 13px; line-height: 19px; }
 .msg .by { font: 600 11px/14px var(--sans); color: var(--text-muted); }
 

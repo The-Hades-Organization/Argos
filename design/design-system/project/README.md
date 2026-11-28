@@ -141,6 +141,7 @@ Cada componente tem anatomia, regra com o porquê e matriz de estados na própri
 | Nó de agente | Agente | A peça do canvas, nos seis estados, selecionado, hover, foco e zoom distante |
 | Linha da sessão | Agente | O mínimo da sessão sob o cabeçalho do foco: modelo, custo, contexto, branch, diretório e squad; janela estreita e campo ausente |
 | Painel de detalhes | Agente | Balão de cinco linhas aberto com I: modelo, diretório inteiro com Copiar, branch, início e squad |
+| Lista de comandos | Agente | Completa os slash commands do agente no prompt do foco e do nó: filtro, argumento, comandos do projeto e tipo sem comandos |
 | Decisão | Decisões | Cartão de permissão, pergunta, plano e proposta, com a opção recomendada |
 | Coluna do coordenador | Decisões | Pedido ao time, caixa de decisões e atalhos; vazia e com erro |
 | Trilho | Navegação | Canvas, Squads, Histórico, Adaptadores e Configuração |

@@ -73,9 +73,15 @@
 
 /* Peças nas folhas */
 .sheet.one { grid-template-columns: minmax(0, 1fr); margin-top: 20px; }
+.sheet.one + .sheet { margin-top: 20px; }
 .ffrag { border: 1px solid var(--border); display: grid; grid-template-columns: minmax(0, 1fr); background: var(--surface); }
 .ffrag > .fhd + .fhd, .ffrag > .fdock + .fhd { border-top: 1px solid var(--border); }
 .ffrag > .fstack { height: 300px; }
+.ffrag.tall > .fstack { height: 420px; }
+.fstack.noline { grid-template-rows: minmax(0, 1fr) auto; }
+.fdock.folded { padding: 6px 12px; }
+.fmain .pfield { position: relative; }
+.ffrag.cmdroom .fout { min-height: 270px; }
 
 @media (prefers-reduced-motion: no-preference) {
   .fhd.just .s-idle .dot { animation: just-done 900ms ease-out 1; }
