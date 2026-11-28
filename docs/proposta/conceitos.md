@@ -13,8 +13,9 @@ interface, na documentação e na CLI. Como as peças se ligam está em [arquite
 |---|---|---|
 | **Agente** | Um processo de linha de comando que trabalha sozinho (Claude Code, Codex, Gemini CLI, OpenCode, agy) e que o Argos acompanha | A sessão em que ele roda |
 | **Tipo de agente** | A ferramenta por trás do agente, como `claude-code` ou `codex`. Cada tipo tem um adaptador | O modelo que o agente usa (`sonnet`, `gpt-5`) |
-| **Adaptador** | Arquivo de dados versionado que diz como iniciar um tipo de agente, mandar prompt, ler estado, responder e ler custo ([contrato](arquitetura.md#contrato-de-adaptador)) | Código específico por agente, que a proposta descarta |
-| **Sessão** | O terminal (PTY) em que o agente roda, aberto e mantido pelo supervisor. Sobrevive ao fechar o app | O agente: uma sessão pode ser retomada por um agente novo do mesmo tipo |
+| **Adaptador** | Arquivo de dados versionado que diz como iniciar um tipo de agente, mandar prompt, ler estado, responder, completar os comandos do agente e ler custo ([contrato](arquitetura.md#contrato-de-adaptador)) | Código específico por agente, que a proposta descarta |
+| **Sessão** | O terminal (PTY) em que o agente roda, aberto e mantido pelo supervisor. Sobrevive ao fechar o app | A sessão do agente, que sobrevive ao PTY |
+| **Sessão do agente** | A conversa que o próprio agente guarda e sabe retomar (um argumento de retomada, por exemplo), quando o adaptador declara como. Um agente novo do mesmo tipo pode retomá-la num PTY novo | A sessão: o PTY morre com o supervisor, a sessão do agente não |
 | **Supervisor** | O processo separado do app que é dono das sessões (`argos serve`) | O app gpui, que só desenha e manda comandos |
 
 ## Estado do agente
@@ -28,8 +29,8 @@ Todo agente está em um de seis estados. Cada estado tem cor, forma e palavra, p
 | **Trabalhando** | O agente está produzindo; o tempo desde o último sinal aparece junto ("Trabalhando · 12s") |
 | **Ocioso** | O agente terminou o que tinha e não pediu nada |
 | **Esperando você** | O agente parou numa pendência que só o dono resolve |
-| **Erro** | O processo saiu com código diferente de zero ou o adaptador não consegue ler o estado |
-| **Encerrado** | O agente foi dispensado ou terminou; o nó sai do canvas e fica no histórico |
+| **Erro** | O processo saiu com código diferente de zero, o adaptador não consegue ler o estado ou o agente não deu sinal de pronto no prazo que o adaptador declara |
+| **Encerrado** | O agente foi dispensado ou terminou. O nó fica no canvas, apagado, por 10 min e vai para o Histórico; quando o supervisor morreu, fica até o dono recrutar de novo ou dispensar |
 
 O estado vem de três fontes, da mais confiável à menos: eventos estruturados, arquivo de sessão e padrões de tela.
 Quando só a tela sustenta o estado, ele aparece com o sufixo **(inferido)**
@@ -40,8 +41,9 @@ Quando só a tela sustenta o estado, ele aparece com o sufixo **(inferido)**
 | Termo | O que é |
 |---|---|
 | **Pendência** | O que um agente espera do dono. Há quatro tipos: **permissão** (rodar um comando, escrever um arquivo), **pergunta** (texto livre ou opções), **plano** (passos para aprovar, recusar ou mudar) e **proposta** (o que o coordenador quer fazer, como recrutar três agentes ou salvar um squad) |
-| **Caixa de decisões** | A lista das pendências abertas, da mais antiga à mais nova, sempre visível na coluna do coordenador. Cada uma traz a opção recomendada primeiro quando o agente a dá. É o trabalho número um do Argos ([decisoes.md](decisoes.md#trabalho-número-um-ver-quem-espera-e-responder)) |
+| **Caixa de decisões** | A lista das pendências abertas e dos agentes com erro ("precisa de atenção"), da mais antiga à mais nova, sempre visível na coluna do coordenador. Cada uma traz a opção recomendada primeiro quando o agente a dá. É o trabalho número um do Argos ([decisoes.md](decisoes.md#trabalho-número-um-ver-quem-espera-e-responder)) |
 | **Opção recomendada** | A resposta que o agente, ou o coordenador, indica como a melhor. Fica destacada e é aceita com Enter; nunca é aplicada sem o dono |
+| **Decisão** | A peça que mostra uma pendência na caixa de decisões. Responder a decisão resolve a pendência |
 | **Responder** | Resolver uma pendência pelo próprio canvas, sem abrir o terminal. O adaptador diz como cada resposta chega ao agente |
 
 ## Canvas
@@ -63,7 +65,7 @@ Quando só a tela sustenta o estado, ele aparece com o sufixo **(inferido)**
 |---|---|
 | **Recrutar** | Criar um agente escolhendo o tipo, o diretório e o prompt inicial. O nó aparece no canvas em "Iniciando" |
 | **Mandar prompt** | Escrever para um agente que já existe, pelo campo do nó ou pela CLI |
-| **Dispensar** | Encerrar o agente e a sessão dele. O nó sai do canvas e o que ele fez fica no histórico |
+| **Dispensar** | Encerrar o agente e a sessão dele, com 5 s para desfazer. O nó vai a Encerrado e o que ele fez fica no Histórico |
 
 ## Coordenador e squads
 
@@ -85,5 +87,5 @@ O squad tem um ciclo de vida de sete passos ([uso.md](uso.md#squads)):
 | **Aprovar** | O dono aceita, pede mudança ou recusa a proposta |
 | **Salvar** | Com o ok, o coordenador grava o manifesto e os briefs em disco |
 | **Convocar** | O dono entrega uma tarefa ao squad; os membros viram agentes no canvas |
-| **Editar** | Uma mudança no squad passa por proposta e aprovação de novo, e sobe a revisão |
+| **Editar** | Uma mudança pelo coordenador passa por proposta e aprovação de novo; editar os arquivos à mão também vale. As duas sobem a revisão |
 | **Aposentar** | O squad sai da lista principal da biblioteca; os arquivos e o histórico ficam |

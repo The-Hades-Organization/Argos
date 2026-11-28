@@ -12,16 +12,16 @@ Tela: [design/telas/vazio-e-erro.html](../../design/telas/vazio-e-erro.html).
 O canvas abre vazio, sem tour: no centro, "Nenhum agente ainda" com **Recrutar** (`R`) e um exemplo de pedido ao
 coordenador; o campo do coordenador já vem focado. Os tipos de fábrica que encontram o programa no PATH já estão
 prontos; os outros aparecem desativados no lançador, com o motivo na linha, e o shell sempre funciona. Sem o work root
-do Hades-Core, uma faixa avisa que o estado vem só do terminal e oferece **Criar em ~/.hades**.
+do Hades-Core, uma faixa avisa que o loop e o painel não enxergam os agentes e oferece **Criar em ~/.hades**.
 
 ## Quando algo falha
 
 Tela: [design/telas/vazio-e-erro.html](../../design/telas/vazio-e-erro.html).
 
-Todo erro do sistema entra numa faixa no topo do canvas, com a causa e a ação; `Enter` com a faixa em foco faz a ação.
+Todo erro do sistema entra numa faixa no topo do canvas, com a causa e a ação; `Enter` com a faixa selecionada pelo teclado faz a ação.
 Supervisor que não responde: os nós ficam com o último estado, marcados com a hora e sem digitação, e o Argos tenta
-de novo a cada 5 s. Supervisor que morreu: ele volta sozinho, os agentes ficam encerrados no canvas e cada um oferece
-recrutar de novo com a mesma sessão, quando o adaptador sabe retomar. Canvas salvo ilegível: os agentes vivos
+de novo a cada 5 s. Supervisor que morreu: o app sobe outro, os agentes ficam encerrados no canvas e cada um oferece
+recrutar de novo com a mesma sessão do agente, quando o adaptador sabe retomar. Canvas salvo ilegível: os agentes vivos
 aparecem lado a lado, e a faixa oferece a última cópia boa.
 
 ## Atalhos da tela principal
@@ -30,9 +30,9 @@ aparecem lado a lado, e a faixa oferece a última cópia boa.
 |---|---|
 | `/` | Foca o campo de pedido ao coordenador |
 | `J`, `K` | Passa para a próxima ou para a decisão anterior; o canvas enquadra o agente dela |
-| `Enter` | Aceita a opção recomendada da decisão em foco |
+| `Enter` | Aceita a opção recomendada da decisão selecionada |
 | `1` a `9` | Escolhe a opção pelo número |
-| `T` | Abre o terminal do agente da decisão em foco |
+| `T` | Abre o terminal do agente da decisão selecionada |
 | `F` | Abre o foco do agente no lugar do canvas, com a coluna do coordenador ao lado; `Esc` volta ao canvas no mesmo lugar (com o teclado no terminal, `Ctrl+]` e depois `Esc`) |
 | `R` | Abre o recrutamento de um agente avulso |
 | `P` | Com um nó selecionado, abre o campo para mandar prompt a ele; `Ctrl+Enter` envia, `Enter` quebra linha, `Esc` fecha |
@@ -81,7 +81,7 @@ atalho para as últimas linhas.
 
 Tela: [design/telas/foco.html](../../design/telas/foco.html).
 
-`F` (agente selecionado ou da decisão em foco) ou clique duplo no cabeçalho do nó abre o foco no lugar do canvas. A
+`F` (agente selecionado ou da decisão selecionada) ou clique duplo no cabeçalho do nó abre o foco no lugar do canvas. A
 coluna do coordenador fica ao lado, e a caixa de decisões continua mostrando quem mais espera. No foco o terminal
 ocupa o espaço, com a rolagem inteira. Acima dele, uma linha com a sessão: modelo e esforço, custo, contexto, branch,
 diretório e squad (que abre o brief).
@@ -89,8 +89,8 @@ diretório e squad (que abre o brief).
 1. Quando o agente espera você, a pendência encaixa no pé do terminal, abaixo da última linha dele, e se responde
    ali, como na caixa de decisões; responder em um lugar resolve os dois. Respondida, ela sai e o terminal recupera
    a altura.
-2. `I` abre o balão de Detalhes: modelo, diretório inteiro com Copiar, branch, início da sessão e squad. Numa janela
-   estreita a linha da sessão guarda só modelo, custo e contexto, e o resto fica nesse balão.
+2. Numa janela estreita, a linha da sessão guarda só modelo, custo e contexto, e `I` abre o balão de Detalhes com
+   o resto: diretório inteiro com Copiar, branch, início da sessão e squad.
 3. `P` manda prompt, `/` busca na saída, `D` dispensa com 5 s para desfazer, `J` e `K` trocam o foco para o agente
    da próxima ou da decisão anterior.
 4. Clicar no terminal dá o teclado a ele; `Ctrl+]` devolve ao foco. `Esc`, com o teclado fora do terminal, volta ao
@@ -110,7 +110,8 @@ Um agente que encerra com o foco aberto não fecha o foco: ele fica cinza, com o
 ## Dispensar
 
 Pelo menu do nó, pela tecla no foco do agente ou pedindo ao coordenador ("dispense os revisores da PR #1"). Pedido ao
-coordenador vira proposta. O agente sai do canvas, a sessão fecha e o que ele fez fica no histórico.
+coordenador vira proposta. Há 5 s para desfazer; depois a sessão fecha, o nó fica apagado no canvas por 10 min e vai para o Histórico com o
+que o agente fez.
 
 ## Configurar um adaptador
 

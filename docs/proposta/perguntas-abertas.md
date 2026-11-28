@@ -25,7 +25,7 @@ não a oferece.
 
 | Opção | Como funciona | Custa |
 |---|---|---|
-| Parte opcional nova do contrato | O adaptador declara como pedir a troca (comando dentro da sessão, tecla, argumento de retomada) e como confirmar que ela pegou; o foco ganha "Trocar modelo", desabilitado com o motivo quando o adaptador não declara | Uma sétima parte no contrato, um estado "trocando" com prazo e o caso da troca que não confirma |
+| Parte opcional nova do contrato | O adaptador declara como pedir a troca (comando dentro da sessão, tecla, argumento de retomada) e como confirmar que ela pegou; o foco ganha "Trocar modelo", desabilitado com o motivo quando o adaptador não declara | Uma oitava parte no contrato, um estado "trocando" com prazo e o caso da troca que não confirma |
 | Recrutar de novo com outro modelo | O dono dispensa e recruta com o modelo novo, retomando a sessão quando o adaptador sabe retomar | Nada novo no contrato; perde o que não estiver salvo na sessão |
 | Fora do Argos | O dono troca pelo próprio terminal do agente, com o teclado no terminal | Nada; o rodapé do nó mostra o modelo só quando o adaptador o lê de novo |
 

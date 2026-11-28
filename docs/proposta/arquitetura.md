@@ -12,13 +12,15 @@ herdr, o loop da Hades e o `gh` viram integrações opcionais. As decisões e as
 | App | `argos-app` | Desenha o canvas, os nós e o terminal; recebe teclado e mouse; mostra o que o núcleo decide | Decidir estado de agente; abrir processo |
 | Núcleo | `argos-core` | Modelo do canvas, máquina de estados do agente, registro de adaptadores, leitura dos sinais, gravação do canvas | Desenhar; falar com gpui |
 | Supervisor de sessões | binário próprio (proposta: subcomando `argos serve` do `argos-cli`) | Abre e mantém os PTYs dos agentes, guarda o histórico da tela, entrega bytes e eventos ao app por socket local | Interface; regra de canvas |
-| CLI | `argos-cli` | Recrutar, mandar prompt, responder e dispensar pela linha de comando, para o loop da Hades e para scripts | Desenhar |
+| CLI | `argos-cli` | Recrutar, mandar prompt, responder, dispensar, enquadrar e salvar e convocar squads pela linha de comando, para o loop da Hades e para scripts | Desenhar |
 
 O supervisor é processo separado do app porque o agente precisa sobreviver ao app. Hoje um reinício do multiplexador
 derrubou um agente (notas de rodada do Argos atual, `argos-canvas.log.md:56`); fechar ou atualizar o app não pode fazer o mesmo.
-O contrário não vale: se o supervisor morre, os agentes morrem com ele. O app mostra os dois casos de forma
+O contrário não vale: se o supervisor morre, os agentes morrem com ele. O app sobe o supervisor quando não acha um
+vivo, na abertura e quando o anterior morre. O app mostra os dois casos de forma
 diferente: supervisor que não responde (agentes vivos, último estado à vista, reconexão) e supervisor que morreu
-(agentes encerrados com o motivo e, quando o adaptador declara retomada, recrutar de novo com a mesma sessão).
+(agentes encerrados com o motivo e, quando o adaptador declara retomada, recrutar de novo com a mesma sessão do
+agente).
 
 ## Contrato de adaptador
 
@@ -55,7 +57,7 @@ o motivo; a lista do adaptador segue a regra geral: inválida, o adaptador não 
 ### Sinais de estado, por confiança
 
 O estado de cada agente é um destes seis: iniciando, trabalhando, ocioso, esperando você, erro, encerrado. "Esperando
-você" carrega o tipo da pendência (permissão, pergunta, plano, proposta, outra). O núcleo combina três fontes, da mais confiável
+você" carrega o tipo da pendência (permissão, pergunta, plano, proposta). O núcleo combina três fontes, da mais confiável
 para a menos:
 
 1. **Eventos estruturados.** O agente avisa por hook ou notificação e o evento cai no diário do Hades-Core. O Claude
@@ -143,8 +145,8 @@ metade.
 
 ### Gravação e convocação
 
-- **Gravar.** O coordenador grava pelo `argos-cli squad salvar`. O núcleo só aceita a gravação de uma proposta que o
-  dono aprovou; a aprovação fica no diário. A pasta é escrita de forma atômica, com o lock do Hades-Core.
+- **Gravar.** O coordenador grava pelo `argos-cli squad salvar`. Pelo coordenador, o núcleo só aceita a gravação de uma
+  proposta que o dono aprovou; a aprovação fica no diário. A pasta é escrita de forma atômica, com o lock do Hades-Core.
 - **Editar.** Uma edição é uma proposta nova com a diferença para a revisão atual. Edição à mão nos arquivos também
   vale: o núcleo relê, confere a estrutura e sobe a `revisao`.
 - **Aposentar.** Muda `estado` para `aposentado`. Os arquivos ficam, e as convocações antigas continuam apontando para

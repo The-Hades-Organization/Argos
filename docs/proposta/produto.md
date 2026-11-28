@@ -24,8 +24,9 @@ código e das notas de rodada:
 - **O estado é adivinhado.** Vem do estado do pane no multiplexador, de hooks do Claude Code e de heurística sobre a
   tela; gravação de canvas já foi perdida em silêncio e há terminais órfãos.
 
-A raiz das três últimas é a dependência de duas ferramentas externas: o multiplexador de terminais para processo e
-tela, e o Claude Code como único agente cujo estado o Argos entende.
+A raiz da primeira e da última é a dependência de duas ferramentas externas: o multiplexador de terminais para
+processo e tela, e o Claude Code como único agente cujo estado o Argos entende. As duas do meio vêm da interface,
+que a proposta revê inteira.
 
 ## Para quem
 
@@ -37,7 +38,7 @@ técnico e quer a interface curta e direta.
 
 - Mostra sempre a caixa de decisões, com quem espera o dono, o tipo da pendência e a opção recomendada, e responde
   permissão, pergunta, plano e proposta ali mesmo.
-- Tem um coordenador: o dono pede ao time em texto, e o coordenador propõe antes de recrutar, enquadrar ou dispensar.
+- Tem um coordenador: o dono pede ao time em texto, e o coordenador propõe antes de recrutar ou dispensar.
 - Monta squads: times salvos em disco, com um brief autocontido por membro, convocados de novo para tarefas futuras
   ([conceitos.md](conceitos.md#coordenador-e-squads)).
 - Aceita qualquer agente de linha de comando por um adaptador declarado em arquivo ([arquitetura.md](arquitetura.md)).

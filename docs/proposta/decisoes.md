@@ -33,7 +33,8 @@ que passa de um para outro. A biblioteca é uma paleta flutuante, e convocar é 
 balão. **Por quê:** escolha do dono entre três estruturas desenhadas. O squad fica onde os agentes vão trabalhar, e
 os nós tracejados viram agentes de verdade. **Custa:** disputa de espaço com os agentes vivos e menos lugar para o
 histórico. A proposta trata os dois: ao soltar, os agentes vivos se afastam e nenhum nó fica por baixo de outro;
-convocado, o squad recolhe numa faixa de células e desdobra com `F`; a paleta abre as últimas convocações do squad
+convocado, o squad recolhe numa faixa de células e desdobra com `F` quando ele está selecionado (com um nó
+selecionado, `F` abre o foco); a paleta abre as últimas convocações do squad
 selecionado, com resultado e custo, e leva ao Histórico filtrado. **Descartadas:** linha de montagem (estações
 com barra de custo, numa tela própria) e mesa de composição (uma coluna por papel, convocação em diálogo).
 
@@ -54,8 +55,8 @@ cursor, tamanho e polling).
 
 ## Adaptador de agente como arquivo de dados
 
-**Decisão:** cada tipo de agente é um arquivo declarado e versionado (iniciar, mandar prompt, ler estado, responder,
-custo e contexto) ([arquitetura.md](arquitetura.md#contrato-de-adaptador)). **Por quê:** agente novo entra sem
+**Decisão:** cada tipo de agente é um arquivo declarado e versionado (identidade, iniciar, mandar prompt, comandos,
+ler estado, responder, custo e contexto) ([arquitetura.md](arquitetura.md#contrato-de-adaptador)). **Por quê:** agente novo entra sem
 recompilar e sem código específico espalhado. **Custa:** o contrato precisa cobrir agentes que só se leem pela tela,
 com estado marcado como inferido. **Descartadas:** um módulo Rust por agente; suporte só ao Claude Code.
 
@@ -87,8 +88,8 @@ fonte, e um formulário repetiria o formato; consertar um padrão de tela não p
 
 ## Sem o work root, o Argos funciona para agentes avulsos
 
-**Decisão:** sem a pasta de estado do Hades-Core, o canvas abre, recruta e mostra o estado lido do terminal,
-marcado como inferido; uma faixa avisa que o loop e o painel não enxergam esses agentes e oferece **Criar em
+**Decisão:** sem a pasta de estado do Hades-Core, o canvas abre, recruta e mostra o estado lido do arquivo de
+sessão e da tela, com o que vem só da tela marcado como inferido; uma faixa avisa que o loop e o painel não enxergam esses agentes e oferece **Criar em
 ~/.hades** ([arquitetura.md](arquitetura.md#o-que-vem-do-hades-core)). **Por quê:** o `hades-core` vai dentro do
 binário; o que pode faltar é a pasta, e exigir configuração antes do canvas trava quem só quer um agente.
 **Descartada:** bloquear o app até o work root existir.
@@ -97,8 +98,8 @@ binário; o que pode faltar é a pasta, e exigir configuração antes do canvas 
 
 **Decisão:** todo erro do sistema entra numa faixa no topo do canvas, com a causa e a ação. Supervisor que não
 responde: os nós ficam com o último estado lido, marcados com a hora e sem digitação, e o Argos tenta reconectar a
-cada 5 s. Supervisor que morreu: ele volta sozinho, os agentes ficam encerrados no canvas com o motivo e a opção de
-recrutar de novo com a mesma sessão, quando o adaptador sabe retomar. Canvas salvo ilegível: os agentes vivos
+cada 5 s. Supervisor que morreu: o app sobe outro, os agentes ficam encerrados no canvas com o motivo e a opção de
+recrutar de novo com a mesma sessão do agente, quando o adaptador sabe retomar. Canvas salvo ilegível: os agentes vivos
 aparecem lado a lado, o arquivo não é regravado e a faixa oferece a última cópia boa. **Por quê:** os agentes são
 do supervisor, não da janela; dar como encerrado um agente que só está sem contato, ou apagar a arrumação do dono
 numa gravação automática, faria a tela mentir. **Descartadas:** esvaziar o canvas quando o supervisor some; diálogo
