@@ -161,6 +161,10 @@ página pública em 2026-11-28.
   `/model` no Claude Code e os equivalentes no Codex, Gemini e outros). O contrato de adaptador declara a lista de
   comandos com descrição, e digitar `/` no prompt lista e completa. Por quê: pedido do dono; o prompt do Argos não
   pode ser mais pobre que o do próprio agente.
+- 2026-11-28: recolher no foco pelo botão "Sessão" do cabeçalho (`L`), que mostra o contexto de 90% em diante, e
+  pela cabeça da pendência (`M`), que recolhida vira a cabeça da Decisão com o resumo; estado global e lembrado. A
+  lista de comandos é peça do design system, compartilhada pelo foco e pelo nó, e filtra só pelo nome. Por quê: um
+  fio de poucos pixels é alvo difícil, e o alerta de contexto não pode sumir com a linha.
 
 ## Perguntas abertas
 
