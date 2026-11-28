@@ -1,35 +1,32 @@
 # Painel de detalhes
 
-Lista do que se sabe de um agente, no painel da direita do foco: de onde veio, onde trabalha, quanto já custou. É a
-única peça que mostra tudo junto; o nó e a caixa de decisões mostram só o que muda a próxima ação.
+Balão com o que a linha da sessão não mostra inteiro: modelo e esforço, diretório inteiro com Copiar, branch,
+quando começou e o squad com o brief. Abre com `I` ou com "Detalhes" na linha da sessão.
 
 **Anatomia.**
-- Seção com cabeçalho fixo (`isec-h`): rótulo em 12/16 600 e, à direita, contagem ou ação. O mesmo cabeçalho serve
-  a toda seção do painel, então elas rolam juntas e o rótulo de cada uma fica à vista.
-- Lista em duas colunas: rótulo de 88 px em 11 px 600 `text-muted`, valor em 12 px `text`. Identificador, caminho,
-  branch e custo em `mono`; caminho longo quebra em qualquer ponto (`overflow-wrap: anywhere`) em vez de alargar o
-  painel ou cortar o fim, que é a parte que distingue dois diretórios.
-- Linhas, nesta ordem: tipo (com "Ver adaptador"), modelo, esforço, diretório (com "Copiar"), branch, iniciado,
-  custo, contexto (número e barra de 2 px), squad · papel · convocação (com "Abrir brief").
-- Ações da linha são botões fantasma pequenos (`btn ghost xs`, 22 px) numa coluna própria à direita: o valor
-  quebra na coluna dele e a ação não desce de linha.
+- `balloon` do bundle (superfície, fio `border`, sombra `elev-float`), 380 px, sem título: o botão que o abriu já
+  diz o que é.
+- Lista em duas colunas: rótulo de 76 px em 11 px 600 `text-muted`, valor em 12 px `text`. Modelo, caminho e
+  branch em `mono`; caminho longo quebra em qualquer ponto (`overflow-wrap: anywhere`): no balão nada corta.
+- Cinco linhas, nesta ordem: Modelo (· esforço), Diretório (com Copiar), Branch, Iniciado, Squad (com "Abrir
+  brief"). Tipo e estado estão no cabeçalho do foco; custo e contexto, na linha da sessão.
+- Ações da linha são botões fantasma pequenos (`btn ghost xs`, 22 px) numa coluna à direita: o valor quebra na
+  coluna dele e a ação não desce.
 
 **Regras.**
-- Campo que o adaptador não declara some da lista. Aqui a linha ausente não vira "não informado": o painel lista o
-  que existe; quem precisa saber o que falta é a configuração do adaptador.
-- Contexto: barra em `text-muted` na largura do uso; de 90% em diante, barra e número em `agent-error`, peso 600 e
-  "quase cheio", igual ao rodapé do nó.
-- "Copiar" tem largura mínima fixa: trocar para "Copiado" (com `check` em `success`) não mexe no valor ao lado. Volta
-  a "Copiar" em 2 s. Sem ícone de copiar: o conjunto de ícones não tem um, e a palavra basta.
-- Nada aqui se edita. Trocar modelo ou esforço fica fora do foco (pergunta aberta no contrato de adaptador).
+- Ancorado no botão Detalhes: canto superior direito 4 px abaixo da linha da sessão, alinhado ao fim dela. Com a
+  janela larga (sem o botão), `I` abre no mesmo lugar.
+- É um diálogo leve: recebe o foco na primeira ação, fecha com `Esc`, `I` ou clique fora e devolve o foco a quem o
+  abriu. Não bloqueia o terminal nem a coluna do coordenador.
+- Campo que o adaptador não declara some da lista.
+- "Copiar" com largura mínima fixa; "Copiado" por 2 s.
 
 | Estado | Como fica |
 |---|---|
-| Normal | Todas as linhas que o adaptador declara |
-| Campo faltando | A linha some; as outras não mudam de lugar entre si |
+| Normal | Cinco linhas |
+| Campo faltando | A linha some (shell: diretório e iniciado) |
 | Texto longo | Caminho e branch quebram dentro da coluna do valor |
-| Contexto alto | 90% ou mais em `agent-error` |
 | Copiar | Hover `tint-hover`; foco por teclado com o anel; pressionado `tint-pressed`; "Copiado" por 2 s |
 
-**Não fazer.** Esconder o diretório atrás de reticências (o fim do caminho é o que importa); pôr campo editável no
-painel; mostrar "0" ou "—" para o que o adaptador não informa.
+**Não fazer.** Esconder o diretório atrás de reticências aqui (é o único lugar onde ele aparece inteiro); pôr campo
+editável; repetir custo e contexto, que já estão na linha.

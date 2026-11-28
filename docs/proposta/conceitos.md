@@ -53,7 +53,7 @@ Quando só a tela sustenta o estado, ele aparece com o sufixo **(inferido)**
 | **Grupo** | Um conjunto de nós que se move e se enquadra junto: os agentes de uma convocação de squad, ou os agentes avulsos de um projeto |
 | **Enquadrar** | Mover a câmera do canvas para mostrar um grupo ou um agente inteiro. O coordenador enquadra sozinho o grupo de que se está falando |
 | **Zoom semântico** | Ao afastar, o nó troca o terminal por um resumo (nome e estado) em vez de só encolher. Com nove ou mais agentes, é o que mantém o canvas legível |
-| **Foco** | Abrir um agente grande, com o terminal inteiro e o histórico de pendências, e voltar ao canvas no mesmo lugar |
+| **Foco** | Abrir um agente grande, com o terminal ocupando o espaço e a pendência atual no pé dele, e voltar ao canvas no mesmo lugar |
 | **Seleção** | O nó escolhido, marcado com colchetes de canto em cor neutra. Seleção nunca usa cor de estado |
 
 ## Ações sobre o agente

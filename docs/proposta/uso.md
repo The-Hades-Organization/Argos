@@ -57,14 +57,18 @@ atalho para as últimas linhas.
 ## Inspecionar um agente
 
 `F` (agente selecionado ou da decisão em foco) ou clique duplo no cabeçalho do nó abre o foco no lugar do canvas. A
-coluna do coordenador fica ao lado, e a caixa de decisões continua mostrando quem mais espera. O foco tem o terminal
-inteiro com a rolagem e, ao lado, a pendência atual, o histórico de pendências (o que cada uma pediu, a resposta,
-quem respondeu e quando) e os detalhes da sessão.
+coluna do coordenador fica ao lado, e a caixa de decisões continua mostrando quem mais espera. No foco o terminal
+ocupa o espaço, com a rolagem inteira. Acima dele, uma linha com a sessão: modelo e esforço, custo, contexto, branch,
+diretório e squad (que abre o brief).
 
-1. A pendência atual se responde ali, como na caixa de decisões; responder em um lugar resolve os dois.
-2. `P` manda prompt, `/` busca na saída, `D` dispensa com 5 s para desfazer, `J` e `K` trocam o foco para o agente
+1. Quando o agente espera você, a pendência encaixa no pé do terminal, abaixo da última linha dele, e se responde
+   ali, como na caixa de decisões; responder em um lugar resolve os dois. Respondida, ela sai e o terminal recupera
+   a altura.
+2. `I` abre o balão de Detalhes: modelo, diretório inteiro com Copiar, branch, início da sessão e squad. Numa janela
+   estreita a linha da sessão guarda só modelo, custo e contexto, e o resto fica nesse balão.
+3. `P` manda prompt, `/` busca na saída, `D` dispensa com 5 s para desfazer, `J` e `K` trocam o foco para o agente
    da próxima ou da decisão anterior.
-3. Clicar no terminal dá o teclado a ele; `Ctrl+]` devolve ao foco. `Esc`, com o teclado fora do terminal, volta ao
+4. Clicar no terminal dá o teclado a ele; `Ctrl+]` devolve ao foco. `Esc`, com o teclado fora do terminal, volta ao
    canvas no mesmo enquadramento.
 
 Um agente que encerra com o foco aberto não fecha o foco: ele fica cinza, com o motivo e o terminal só para leitura.

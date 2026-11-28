@@ -12,22 +12,21 @@
 .fhd .grow { flex: 1 1 0; min-width: 0; }
 .fhd .acts { display: flex; gap: 6px; flex: none; }
 .fhd .back { flex: none; color: var(--text); }
-.fhd .btn.on { background: var(--tint-selected); }
 .fhd.waiting { background: var(--agent-waiting-bg); }
 .fhd.waiting::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--agent-waiting); }
 .fhd.error { box-shadow: inset 0 0 0 1px var(--agent-error); border-bottom-color: var(--agent-error); }
 .fhd.ended .fnm, .fhd.ended .ftp { color: var(--text-disabled); }
 .fhd.leaving > :not(.back) { opacity: .5; }
 
-/* Corpo: terminal grande e painel */
-.fbody { display: grid; grid-template-columns: minmax(0, 1fr) 360px; min-height: 0; position: relative; }
-.fbody.one { grid-template-columns: minmax(0, 1fr); }
+/* Corpo: linha da sessão, terminal e pendência no pé; o balão de Detalhes abre por cima */
+.fstack { position: relative; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr); min-height: 0; }
+.fstack > .det { top: 34px; right: 6px; }
 .fmain { display: grid; grid-template-rows: minmax(0, 1fr) auto; grid-template-columns: minmax(0, 1fr); min-height: 0; min-width: 0; }
 .fout { position: relative; background: var(--term-bg); color: var(--term-fg); overflow: hidden; display: flex; flex-direction: column; justify-content: flex-start; padding: 10px 12px; min-height: 0; }
 .fout .tx { font: 400 12px/17px var(--mono); white-space: pre; }
 .fout .m { color: var(--term-muted); }
 .fout .ask { color: var(--term-fg); font-weight: 600; }
-.focus .fout { justify-content: flex-end; }
+.focus .fout, .fstack .fout { justify-content: flex-end; }
 .fout .dropped { font: 500 11px/17px var(--sans); color: var(--term-muted); border-bottom: 1px dashed var(--term-muted); padding-bottom: 4px; margin-bottom: 6px; }
 .fout .stale { color: var(--term-muted); }
 .fout .recon { display: flex; margin-bottom: 6px; align-items: center; gap: 6px; font: 500 11px/15px var(--sans); color: var(--term-fg); }
@@ -54,25 +53,29 @@
 .fsearch .n { font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .fsearch .h { font: 400 11px/14px var(--sans); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 
-/* Painel à direita (gaveta na janela estreita) */
-.fside { background: var(--surface); border-left: 1px solid var(--border); overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; min-height: 0; }
-.fside > .isec + .isec { border-top: 1px solid var(--border); }
-.fside.drawer { position: absolute; right: 0; top: 0; bottom: 0; width: 360px; z-index: 2; box-shadow: var(--elev-float); }
-.fside.flat { border-left: 0; }
-.fside .cb { padding: 12px; display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); }
-.fside .none { margin: 0; font: 400 12px/17px var(--sans); color: var(--text-muted); }
-.fside .why { font: 400 12px/17px var(--sans); color: var(--text); }
-.fside .why .row { display: flex; gap: 6px; }
-.fside .done-line { padding: 0; }
-.fside .hl.fresh > .hrow:first-child { background: var(--tint-selected); }
+/* Pendência no pé do terminal: até metade da área; acima disso o conteúdo rola e os botões ficam */
+.fdock { border-top: 1px solid var(--border); background: var(--surface); padding: 10px 12px; display: grid; grid-template-columns: minmax(0, 1fr); max-height: 50%; }
+.fdock .dec .db:has(> .cmd) { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; }
+.fdock .dec .db:has(> .cmd) > .q { grid-column: 1 / -1; }
+.fdock .dec .db:has(> .cmd) > .cmd { grid-column: 1; }
+.fdock .dec .db:has(> .cmd) > .row { grid-column: 2; grid-row: 2; flex-wrap: nowrap; }
+.narrow .fdock .dec .db:has(> .cmd) { grid-template-columns: minmax(0, 1fr); }
+.narrow .fdock .dec .db:has(> .cmd) > .row { grid-column: 1; grid-row: auto; }
+.fdock .scrollbox { max-height: 156px; overflow-y: auto; border-bottom: 1px solid var(--divider); padding-bottom: 6px; }
+.fdock .why { display: grid; gap: 8px; font: 400 12px/17px var(--sans); color: var(--text); }
+.fdock .why .row { display: flex; gap: 6px; }
+.fdock.err { border-top-color: var(--agent-error); }
+.fdock.done { padding-block: 4px; }
+.fdock.done .done-line { padding: 0; }
+.fdock.entering { box-shadow: inset 0 3px 0 var(--agent-waiting); }
 .dec .steps { margin: 0; padding-left: 22px; display: grid; gap: 2px; font: 400 12px/17px var(--sans); color: var(--text); }
 .dec .steps li::marker { font: 400 11px/17px var(--mono); color: var(--text-muted); }
 
 /* Peças nas folhas */
 .sheet.one { grid-template-columns: minmax(0, 1fr); margin-top: 20px; }
 .ffrag { border: 1px solid var(--border); display: grid; grid-template-columns: minmax(0, 1fr); background: var(--surface); }
-.ffrag > .fhd + .fhd { border-top: 0; }
-.ffrag > .fhd + .fside, .ffrag > .fmain + .fside { border-top: 1px solid var(--border); }
+.ffrag > .fhd + .fhd, .ffrag > .fdock + .fhd { border-top: 1px solid var(--border); }
+.ffrag > .fstack { height: 300px; }
 
 @media (prefers-reduced-motion: no-preference) {
   .fhd.just .s-idle .dot { animation: just-done 900ms ease-out 1; }
@@ -101,6 +104,10 @@
 .narrow .fdock .dec .db > .row { grid-column: 1; grid-row: auto; }
 
 /* B · resumo no cabeçalho, balão de detalhes e gaveta da pendência */
+.fbody { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 0; position: relative; }
+.isec { display: grid; grid-template-columns: minmax(0, 1fr); background: var(--surface); }
+.isec-h { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 8px; min-height: 32px; padding: 6px 12px; background: var(--surface); border-bottom: 1px solid var(--divider); font: 600 12px/16px var(--sans); color: var(--text); }
+.fhd .btn.on { background: var(--tint-selected); }
 .fhd .fsum { display: inline-flex; align-items: center; gap: 6px; margin-right: 6px; font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .fdet { top: 6px; right: 96px; width: 380px; padding: 4px 0; z-index: 3; }
 .fdrawer { position: absolute; top: 0; right: 0; bottom: 0; width: 360px; z-index: 2; background: var(--surface); border-left: 1px solid var(--border); box-shadow: var(--elev-float); }
