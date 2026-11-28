@@ -35,8 +35,11 @@ técnico e quer a interface curta e direta.
 
 ## O que o Argos novo faz
 
-- Mostra sempre a fila de quem espera o dono, com o tipo da pendência, e responde permissão, pergunta e plano ali
-  mesmo.
+- Mostra sempre a caixa de decisões, com quem espera o dono, o tipo da pendência e a opção recomendada, e responde
+  permissão, pergunta, plano e proposta ali mesmo.
+- Tem um coordenador: o dono pede ao time em texto, e o coordenador propõe antes de recrutar, enquadrar ou dispensar.
+- Monta squads: times salvos em disco, com um brief autocontido por membro, convocados de novo para tarefas futuras
+  ([conceitos.md](conceitos.md#coordenador-e-squads)).
 - Aceita qualquer agente de linha de comando por um adaptador declarado em arquivo ([arquitetura.md](arquitetura.md)).
 - Tem terminal próprio, desenhado pelo app, sobre sessões que sobrevivem ao fechar o app.
 - Mantém o canvas, com agrupamento e zoom semântico para nove ou mais agentes, e com menos passos para recrutar,

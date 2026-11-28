@@ -6,9 +6,12 @@
 
 App desktop gpui onde um dev acompanha nove ou mais agentes de linha de comando (Claude Code, Codex, Gemini CLI,
 OpenCode, agy e os que vierem) num canvas. Trabalho número um da tela principal: **ver quem precisa do dono e
-responder**. A fila de "esperando você" fica sempre visível, e permissão, pergunta e plano são respondidos sem abrir o
-terminal. Com nove ou mais agentes vivos, o canvas agrupa e usa zoom semântico. Recrutar, acompanhar e dispensar vêm
-depois, com menos passos que no Argos atual. Detalhe em `docs/proposta/produto.md`.
+responder**. A tela principal tem uma coluna fixa com o **coordenador** (pedido ao time em texto) e a **caixa de
+decisões** (cada pendência com a opção recomendada primeiro), e o canvas à direita, enquadrado no grupo de que se está
+falando. Permissão, pergunta, plano e proposta são respondidos sem abrir o terminal. Com nove ou mais agentes vivos, o
+canvas agrupa e usa zoom semântico. **Squads** são de primeira classe: times salvos em disco, propostos pelo
+coordenador, aprovados pelo dono e convocados de novo para tarefas futuras. Recrutar, acompanhar e dispensar vêm com
+menos passos que no Argos atual. Detalhe em `docs/proposta/produto.md`, `conceitos.md` e `uso.md`.
 
 ## Público e voz
 
@@ -100,6 +103,11 @@ página pública em 2026-11-28.
 - 2026-11-28: fundações do design system aprovadas, com três escolhas próprias do Argos: rosa só para "esperando
   você", anel de foco azul e seleção neutra em colchetes de canto. Por quê: a atenção do canvas tem uma cor só, e
   seleção não se confunde com estado.
+- 2026-11-28: tela principal na direção Coordenador: coluna fixa com o pedido ao time e a caixa de decisões, canvas à
+  direita enquadrado sozinho. Salas (canvas na janela, fila flutuante) e Triagem (mesa de um pedido por vez)
+  descartadas. Por quê: escolha do dono entre três direções desenhadas.
+- 2026-11-28: squads de agentes como conceito de primeira classe, com telas próprias (proposta para aprovação,
+  biblioteca, convocação). Por quê: pedido do dono, para reaproveitar times especializados sem depender da conversa.
 
 ## Perguntas abertas
 

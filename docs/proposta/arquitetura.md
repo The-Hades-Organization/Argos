@@ -41,7 +41,7 @@ ele não cai num padrão em silêncio.
 ### Sinais de estado, por confiança
 
 O estado de cada agente é um destes seis: iniciando, trabalhando, ocioso, esperando você, erro, encerrado. "Esperando
-você" carrega o tipo da pendência (permissão, pergunta, plano, outra). O núcleo combina três fontes, da mais confiável
+você" carrega o tipo da pendência (permissão, pergunta, plano, proposta, outra). O núcleo combina três fontes, da mais confiável
 para a menos:
 
 1. **Eventos estruturados.** O agente avisa por hook ou notificação e o evento cai no diário do Hades-Core. O Claude
@@ -73,6 +73,71 @@ o multiplexador impõe hoje (Hades-Skill, `reference/argos.md`):
 O supervisor guarda o histórico de rolagem de cada sessão e um tamanho por cliente; o app pede só o trecho visível.
 Candidatos para o parser de terminal e o PTY: crates Rust maduras de emulação VT e de PTY portátil; versão e licença
 (compatível com GPL-3.0) conferidas ao escolher.
+
+## Coordenador e squads
+
+O coordenador é um agente como os outros, recrutado por um adaptador, com um papel a mais: ele recebe os pedidos do
+dono em texto e age pelo `argos-cli` (recrutar, enquadrar, dispensar, propor e salvar squad, convocar). Tudo o que ele
+quer fazer e muda o canvas ou o disco chega primeiro ao dono como pendência do tipo **proposta**, na caixa de decisões.
+Os termos estão em [conceitos.md](conceitos.md#coordenador-e-squads); o fluxo, em [uso.md](uso.md#squads).
+
+Um squad é um time salvo em disco e reutilizável. Os arquivos não dependem da conversa que criou o squad: cada membro
+recebe um brief autocontido, e o squad pode ser convocado meses depois por outro coordenador, ou pela CLI, com o mesmo
+resultado.
+
+### Onde fica
+
+| Escopo | Pasta | Uso |
+|---|---|---|
+| Global | `<config do Argos>/squads/<id>/` | Squad que serve a qualquer projeto (revisão de PR, triagem de bug) |
+| Projeto | `<work root>/.argos/squads/<id>/` | Squad especializado num módulo ou numa base de código; vence o global de mesmo `id` |
+
+Cada pasta de squad tem um manifesto (`squad.toml`) e um brief por membro (`membros/<papel>.md`). Nada mais é lido.
+
+### Manifesto do squad
+
+| Campo | Obrigatório | Declara |
+|---|---|---|
+| `contrato` | sim | Versão do formato. Só cresce, como o contrato de adaptador |
+| `id`, `nome` | sim | Identificador estável e nome mostrado |
+| `especialidade` | sim | Uma frase: em que o squad é bom ("bugs de concorrência no `hades-core`") |
+| `estado` | sim | `ativo` ou `aposentado` |
+| `revisao` | sim | Número que sobe a cada edição gravada; a convocação registra a revisão usada |
+| `entrada` | sim | O que a convocação pede: a tarefa em texto e o diretório; branch e referências são opcionais |
+| `membros` | sim | Lista de membros: `papel`, `adaptador`, `modelo`, `esforco`, `brief` (caminho do brief), `le` (o que lê), `entrega` (o que produz e onde), `depende_de` (papéis cuja entrega ele espera) |
+| `pronto_quando` | sim | Critério de pronto do squad inteiro, verificável sem perguntar ao coordenador |
+| `orcamento` | não | Custo máximo estimado por convocação, em US$; passar dele vira pendência |
+
+Variáveis de ambiente entram por referência, nunca por valor, como no adaptador. Segredo não entra em arquivo de
+squad.
+
+### Brief do membro
+
+Markdown com seções fixas, para que o núcleo confira a estrutura ao carregar:
+
+| Seção | Conteúdo |
+|---|---|
+| Objetivo | O que este papel faz no squad, numa frase |
+| O que lê | Caminhos, tipos de arquivo e entregas de outros papéis. Nunca "o que foi conversado" |
+| O que entrega | Arquivo, relatório ou PR, com formato e destino |
+| Pronto quando | Critério verificável deste papel |
+| Limites | O que não toca e quando para e pergunta ao dono |
+
+O brief usa só três marcadores, preenchidos na convocação: `{tarefa}`, `{dir}` e `{entrega:<papel>}`. Marcador
+desconhecido ou seção faltando impede a carga, e o squad aparece com erro na biblioteca; ele não é convocado pela
+metade.
+
+### Gravação e convocação
+
+- **Gravar.** O coordenador grava pelo `argos-cli squad salvar`. O núcleo só aceita a gravação de uma proposta que o
+  dono aprovou; a aprovação fica no diário. A pasta é escrita de forma atômica, com o lock do Hades-Core.
+- **Editar.** Uma edição é uma proposta nova com a diferença para a revisão atual. Edição à mão nos arquivos também
+  vale: o núcleo relê, confere a estrutura e sobe a `revisao`.
+- **Aposentar.** Muda `estado` para `aposentado`. Os arquivos ficam, e as convocações antigas continuam apontando para
+  a revisão que usaram.
+- **Convocar.** Cria um agente por membro com o brief preenchido como prompt inicial, na ordem de `depende_de`. Os
+  agentes aparecem juntos no canvas, como um grupo da convocação. As entregas vão para
+  `<work root>/.argos/convocacoes/<id>/`, e o diário registra a convocação, o squad, a revisão e o custo.
 
 ## O que vem do Hades-Core
 
