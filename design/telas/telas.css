@@ -1,0 +1,43 @@
+/* Layout das telas: só papéis de token. As peças vêm de bundle.css. */
+body { background: var(--canvas); color: var(--text); }
+.doc { max-width: 1240px; margin: 0 auto; padding-block: 32px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+.doc h1 { font: 400 32px/38px var(--display); margin: 0; text-wrap: balance; }
+.doc h2 { font: 400 20px/26px var(--display); margin: 0 0 8px; text-wrap: balance; }
+.doc p { margin: 0; max-width: 72ch; color: var(--text-muted); font-size: 14px; line-height: 21px; }
+.doc .lead { color: var(--text); font-size: 15px; line-height: 23px; }
+.dochead { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; justify-content: space-between; }
+.dochead .titles { display: grid; gap: 10px; min-width: 0; flex: 1 1 480px; }
+.themes { display: flex; border: 1px solid var(--border); }
+.themes button { height: 28px; padding: 0 10px; border: 0; background: transparent; color: var(--text-muted); font: 600 12px/16px var(--sans); cursor: pointer; }
+.themes button[aria-pressed="true"] { background: var(--tint-selected); color: var(--text); }
+.themes button:hover { background: var(--tint-hover); }
+.themes button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.facts > div { background: var(--surface); padding: 14px 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.facts b { font: 600 12px/16px var(--sans); color: var(--text-muted); }
+.facts span b { color: var(--text); }
+.facts span { font-size: 13px; line-height: 19px; }
+.cap { font: 500 12px/18px var(--sans); color: var(--text-muted); margin-top: 8px; }
+.viewport { position: relative; width: 100%; overflow: hidden; border: 1px solid var(--border); }
+.viewport > .frame { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+
+/* Coluna do coordenador (392 px), como na página do componente */
+.coord { position: absolute; left: 0; top: 0; bottom: 0; width: 392px; background: var(--surface); border-right: 1px solid var(--border); display: grid; grid-template-rows: auto 1fr auto; z-index: 1; }
+.coord .ask { padding: 14px; border-bottom: 1px solid var(--border); display: grid; gap: 8px; }
+.coord .list { padding: 12px 14px; display: grid; gap: 8px; align-content: start; overflow: hidden; }
+.coord .foot { border-top: 1px solid var(--border); padding: 8px 14px; font-size: 11px; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 6px 12px; }
+.coord .push { margin-left: auto; }
+.coord .field .grow { flex: 1; min-width: 0; }
+.dec .dh .tp { font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.dec .dh .age { margin-left: auto; font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dec .opts { gap: 4px; }
+.qkind { font: 600 11px/14px var(--sans); color: var(--text); white-space: nowrap; }
+.msg { display: grid; gap: 4px; font-size: 13px; line-height: 19px; }
+.msg .by { font: 600 11px/14px var(--sans); color: var(--text-muted); }
+
+/* Controles sobre o canvas */
+.float .sep { width: 1px; align-self: stretch; margin: 4px 2px; background: var(--divider); }
+.float .tool { height: 28px; color: var(--text); }
+.btn.ghost.strong { color: var(--text); }
+.offscreen { position: absolute; right: 16px; top: 16px; padding: 6px 10px; display: flex; gap: 12px; align-items: center; font-size: 11px; }
+.node .ft .link { display: inline-flex; align-items: center; gap: 4px; color: var(--text); font-family: var(--sans); font-weight: 600; }

@@ -114,6 +114,10 @@ página pública em 2026-11-28.
 - 2026-11-28: telas de squad como planta no canvas: nós tracejados, paleta flutuante com o histórico e squad
   convocado recolhido numa faixa. Linha de montagem e mesa de composição descartadas. Por quê: escolha do
   dono, que pediu tratar a disputa de espaço com os agentes vivos e o histórico escondido.
+- 2026-11-28: dispensar um agente não pede confirmação: dá 5 s para desfazer antes de encerrar o processo. Por
+  quê: escolha do dono, um passo a menos no fluxo mais repetido.
+- 2026-11-28: nó encerrado sai sozinho do canvas para o Histórico depois de 10 min. Por quê: escolha do dono, o
+  canvas fica só com quem está vivo.
 
 ## Perguntas abertas
 
