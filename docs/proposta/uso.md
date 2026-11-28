@@ -3,7 +3,7 @@
 O dono passa o dia na tela principal: à esquerda, a coluna do coordenador com o campo de pedido ao time e a caixa de
 decisões; à direita, o canvas, enquadrado no grupo de que se está falando. Responder uma pendência custa uma tecla
 quando a opção recomendada serve. Recrutar e montar um squad custam uma frase e um ok. Os termos estão em
-[conceitos.md](conceitos.md); as telas, nos Artifacts listados em [artifacts.md](artifacts.md).
+[conceitos.md](conceitos.md); as telas, nas páginas de `design/` listadas em [paginas.md](paginas.md).
 
 ## Atalhos da tela principal
 

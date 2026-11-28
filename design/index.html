@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design do Argos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Marcellus&display=swap">
+<link rel="stylesheet" href="telas/tokens.css">
+<link rel="stylesheet" href="telas/bundle.css">
+<style>
+body { margin: 0; background: var(--canvas); color: var(--text); font: 400 14px/21px var(--sans); }
+main { max-width: 880px; margin: 0 auto; padding: 32px 16px 64px; display: grid; gap: 24px; }
+h1 { font: 400 32px/38px var(--display); margin: 0; }
+p { margin: 0; color: var(--text-muted); max-width: 72ch; }
+code { font: 400 12px/18px var(--mono); }
+ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+li { border-bottom: 1px solid var(--border); }
+li a { display: grid; gap: 2px; padding: 12px 8px; color: var(--text); text-decoration: none; }
+li a:hover { background: var(--tint-hover); }
+li a:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+li b { font-weight: 600; }
+li span { color: var(--text-muted); }
+li code { color: var(--text-muted); }
+</style>
+<main>
+  <h1>Design do Argos</h1>
+  <p>As páginas de design do Argos novo, para abrir no navegador. Cada tela tem um seletor de tema (Sistema, Escuro,
+  Claro) no canto de cima.</p>
+  <ul>
+    <li><a href="design-system/index.html"><b>Design system</b><span>Princípios, voz, tokens nos dois temas, componentes com seus estados e ícones</span><code>design/design-system/</code></a></li>
+    <li><a href="direcoes/coordenador.html"><b>Direção Coordenador</b><span>A direção escolhida para a tela principal: caixa de decisões e pedido ao time em texto</span><code>design/direcoes/coordenador.html</code></a></li>
+    <li><a href="direcoes/squads-planta.html"><b>Telas de squad: planta no canvas</b><span>Proposta de squad para aprovação, paleta com histórico, convocar soltando no canvas e squad recolhido</span><code>design/direcoes/squads-planta.html</code></a></li>
+    <li><a href="telas/canvas-principal.html"><b>Canvas principal</b><span>Estado padrão, ninguém esperando, muitos agentes, pedido ao time em andamento e folhas de dados, sistema, atividade e interação, com a janela de 1024 px</span><code>design/telas/canvas-principal.html</code></a></li>
+    <li><a href="telas/recrutar.html"><b>Recrutar</b><span>Lançador de tipos de agente: padrão, primeira vez no projeto, recrutado agora e folhas de dados, sistema, atividade e interação</span><code>design/telas/recrutar.html</code></a></li>
+    <li><a href="telas/no.html"><b>Nó de agente</b><span>Os seis estados a 100%, o nó ao afastar o zoom e folhas de dados, sistema, atividade e interação</span><code>design/telas/no.html</code></a></li>
+  </ul>
+</main>
