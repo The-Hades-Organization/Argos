@@ -148,4 +148,4 @@ Cada componente tem anatomia, regra com o porquê e matriz de estados na própri
 | Balão de tarefa | Squad | Pede a tarefa ao soltar o squad: vazio, preenchido, convocando e erro |
 | Faixa do squad | Squad | Squad convocado recolhido em células: em andamento, esperando você, erro e pronto |
 
-As peças de squad seguem a direção planta no canvas, escolhida pelo dono em 28/11 (aguardando o ok nos componentes).
+As peças de squad seguem a direção planta no canvas, escolhida pelo dono em 28/11; componentes aprovados no mesmo dia.
