@@ -1,0 +1,35 @@
+/* Vazio e erro: peças de bundle.css; acréscimos da tela só com papéis de token. */
+.vtop { position: absolute; left: 392px; right: 0; top: 0; z-index: 2; display: grid; }
+.narrow .vtop, .narrow .vcenter { left: var(--queue-width); }
+.vtop .faixa { border-bottom: 1px solid var(--divider); }
+.faixa .acts .next { align-self: center; min-width: 22ch; padding-right: 6px; text-align: right; font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vcenter { position: absolute; left: 392px; right: 0; top: 0; bottom: 0; display: grid; place-items: center; padding: 16px; }
+.ptitle .seen { display: inline-flex; align-items: center; gap: 4px; font: 400 11px/14px var(--mono); color: var(--text-muted); white-space: nowrap; }
+.ptitle .seen svg.ic { width: 12px; height: 12px; }
+.float .tool.is-disabled { color: var(--text-disabled); border-color: transparent; }
+.field .ph { color: var(--text-placeholder); }
+.field.is-disabled .ph { color: var(--text-disabled); }
+.opt.off { background: transparent; border-color: var(--divider); }
+.opt.off .t, .opt.off .d, .opt.off .k, .opt.off .rec-tag { color: var(--text-disabled); }
+.dec.frozen .q { color: var(--text-muted); }
+.dec.frozen .dh .age { font-family: var(--mono); }
+.node.dead { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; }
+.node.dead .term { position: relative; }
+.node .again { display: flex; align-items: center; gap: 8px; padding: 4px 6px; border-top: 1px solid var(--divider); background: var(--surface); }
+.node .again .why { font: 400 11px/14px var(--sans); color: var(--text-muted); }
+.vfrag { display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); }
+.vfrag.stage { position: relative; min-height: 220px; border: 1px dashed var(--divider); background: var(--canvas); }
+.vfrag.stage.tall { min-height: 400px; }
+.vfrag .vcenter { left: 0; }
+.vfrag.skels { position: relative; }
+.vfrag.skels .node { position: relative; }
+.vcount { font: 400 11px/14px var(--mono); color: var(--text-muted); }
+.vnote { display: grid; gap: 6px; justify-items: start; padding: 10px 12px; border-top: 1px solid var(--divider); font: 400 12px/17px var(--sans); color: var(--text-muted); }
+.vnote .btn { margin-left: -10px; }
+.vsides { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.vside { display: grid; gap: 6px; align-content: start; justify-items: start; padding: 12px; border: 1px solid var(--border); background: var(--surface); font: 400 12px/17px var(--sans); }
+.vside b { font: 600 13px/18px var(--sans); }
+.vside .m { color: var(--text-muted); font-family: var(--mono); font-size: 11px; }
+.vside ul { margin: 0; padding-left: 16px; }
+.keys { display: grid; gap: 8px; }
+.krow { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; align-items: center; font: 400 12px/17px var(--sans); }

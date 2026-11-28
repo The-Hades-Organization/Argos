@@ -5,6 +5,21 @@ decisões; à direita, o canvas, enquadrado no grupo de que se está falando. Re
 quando a opção recomendada serve. Recrutar e montar um squad custam uma frase e um ok. Os termos estão em
 [conceitos.md](conceitos.md); as telas, nas páginas de `design/` listadas em [paginas.md](paginas.md).
 
+## Primeira vez
+
+O canvas abre vazio, sem tour: no centro, "Nenhum agente ainda" com **Recrutar** (`R`) e um exemplo de pedido ao
+coordenador; o campo do coordenador já vem focado. Os tipos de fábrica que encontram o programa no PATH já estão
+prontos; os outros aparecem desativados no lançador, com o motivo na linha, e o shell sempre funciona. Sem o work root
+do Hades-Core, uma faixa avisa que o estado vem só do terminal e oferece **Criar em ~/.hades**.
+
+## Quando algo falha
+
+Todo erro do sistema entra numa faixa no topo do canvas, com a causa e a ação; `Enter` com a faixa em foco faz a ação.
+Supervisor que não responde: os nós ficam com o último estado, marcados com a hora e sem digitação, e o Argos tenta
+de novo a cada 5 s. Supervisor que morreu: ele volta sozinho, os agentes ficam encerrados no canvas e cada um oferece
+recrutar de novo com a mesma sessão, quando o adaptador sabe retomar. Canvas salvo ilegível: os agentes vivos
+aparecem lado a lado, e a faixa oferece a última cópia boa.
+
 ## Atalhos da tela principal
 
 | Tecla | Faz |
