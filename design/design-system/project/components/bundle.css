@@ -18,7 +18,7 @@ svg.ic { width: 16px; height: 16px; stroke-width: 1.5; flex: none; }
 .rail .mark { font: 400 20px/24px var(--display); margin-bottom: 14px; }
 .rail .rb { width: 36px; height: 36px; display: grid; place-items: center; color: var(--on-rail); opacity: .72; position: relative; }
 .rail .rb.on { opacity: 1; background: color-mix(in srgb, var(--on-rail) 12%, transparent); }
-.rail .rb .n { position: absolute; top: 3px; right: 2px; min-width: 15px; height: 15px; padding: 0 3px; font: 600 10px/15px var(--mono); background: var(--agent-waiting); color: var(--on-primary); text-align: center; border-radius: 9999px; }
+.rail .rb .n { position: absolute; top: 3px; right: 2px; min-width: 15px; height: 15px; padding: 0 3px; font: 600 10px/15px var(--mono); background: var(--agent-waiting); color: var(--on-agent-waiting); text-align: center; border-radius: 9999px; }
 .rail .sp { flex: 1; }
 .status { grid-column: 2; background: var(--surface); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 16px; padding: 0 12px; font: 400 11px/14px var(--sans); color: var(--text-muted); }
 .status .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
@@ -105,7 +105,7 @@ svg.cables path.on { stroke: var(--cable-active); }
 /* Painéis e linhas de fila */
 .panel { background: var(--surface); border: 1px solid var(--border); }
 .ptitle { font: 400 15px/20px var(--display); display: flex; align-items: center; gap: 8px; }
-.count { font: 600 11px/18px var(--mono); padding: 0 6px; background: var(--agent-waiting); color: var(--on-primary); border-radius: 9999px; }
+.count { font: 600 11px/18px var(--mono); padding: 0 6px; background: var(--agent-waiting); color: var(--on-agent-waiting); border-radius: 9999px; }
 .qrow { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 8px 10px; background: var(--agent-waiting-bg); border: 1px solid transparent; }
 .qrow.cur { border-color: var(--agent-waiting); }
 .qrow .who { font: 600 13px/18px var(--sans); display: flex; gap: 6px; align-items: center; min-width: 0; }

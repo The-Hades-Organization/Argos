@@ -5,8 +5,8 @@ de linha de comando e responde o que cada um pede. Família Hades (fontes, forma
 Hades-UI v0.3.1), com tokens próprios para estado do agente, nó, cabo e terminal. O brief que manda nestas escolhas é o
 `DESIGN.md` do repositório Argos.
 
-> **Estado:** fundações e regras de interação aprovadas pelo dono em 28/11. Nove componentes base e os ícones em
-> rascunho, aguardando o ok do dono. A tela principal segue a direção Coordenador.
+> **Estado:** fundações, regras de interação, nove componentes base e os ícones aprovados pelo dono em 28/11. A
+> tela principal segue a direção Coordenador.
 
 ## Princípios
 
@@ -42,7 +42,7 @@ Os componentes pedem papéis, nunca valores. Os valores estão em `tokens.json`,
 | Texto | `text`, `text-muted`, `text-placeholder`, `text-disabled`, `on-rail` | `text-placeholder` é mais claro que `text-muted`, para nunca parecer texto digitado |
 | Linhas | `border`, `border-hover`, `divider` | Um peso de fio; `divider` mais leve, para lista não virar caixa |
 | Camadas | `tint-hover`, `tint-selected`, `tint-pressed` | Translúcidas: servem em qualquer chão |
-| Ação | `primary`, `primary-hover`, `primary-pressed`, `on-primary` | Uma ação principal por tela |
+| Ação | `primary`, `primary-hover`, `primary-pressed`, `on-primary` | Uma ação principal por tela. Neutra (claro no escuro, escuro no claro): o rosa é só de quem espera |
 | Foco e seleção | `focus`, `select-mark` | Foco é azul e só aparece por teclado; seleção é neutra, em colchetes de canto |
 | Sistema | `success`, `warn`, `danger`, `info` e os `-bg` | Estado de operação (custo alto, falha de gravação); nunca decoração |
 | Terminal | `term-bg`, `term-fg`, `term-muted`, `term-cursor`, `term-selection` | Escuro nos dois temas, como no Hades |
@@ -57,7 +57,7 @@ Estado nunca é só cor: cada um tem forma e palavra. A palavra aparece no cabe�
 | Iniciando | `agent-starting` | Anel tracejado | Iniciando |
 | Trabalhando | `agent-working` | Ponto cheio | Trabalhando · 12s |
 | Ocioso | `agent-idle` | Ponto vazado | Ocioso · 4 min |
-| Esperando você | `agent-waiting` + `agent-waiting-bg` | Faixa no topo do nó, ponto cheio, pulso | Esperando você · permissão |
+| Esperando você | `agent-waiting` + `agent-waiting-bg` (texto por cima em `on-agent-waiting`) | Faixa no topo do nó, ponto cheio, pulso | Esperando você · permissão |
 | Erro | `agent-error` | Triângulo; borda do nó em `agent-error` | Erro · saiu com código 1 |
 | Encerrado | `agent-ended` | Ponto com x; nó em `text-disabled` | Encerrado |
 

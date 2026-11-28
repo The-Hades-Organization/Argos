@@ -108,6 +108,9 @@ página pública em 2026-11-28.
   descartadas. Por quê: escolha do dono entre três direções desenhadas.
 - 2026-11-28: squads de agentes como conceito de primeira classe, com telas próprias (proposta para aprovação,
   biblioteca, convocação). Por quê: pedido do dono, para reaproveitar times especializados sem depender da conversa.
+- 2026-11-28: componentes base e ícones aprovados; a ação principal (`primary`) passa a neutro claro no tema escuro
+  (fundo claro, texto escuro) e neutro escuro no claro. Texto sobre o rosa ganha token próprio, `on-agent-waiting`.
+  Por quê: o botão principal fica dentro dos cartões de decisão, e dois rosas lado a lado se confundiam.
 
 ## Perguntas abertas
 
