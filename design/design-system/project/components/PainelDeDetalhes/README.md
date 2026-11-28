@@ -5,7 +5,7 @@ Lista do que se sabe de um agente, no painel da direita do foco: de onde veio, o
 
 **Anatomia.**
 - Seção com cabeçalho fixo (`isec-h`): rótulo em 12/16 600 e, à direita, contagem ou ação. O mesmo cabeçalho serve
-  ao histórico de pendências, então as seções do painel rolam juntas e o rótulo de cada uma fica à vista.
+  a toda seção do painel, então elas rolam juntas e o rótulo de cada uma fica à vista.
 - Lista em duas colunas: rótulo de 88 px em 11 px 600 `text-muted`, valor em 12 px `text`. Identificador, caminho,
   branch e custo em `mono`; caminho longo quebra em qualquer ponto (`overflow-wrap: anywhere`) em vez de alargar o
   painel ou cortar o fim, que é a parte que distingue dois diretórios.

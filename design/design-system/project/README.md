@@ -140,7 +140,6 @@ Cada componente tem anatomia, regra com o porquê e matriz de estados na própri
 | Estado do agente | Agente | Forma, palavra e tempo dos seis estados, mais "(inferido)" |
 | Nó de agente | Agente | A peça do canvas, nos seis estados, selecionado, hover, foco e zoom distante |
 | Painel de detalhes | Agente | O que se sabe do agente no foco: tipo, modelo, diretório, custo, contexto, squad; campo ausente some |
-| Histórico de pendências | Agente | O que o agente pediu e quem respondeu; aberta, vazia e com erro de leitura |
 | Decisão | Decisões | Cartão de permissão, pergunta, plano e proposta, com a opção recomendada |
 | Coluna do coordenador | Decisões | Pedido ao time, caixa de decisões e atalhos; vazia e com erro |
 | Trilho | Navegação | Canvas, Squads, Histórico, Adaptadores e Configuração |
