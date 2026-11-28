@@ -148,6 +148,11 @@ página pública em 2026-11-28.
 - 2026-11-28: trocar o modelo de um agente no meio do trabalho fica fora da tela de foco, como pergunta aberta
   sobre uma parte opcional futura do contrato de adaptador. Por quê: escolha do dono; o contrato ainda não declara
   a troca.
+- 2026-11-28: no foco de um agente, o terminal ocupa o espaço. Sob o cabeçalho, uma linha de 30 px com a
+  sessão (modelo e esforço, custo, contexto, branch, diretório copiável, squad com o brief); a pendência atual
+  encaixa no pé do terminal, abaixo da última linha do agente; sem coluna fixa nem histórico de pendências.
+  Detalhes viram um balão de cinco linhas (`I`) só na janela estreita. Por quê: escolha do dono entre duas
+  direções; o que se consulta ao acompanhar fica à vista e nada cobre a saída do agente.
 
 ## Perguntas abertas
 
