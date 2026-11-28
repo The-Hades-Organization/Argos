@@ -16,7 +16,7 @@ quando a opção recomendada serve. Recrutar e montar um squad custam uma frase 
 | `T` | Abre o terminal do agente da decisão em foco |
 | `F` | Abre o foco do agente; `Esc` volta ao canvas no mesmo lugar |
 | `R` | Abre o recrutamento de um agente avulso |
-| `P` | Com um nó selecionado, abre o campo para mandar prompt a ele |
+| `P` | Com um nó selecionado, abre o campo para mandar prompt a ele; `Ctrl+Enter` envia, `Enter` quebra linha, `Esc` fecha |
 | `Ctrl+]` | Devolve ao canvas o teclado que estava no terminal de um nó (clicar fora do nó também devolve) |
 
 Nenhum atalho do Argos atual foi pedido pelo dono para continuar (pergunta aberta no [DESIGN.md](../../DESIGN.md)).

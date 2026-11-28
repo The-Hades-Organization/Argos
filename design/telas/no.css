@@ -1,27 +1,13 @@
 /* Nó de agente: peças de bundle.css; acréscimos do nó só com papéis de token. */
 .spec .in > .node + .node { margin-top: 8px; }
-.node .ft { position: relative; }
-.node .ft .ctx { position: absolute; left: 0; bottom: -1px; height: 2px; width: var(--p); background: var(--text-muted); }
-.node .ft .ctx.full, .node .ft .ctx-t.full { color: var(--agent-error); }
-.node .ft .ctx.full { background: var(--agent-error); }
-.node .ft .ctx-t.full { font-weight: 600; }
 .node .ft .r { display: inline-flex; gap: 4px; align-items: center; }
 .node .ft .link + .link { margin-left: 8px; }
-.node .term { position: relative; }
 .node.wrap .term { white-space: pre-wrap; overflow-wrap: anywhere; }
 .node .term .ask-q { display: block; color: var(--term-fg); white-space: pre-wrap; padding-bottom: 6px; margin-bottom: 6px; border-bottom: 1px solid var(--term-muted); }
 .node .term .ask-q.clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; max-height: calc(3 * 15px); padding-bottom: 0; border-bottom: 0; margin-bottom: 4px; }
 .node .term .more-l { display: block; font: 600 11px/15px var(--sans); color: var(--term-fg); text-decoration: underline; text-underline-offset: 2px; }
-.node .term .newlines { position: absolute; right: 10px; bottom: 8px; padding: 2px 8px; background: var(--surface); color: var(--text); border: 1px solid var(--border); font: 600 11px/16px var(--sans); }
 .node .term .recon { display: flex; align-items: center; gap: 6px; font: 500 11px/15px var(--sans); color: var(--term-fg); margin-bottom: 6px; }
 .node .term .stale { color: var(--term-muted); }
-.node .term .cur { display: inline-block; width: 7px; height: 13px; background: var(--term-fg); vertical-align: -2px; }
-.node .pfield { border-top: 1px solid var(--border); padding: 6px 10px 5px; display: grid; gap: 4px; }
-.node .pbox { border: 1px solid var(--focus); background: var(--fill-1); padding: 4px 8px; font: 400 12px/17px var(--sans); color: var(--text); max-height: calc(4 * 17px + 10px); overflow: hidden; }
-.node .pbox .caret { display: inline-block; width: 1px; height: 14px; background: var(--text); vertical-align: -2px; margin-left: 1px; }
-.node .phint { font: 400 11px/14px var(--sans); color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
-.node .ft.kb { font-family: var(--sans); color: var(--text); font-weight: 600; }
-.node .ft.kb .r { font-weight: 400; color: var(--text-muted); }
 .spec .in > .node.is-focus { margin: 4px; }
 .zgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(336px, 1fr)); gap: 24px 16px; }
 .zitem { display: grid; gap: 8px; justify-items: start; align-content: start; }

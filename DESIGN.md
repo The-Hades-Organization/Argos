@@ -136,6 +136,11 @@ página pública em 2026-11-28.
   vermelho com "quase cheio". Não entra na caixa de decisões. Por quê: escolha do dono.
 - 2026-11-28: agente em Iniciando vira erro quando passa do prazo declarado pelo adaptador; antes disso, o nó
   mostra o tempo. Por quê: escolha do dono, nenhum nó fica parado em Iniciando sem fim.
+- 2026-11-28: em todo campo de prompt (lançador de Recrutar, campo do nó, pedido ao time), `Enter` quebra linha e
+  `Ctrl+Enter` envia; `Esc` fecha o campo do nó sem enviar. Por quê: escolha do dono, um prompt longo não sai pela
+  metade e a tecla é a mesma em toda parte.
+- 2026-11-28: tela do nó de agente aprovada; a barra de contexto, o aviso de linhas novas, o campo de prompt no
+  rodapé e o rodapé "Teclado no terminal" entram no componente Nó de agente do design system. Por quê: ok do dono.
 
 ## Perguntas abertas
 

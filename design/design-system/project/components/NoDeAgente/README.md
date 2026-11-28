@@ -20,4 +20,25 @@ contexto.
 | Foco (teclado) | Anel `focus` de 2 px; com seleção, os dois aparecem juntos |
 | Zoom distante | Vira célula (168 × 44): nome e estado, na mesma posição. Esperando e erro mantêm fio e fundo do estado |
 
+<!-- peças:inicio -->
+## Peças do rodapé e do terminal
+
+**Barra de contexto.** Fio de 2 px no pé do rodapé, da esquerda, na largura do contexto usado; em `text-muted`. De
+90% em diante, fio e número em `agent-error` com "quase cheio" e peso 600. Fica só no nó: não entra na caixa de
+decisões. Adaptador que não declara contexto mostra "contexto não informado", nunca zero.
+
+**Linhas novas.** Quando o dono rolou o terminal para cima e chega saída, aparece "↓ N linhas novas" no canto de
+baixo do terminal, em `surface` com fio `border`. Clique ou `Enter` (com foco) volta ao fim e o aviso some. Hover
+escurece o fio (`border-hover`); foco por teclado tem o anel `focus`.
+
+**Campo de prompt.** Com o nó selecionado, `P` abre o campo no lugar do rodapé, já em foco (fio `focus`, fundo
+`fill-1`, texto de exemplo em `text-placeholder`). Cresce até quatro linhas tomando altura do terminal, então o nó
+não muda de tamanho; passou disso, rola dentro. Como em todo campo de prompt do Argos, `Enter` quebra linha e
+`Ctrl+Enter` envia; `Esc` fecha sem enviar. Enviar fecha o campo na hora (o texto vai ao terminal), então não há
+estado de carregando. Nó encerrado não abre o campo.
+
+**Teclado no terminal.** Um clique no corpo dá o teclado ao agente: o nó ganha o anel de foco e o rodapé troca por
+"Teclado no terminal", com `Ctrl+]` ou clique fora para voltar ao canvas. `Esc` fica com o agente.
+<!-- peças:fim -->
+
 **Não fazer.** Seleção em cor de estado; sombra no nó; esconder o estado quando o nó encolhe.

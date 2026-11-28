@@ -3,8 +3,9 @@
 Campo de texto de uma linha (resposta livre) ou de várias (pedido ao coordenador), sempre com o ícone do que ele faz.
 
 **Anatomia.** Fundo `fill-1`, fio `border`, altura `control-md` (32) na versão de uma linha e 56 no mínimo na de
-várias. Texto de exemplo em `text-placeholder`, mais claro que `text-muted`, para nunca parecer digitado. `Enter`
-envia; `Shift+Enter` quebra linha no pedido ao time.
+várias. Texto de exemplo em `text-placeholder`, mais claro que `text-muted`, para nunca parecer digitado. Na
+resposta livre, `Enter` envia. No pedido ao time, como em todo campo de prompt, `Enter` quebra linha e `Ctrl+Enter`
+envia.
 
 | Estado | Como fica |
 |---|---|

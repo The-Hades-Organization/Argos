@@ -226,3 +226,22 @@ svg.cables path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }
 .balloon .bar .grow { flex: 1; }
 .balloon .bar .muted { white-space: nowrap; }
 .balloon .field { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* NoDeAgente · contexto, linhas novas, prompt e teclado */
+.node .ft { position: relative; }
+.node .ft .ctx { position: absolute; left: 0; bottom: -1px; height: 2px; width: var(--p); background: var(--text-muted); }
+.node .ft .ctx.full, .node .ft .ctx-t.full { color: var(--agent-error); }
+.node .ft .ctx.full { background: var(--agent-error); }
+.node .ft .ctx-t.full { font-weight: 600; }
+.node .term { position: relative; }
+.node .term .newlines { position: absolute; right: 10px; bottom: 8px; padding: 2px 8px; background: var(--surface); color: var(--text); border: 1px solid var(--border); font: 600 11px/16px var(--sans); cursor: pointer; }
+.node .term .newlines:hover, .node .term .newlines.is-hover { border-color: var(--border-hover); }
+.node .term .newlines:focus-visible { outline: 0; box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus); }
+.node .term .cur { display: inline-block; width: 7px; height: 13px; background: var(--term-fg); vertical-align: -2px; }
+.node .pfield { border-top: 1px solid var(--border); padding: 6px 10px 5px; display: grid; gap: 4px; }
+.node .pbox { border: 1px solid var(--focus); background: var(--fill-1); padding: 4px 8px; font: 400 12px/17px var(--sans); color: var(--text); max-height: calc(4 * 17px + 10px); overflow: hidden; }
+.node .pbox .ph { color: var(--text-placeholder); }
+.node .pbox .caret { display: inline-block; width: 1px; height: 14px; background: var(--text); vertical-align: -2px; margin-left: 1px; }
+.node .phint { font: 400 11px/14px var(--sans); color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+.node .ft.kb { font-family: var(--sans); color: var(--text); font-weight: 600; }
+.node .ft.kb .r { font-weight: 400; color: var(--text-muted); }
