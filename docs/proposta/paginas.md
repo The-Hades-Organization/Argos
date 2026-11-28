@@ -21,6 +21,7 @@ rede o navegador usa as fontes de reserva.
 | Canvas principal | Estado padrão, ninguém esperando, muitos agentes, pedido ao time em andamento e folhas de dados, sistema, atividade e interação, com a janela de 1024 px | `design/telas/canvas-principal.html` |
 | Recrutar | Lançador de tipos de agente: padrão, primeira vez no projeto, recrutado agora e folhas de dados, sistema, atividade e interação | `design/telas/recrutar.html` |
 | Nó de agente | Os seis estados a 100%, o nó ao afastar o zoom e folhas de dados, sistema, atividade e interação | `design/telas/no.html` |
+| Foco de um agente | Um agente em foco no lugar do canvas: padrão, esperando você, janela de 1024 px e folhas de dados, sistema, atividade e pessoas, e interação | `design/telas/foco.html` |
 
 A página do design system é gerada a partir de `design/design-system/project/` (README, `tokens.json`, prévias e
 READMEs dos componentes, ícones) por `python3 design/design-system/gerar_index.py .`; edite a fonte e rode de novo, não
