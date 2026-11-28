@@ -49,9 +49,5 @@
 .flash { box-shadow: 0 0 0 1px var(--info); background: var(--info-bg); padding: 0 4px; margin-inline: -4px; justify-self: start; }
 .launcher .nw { white-space: nowrap; }
 .btn.tool.is-pressed { background: var(--tint-pressed); color: var(--text); }
-/* Precisa de atenção: a decisão de um agente em erro usa a cor de erro, não o rosa de "esperando você" */
-.dec.err { border-color: var(--agent-error); }
-.dec.err .dh { background: var(--danger-bg); }
-.dec.err .dh .st { flex: none; }
 /* O agente que se afasta deixa o contorno de onde estava */
 svg.cables path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }

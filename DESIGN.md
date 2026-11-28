@@ -124,6 +124,12 @@ página pública em 2026-11-28.
   quê: escolha do dono, recrutar fica em três teclas (`R`, duas letras, `Enter`).
 - 2026-11-28: o nó recrutado nasce ao lado dos agentes do mesmo projeto, afastando os vizinhos. Por quê: escolha do
   dono, o canvas continua agrupado por projeto.
+- 2026-11-28: no campo do prompt do lançador, `Enter` quebra linha e `Ctrl+Enter` recruta; nos outros campos,
+  `Enter` recruta. Por quê: um prompt longo não sai recrutado pela metade; confirmado pelo dono.
+- 2026-11-28: agente que falha ao iniciar entra na caixa de decisões no mesmo rosa de "esperando você", sem
+  variante nova da peça de decisão. Por quê: escolha do dono; o rosa continua sendo o único sinal de "precisa de
+  você".
+- 2026-11-28: tela Recrutar aprovada como desenhada, com a folha 2.6 no rosa padrão. Por quê: ok do dono.
 
 ## Perguntas abertas
 

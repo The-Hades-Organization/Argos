@@ -39,7 +39,8 @@ proposta: quantos agentes, tipo, modelo, esforço, diretório e custo estimado. 
 o dono aceitar.
 
 **Avulso.** `R` abre o lançador: duas letras filtram o tipo de agente e o diretório, o modelo e o prompt inicial vêm
-preenchidos com os do último agente daquele tipo no projeto. `Enter` recruta; `Tab` leva aos campos para editar antes.
+preenchidos com os do último agente daquele tipo no projeto. `Enter` recruta; `Tab` leva aos campos para editar antes. No campo do prompt, `Enter` quebra linha e
+`Ctrl+Enter` recruta.
 O nó nasce em "Iniciando" ao lado dos agentes do mesmo projeto, afastando os vizinhos, e o canvas o enquadra.
 
 ## Acompanhar
