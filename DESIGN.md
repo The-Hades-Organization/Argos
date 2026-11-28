@@ -118,6 +118,8 @@ página pública em 2026-11-28.
   quê: escolha do dono, um passo a menos no fluxo mais repetido.
 - 2026-11-28: nó encerrado sai sozinho do canvas para o Histórico depois de 10 min. Por quê: escolha do dono, o
   canvas fica só com quem está vivo.
+- 2026-11-28: canvas principal aprovado como desenhado: padrão, ninguém esperando, muitos, pedido ao time e as
+  folhas de dados, sistema, atividade e interação. Por quê: ok do dono sem mudanças.
 
 ## Perguntas abertas
 
