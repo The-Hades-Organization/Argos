@@ -120,6 +120,10 @@ página pública em 2026-11-28.
   canvas fica só com quem está vivo.
 - 2026-11-28: canvas principal aprovado como desenhado: padrão, ninguém esperando, muitos, pedido ao time e as
   folhas de dados, sistema, atividade e interação. Por quê: ok do dono sem mudanças.
+- 2026-11-28: no lançador de Recrutar, `Enter` recruta direto com os campos preenchidos; `Tab` edita antes. Por
+  quê: escolha do dono, recrutar fica em três teclas (`R`, duas letras, `Enter`).
+- 2026-11-28: o nó recrutado nasce ao lado dos agentes do mesmo projeto, afastando os vizinhos. Por quê: escolha do
+  dono, o canvas continua agrupado por projeto.
 
 ## Perguntas abertas
 

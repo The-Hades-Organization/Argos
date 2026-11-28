@@ -38,8 +38,9 @@ veio só da tela, a decisão diz "(inferido)" e oferece abrir o terminal antes d
 proposta: quantos agentes, tipo, modelo, esforço, diretório e custo estimado. Os nós aparecem tracejados no canvas até
 o dono aceitar.
 
-**Avulso.** `R` abre o lançador: duas letras filtram o tipo de agente, `Enter` escolhe, o diretório e o prompt inicial
-vêm preenchidos com o do último agente do projeto. O nó entra no canvas em "Iniciando".
+**Avulso.** `R` abre o lançador: duas letras filtram o tipo de agente e o diretório, o modelo e o prompt inicial vêm
+preenchidos com os do último agente daquele tipo no projeto. `Enter` recruta; `Tab` leva aos campos para editar antes.
+O nó nasce em "Iniciando" ao lado dos agentes do mesmo projeto, afastando os vizinhos, e o canvas o enquadra.
 
 ## Acompanhar
 

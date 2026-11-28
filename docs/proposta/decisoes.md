@@ -37,6 +37,13 @@ convocado, o squad recolhe numa faixa de células e desdobra com `F`; a paleta a
 selecionado, com resultado e custo, e leva ao Histórico filtrado. **Descartadas:** linha de montagem (estações
 com barra de custo, numa tela própria) e mesa de composição (uma coluna por papel, convocação em diálogo).
 
+## Recrutar em três teclas
+
+**Decisão:** `R` abre o lançador, duas letras filtram o tipo e `Enter` recruta com o diretório, o modelo e o prompt do
+último agente daquele tipo no projeto; `Tab` edita antes. O nó nasce ao lado dos agentes do mesmo projeto, afastando
+os vizinhos. **Por quê:** escolha do dono; o Argos atual pedia desenhar um retângulo e preencher oito campos.
+**Descartadas:** um segundo `Enter` depois de mostrar os campos; o nó nascer onde estava o ponteiro.
+
 ## Supervisor de sessões separado do app
 
 **Decisão:** um processo próprio abre e mantém os PTYs; o app gpui se liga a ele por socket local

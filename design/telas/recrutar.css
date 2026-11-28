@@ -1,0 +1,57 @@
+/* Recrutar: o lançador é a paleta de squads (bundle.css) com linhas de tipo. Só papéis de token. */
+.launcher { position: absolute; width: 340px; z-index: 2; }
+.spec .in > .launcher { position: relative; }
+.launcher .ptitle .hint { font-family: var(--mono); }
+.launcher > .field { gap: 0; color: var(--text); }
+.launcher > .field .ph { color: var(--text-placeholder); margin-left: 6px; }
+.launcher > .field .n { font: 400 11px/14px var(--mono); color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.launcher > .field .grow { flex: 1; }
+.caret { display: inline-block; width: 1px; height: 15px; background: var(--text); vertical-align: -3px; margin-left: 1px; }
+.titem { gap: 8px; }
+.titem .tr { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 8px; align-items: center; min-width: 0; }
+.titem .tr b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; font-family: var(--mono); font-weight: 500; }
+.titem .tr > span:last-child { white-space: nowrap; font: 400 11px/16px var(--sans); }
+.titem .tr .bad, .titem .tr .muted { display: inline-flex; align-items: center; gap: 4px; }
+.titem .tr .bad svg.ic { width: 12px; height: 12px; }
+.titem .hit { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.titem.off b { color: var(--text-disabled); }
+.titem.off .tile { color: var(--text-disabled); border-color: var(--divider); }
+.tile { width: 20px; height: 20px; display: grid; place-items: center; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.tile.ini { font: 600 11px/1 var(--mono); text-transform: uppercase; color: var(--text-muted); }
+.launcher .kv { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 6px 8px; font-size: 12px; line-height: 17px; padding-left: 28px; }
+.launcher .kv b { font: 600 11px/17px var(--sans); color: var(--text-muted); }
+.launcher .kv > span { min-width: 0; display: grid; gap: 2px; }
+.launcher .kv .mono { font: 400 12px/17px var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.launcher .kv > .mono { display: block; }
+.launcher .kv .note { font: 400 11px/14px var(--sans); color: var(--text-muted); }
+.launcher .kv .pr { display: block; }
+.launcher .kv .pr.none { color: var(--text-muted); }
+.launcher .kv .pr.long { position: relative; max-height: calc(6 * 17px); overflow: hidden; padding-right: 8px; }
+.launcher .mid .e { color: var(--text-muted); }
+.launcher .kv > .fld, .launcher .fld { display: flex; align-items: center; height: 28px; padding: 0 8px; border: 1px solid var(--border); background: var(--fill-1); min-width: 0; }
+.launcher .fld .mono { overflow: hidden; text-overflow: ellipsis; }
+.launcher .fld.err { border-color: var(--danger); }
+.launcher .help.err { font-size: 11px; line-height: 14px; }
+.launcher .go { display: flex; align-items: center; gap: 10px; padding-left: 28px; min-width: 0; }
+.launcher .go .btn { min-width: 0; max-width: 100%; }
+.launcher .go .btn .bn { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.launcher .go .btn .kbd { flex: none; }
+.launcher .go .help { font-size: 11px; white-space: nowrap; }
+.launcher .go .wait { display: inline-flex; align-items: center; gap: 6px; height: 28px; font: 600 12px/16px var(--sans); color: var(--text-muted); }
+.launcher .from { padding-left: 28px; font: 400 11px/14px var(--sans); color: var(--text-muted); }
+.launcher .pfoot .r { margin-left: auto; white-space: nowrap; }
+.launcher .pempty .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 4px; }
+.launcher .pempty b { font: 600 13px/18px var(--sans); }
+.tlist { position: relative; }
+.tlist.scroll { max-height: calc(8 * 36px); overflow: hidden; }
+.thumb { position: absolute; right: 2px; top: 2px; width: 3px; height: 57%; background: var(--border-hover); z-index: 1; }
+.pr.long .thumb { right: 0; height: 40%; }
+.flash { box-shadow: 0 0 0 1px var(--info); background: var(--info-bg); padding: 0 4px; margin-inline: -4px; justify-self: start; }
+.launcher .nw { white-space: nowrap; }
+.btn.tool.is-pressed { background: var(--tint-pressed); color: var(--text); }
+/* Precisa de atenção: a decisão de um agente em erro usa a cor de erro, não o rosa de "esperando você" */
+.dec.err { border-color: var(--agent-error); }
+.dec.err .dh { background: var(--danger-bg); }
+.dec.err .dh .st { flex: none; }
+/* O agente que se afasta deixa o contorno de onde estava */
+svg.cables path.mv { stroke: var(--text-muted); stroke-dasharray: 3 3; }
