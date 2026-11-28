@@ -153,6 +153,14 @@ página pública em 2026-11-28.
   encaixa no pé do terminal, abaixo da última linha do agente; sem coluna fixa nem histórico de pendências.
   Detalhes viram um balão de cinco linhas (`I`) só na janela estreita. Por quê: escolha do dono entre duas
   direções; o que se consulta ao acompanhar fica à vista e nada cobre a saída do agente.
+- 2026-11-28: tela de foco aprovada na direção A, com a forma curta da linha da sessão quando a área do foco fica
+  abaixo de 900 px e a pendência no pé ocupando até metade da área (acima disso, rola por dentro). A linha da
+  sessão e a pendência podem ser recolhidas e expandidas pelo dono, com tecla, e o Argos lembra o estado. Por quê:
+  escolha do dono; as duas regras só valem se o dono puder devolver o espaço ao terminal.
+- 2026-11-28: o prompt do foco e do nó aceita os slash commands nativos de cada tipo de agente (`/compact`,
+  `/model` no Claude Code e os equivalentes no Codex, Gemini e outros). O contrato de adaptador declara a lista de
+  comandos com descrição, e digitar `/` no prompt lista e completa. Por quê: pedido do dono; o prompt do Argos não
+  pode ser mais pobre que o do próprio agente.
 
 ## Perguntas abertas
 
